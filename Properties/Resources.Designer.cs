@@ -73,6 +73,26 @@ namespace RozCineWorld.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap artı {
+            get {
+                object obj = ResourceManager.GetObject("artı", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap artı1 {
+            get {
+                object obj = ResourceManager.GetObject("artı1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap depositphotos_181131144_stock_illustration_female_gender_symbol {
             get {
                 object obj = ResourceManager.GetObject("depositphotos_181131144-stock-illustration-female-gender-symbol", resourceCulture);

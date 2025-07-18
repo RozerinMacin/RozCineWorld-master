@@ -45,6 +45,9 @@
             rB8 = new RadioButton();
             rB7 = new RadioButton();
             groupBox6 = new GroupBox();
+            FoyuncuPaneli = new FlowLayoutPanel();
+            lblOyuncuAra = new Label();
+            txtOyuncuara = new TextBox();
             lblReyting = new Label();
             rB3 = new RadioButton();
             rB2 = new RadioButton();
@@ -62,6 +65,7 @@
             BtnKaydet = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox6.SuspendLayout();
             groupBox8.SuspendLayout();
             groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pBResim).BeginInit();
@@ -265,6 +269,9 @@
             // 
             // groupBox6
             // 
+            groupBox6.Controls.Add(FoyuncuPaneli);
+            groupBox6.Controls.Add(lblOyuncuAra);
+            groupBox6.Controls.Add(txtOyuncuara);
             groupBox6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox6.ForeColor = Color.FromArgb(16, 46, 80);
             groupBox6.Location = new Point(298, 237);
@@ -274,6 +281,37 @@
             groupBox6.TabIndex = 13;
             groupBox6.TabStop = false;
             groupBox6.Text = "Filmin Oyuncuları";
+            // 
+            // FoyuncuPaneli
+            // 
+            FoyuncuPaneli.AutoScroll = true;
+            FoyuncuPaneli.Location = new Point(10, 33);
+            FoyuncuPaneli.Name = "FoyuncuPaneli";
+            FoyuncuPaneli.Size = new Size(270, 189);
+            FoyuncuPaneli.TabIndex = 3;
+            // 
+            // lblOyuncuAra
+            // 
+            lblOyuncuAra.AutoSize = true;
+            lblOyuncuAra.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblOyuncuAra.Location = new Point(170, 228);
+            lblOyuncuAra.Name = "lblOyuncuAra";
+            lblOyuncuAra.Size = new Size(110, 25);
+            lblOyuncuAra.TabIndex = 2;
+            lblOyuncuAra.Text = "Oyuncu ara";
+            lblOyuncuAra.Visible = false;
+            // 
+            // txtOyuncuara
+            // 
+            txtOyuncuara.BackColor = Color.FromArgb(79, 149, 157);
+            txtOyuncuara.BorderStyle = BorderStyle.None;
+            txtOyuncuara.Location = new Point(10, 228);
+            txtOyuncuara.Name = "txtOyuncuara";
+            txtOyuncuara.Size = new Size(270, 27);
+            txtOyuncuara.TabIndex = 1;
+            txtOyuncuara.TextChanged += txtOyuncuara_TextChanged;
+            txtOyuncuara.MouseLeave += txtOyuncuara_MouseLeave;
+            txtOyuncuara.MouseMove += txtOyuncuara_MouseMove;
             // 
             // lblReyting
             // 
@@ -500,10 +538,13 @@
             Name = "Frm_FilmKayit";
             StartPosition = FormStartPosition.Manual;
             Text = "Frm_FilmKayit";
+            Load += Frm_FilmKayit_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
             groupBox8.ResumeLayout(false);
             groupBox8.PerformLayout();
             groupBox9.ResumeLayout(false);
@@ -547,5 +588,8 @@
         private RadioButton rB2;
         private RadioButton rB1;
         private Label lblReyting;
+        private Label lblOyuncuAra;
+        private TextBox txtOyuncuara;
+        private FlowLayoutPanel FoyuncuPaneli;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace RozCineWorld
         {
             InitializeComponent();
         }
-
+        SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
         private void btnkapat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -94,6 +95,56 @@ namespace RozCineWorld
             {
                 lblKarakter.ForeColor = Color.Red;
             }
+        }
+
+        private void Frm_FilmKayit_Load(object sender, EventArgs e)
+        {
+            oListeGetir();
+        }
+        void oListeGetir()
+        {
+            string sorgu = "select * from Tbl_Oyuncular ORDER BY AdSoyad ASC";
+            FoyuncuPaneli.Controls.Clear();
+            connection.Open();
+            SqlCommand komut = new SqlCommand(sorgu, connection);
+            SqlDataReader oku = komut.ExecuteReader();
+            while (oku.Read())
+            {
+                OListeAraci arac = new OListeAraci();
+                arac.lbladi.Text = oku["AdSoyad"].ToString();
+                FoyuncuPaneli.Controls.Add(arac);
+            }
+            connection.Close();
+        }
+
+        private void txtOyuncuara_MouseMove(object sender, MouseEventArgs e)
+        {
+            lblOyuncuAra.Visible = true;
+        }
+
+        private void txtOyuncuara_MouseLeave(object sender, EventArgs e)
+        {
+            lblOyuncuAra.Visible = false;
+        }
+
+        private void txtOyuncuara_TextChanged(object sender, EventArgs e)
+        {
+            OyuncuAra();
+        }
+        void OyuncuAra()
+        {
+            string sorgu = "select * from Tbl_Oyuncular where AdSoyad LIKE '%" + txtOyuncuara.Text + "%' ORDER BY AdSoyad ASC";
+            FoyuncuPaneli.Controls.Clear();
+            connection.Open();
+            SqlCommand komut = new SqlCommand(sorgu, connection);
+            SqlDataReader oku = komut.ExecuteReader();
+            while (oku.Read())
+            {
+                OListeAraci arac = new OListeAraci();
+                arac.lbladi.Text = oku["AdSoyad"].ToString();
+                FoyuncuPaneli.Controls.Add(arac);
+            }
+            connection.Close();
         }
     }
 }
