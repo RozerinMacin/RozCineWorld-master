@@ -33,6 +33,8 @@
             btnkapat = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            panel8 = new Panel();
+            button3 = new Button();
             panel7 = new Panel();
             button2 = new Button();
             panel6 = new Panel();
@@ -42,15 +44,16 @@
             panel4 = new Panel();
             btnyonetmenkayit = new Button();
             panel3 = new Panel();
-            panel8 = new Panel();
-            button3 = new Button();
+            panel9 = new Panel();
+            button4 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
-            panel8.SuspendLayout();
+            panel9.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -105,6 +108,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(16, 46, 80);
+            panel2.Controls.Add(panel9);
             panel2.Controls.Add(panel8);
             panel2.Controls.Add(panel7);
             panel2.Controls.Add(panel6);
@@ -115,6 +119,33 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(312, 532);
             panel2.TabIndex = 2;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(79, 149, 157);
+            panel8.Controls.Add(button3);
+            panel8.Dock = DockStyle.Top;
+            panel8.Location = new Point(0, 240);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(312, 60);
+            panel8.TabIndex = 8;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(190, 61, 42);
+            button3.Cursor = Cursors.Hand;
+            button3.Dock = DockStyle.Top;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(0, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(312, 56);
+            button3.TabIndex = 0;
+            button3.Text = "SALON KAYIT EKRANI";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // panel7
             // 
@@ -233,32 +264,32 @@
             panel3.Size = new Size(627, 40);
             panel3.TabIndex = 3;
             // 
-            // panel8
+            // panel9
             // 
-            panel8.BackColor = Color.FromArgb(79, 149, 157);
-            panel8.Controls.Add(button3);
-            panel8.Dock = DockStyle.Top;
-            panel8.Location = new Point(0, 240);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(312, 60);
-            panel8.TabIndex = 8;
+            panel9.BackColor = Color.FromArgb(79, 149, 157);
+            panel9.Controls.Add(button4);
+            panel9.Dock = DockStyle.Top;
+            panel9.Location = new Point(0, 300);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(312, 60);
+            panel9.TabIndex = 9;
             // 
-            // button3
+            // button4
             // 
-            button3.BackColor = Color.FromArgb(190, 61, 42);
-            button3.Cursor = Cursors.Hand;
-            button3.Dock = DockStyle.Top;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(0, 0);
-            button3.Name = "button3";
-            button3.Size = new Size(312, 56);
-            button3.TabIndex = 0;
-            button3.Text = "SALON KAYIT EKRANI";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            button4.BackColor = Color.FromArgb(190, 61, 42);
+            button4.Cursor = Cursors.Hand;
+            button4.Dock = DockStyle.Top;
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(0, 0);
+            button4.Name = "button4";
+            button4.Size = new Size(312, 56);
+            button4.TabIndex = 0;
+            button4.Text = "FİLM KAYIT EKRANI";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // FrmAnaForm
             // 
@@ -279,11 +310,12 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel8.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel8.ResumeLayout(false);
+            panel9.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -305,5 +337,7 @@
         private Button button2;
         private Panel panel8;
         private Button button3;
+        private Panel panel9;
+        private Button button4;
     }
 }

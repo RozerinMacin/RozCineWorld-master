@@ -58,5 +58,11 @@ namespace RozCineWorld
             FrmSalonKayit frm = new FrmSalonKayit();
             frm.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Frm_FilmKayit frm = new Frm_FilmKayit();
+            frm.ShowDialog();
+        }
     }
 }
