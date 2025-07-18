@@ -22,7 +22,7 @@ namespace RozCineWorld
             Application.Exit();
 
         }
-        public string isimsoyad5 = "";
+        public string AdSoyad = "";
 
         private void FrmAnaForm_Load(object sender, EventArgs e)
         {
