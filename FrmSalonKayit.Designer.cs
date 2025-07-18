@@ -52,7 +52,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(613, 43);
+            panel1.Size = new Size(500, 36);
             panel1.TabIndex = 2;
             // 
             // btnkapat
@@ -64,9 +64,9 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(575, 0);
+            btnkapat.Location = new Point(462, 0);
             btnkapat.Name = "btnkapat";
-            btnkapat.Size = new Size(38, 43);
+            btnkapat.Size = new Size(38, 36);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
@@ -79,7 +79,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(2, 5);
             label1.Name = "label1";
-            label1.Size = new Size(283, 32);
+            label1.Size = new Size(220, 25);
             label1.TabIndex = 1;
             label1.Text = "[SALON KAYIT EKRANI]";
             // 
@@ -92,9 +92,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox1.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox1.Location = new Point(3, 42);
+            groupBox1.Location = new Point(3, 36);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(610, 148);
+            groupBox1.Size = new Size(489, 110);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             // 
@@ -106,9 +106,9 @@
             BtnSalonKaydet.FlatStyle = FlatStyle.Flat;
             BtnSalonKaydet.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnSalonKaydet.ForeColor = Color.White;
-            BtnSalonKaydet.Location = new Point(413, 88);
+            BtnSalonKaydet.Location = new Point(319, 70);
             BtnSalonKaydet.Name = "BtnSalonKaydet";
-            BtnSalonKaydet.Size = new Size(182, 41);
+            BtnSalonKaydet.Size = new Size(157, 32);
             BtnSalonKaydet.TabIndex = 5;
             BtnSalonKaydet.Text = "KAYDET";
             BtnSalonKaydet.UseVisualStyleBackColor = false;
@@ -119,17 +119,17 @@
             cBkoltukSayisi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             cBkoltukSayisi.ForeColor = Color.FromArgb(16, 46, 80);
             cBkoltukSayisi.FormattingEnabled = true;
-            cBkoltukSayisi.Location = new Point(324, 48);
+            cBkoltukSayisi.Location = new Point(258, 39);
             cBkoltukSayisi.Name = "cBkoltukSayisi";
-            cBkoltukSayisi.Size = new Size(272, 31);
+            cBkoltukSayisi.Size = new Size(220, 25);
             cBkoltukSayisi.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(296, 15);
+            label3.Location = new Point(234, 15);
             label3.Name = "label3";
-            label3.Size = new Size(152, 28);
+            label3.Size = new Size(123, 21);
             label3.TabIndex = 2;
             label3.Text = "KOLTUK SAYISI:";
             // 
@@ -137,9 +137,9 @@
             // 
             txtSalonAdi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtSalonAdi.ForeColor = Color.FromArgb(16, 46, 80);
-            txtSalonAdi.Location = new Point(29, 49);
+            txtSalonAdi.Location = new Point(22, 38);
             txtSalonAdi.Name = "txtSalonAdi";
-            txtSalonAdi.Size = new Size(272, 30);
+            txtSalonAdi.Size = new Size(214, 25);
             txtSalonAdi.TabIndex = 1;
             // 
             // label2
@@ -147,7 +147,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(6, 14);
             label2.Name = "label2";
-            label2.Size = new Size(119, 28);
+            label2.Size = new Size(97, 21);
             label2.TabIndex = 0;
             label2.Text = "SALON ADI:";
             // 
@@ -156,9 +156,9 @@
             groupBox2.Controls.Add(Panelsalon);
             groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox2.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox2.Location = new Point(2, 189);
+            groupBox2.Location = new Point(4, 145);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(611, 494);
+            groupBox2.Size = new Size(490, 396);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             // 
@@ -166,23 +166,23 @@
             // 
             Panelsalon.AutoScroll = true;
             Panelsalon.Dock = DockStyle.Fill;
-            Panelsalon.Location = new Point(3, 30);
+            Panelsalon.Location = new Point(3, 25);
             Panelsalon.Name = "Panelsalon";
-            Panelsalon.Size = new Size(605, 461);
+            Panelsalon.Size = new Size(484, 368);
             Panelsalon.TabIndex = 0;
             // 
             // FrmSalonKayit
             // 
-            AutoScaleDimensions = new SizeF(13F, 31F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(613, 683);
+            ClientSize = new Size(500, 542);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(panel1);
             Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(750, 200);
+            Location = new Point(550, 100);
             Margin = new Padding(5);
             Name = "FrmSalonKayit";
             StartPosition = FormStartPosition.Manual;

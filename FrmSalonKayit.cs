@@ -66,7 +66,7 @@ namespace RozCineWorld
             while (oku.Read())
             {
                 SalonListesi arac = new SalonListesi();
-                arac.lblsalonadi.Text = oku["Salonadı"].ToString();
+                arac.lblsalonadi.Text = oku["SalonAdı"].ToString();
                 arac.lblkoltuksayisi.Text = oku["KoltukSayısı"].ToString();
                 Panelsalon.Controls.Add(arac);
             }

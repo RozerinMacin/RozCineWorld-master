@@ -75,7 +75,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(613, 43);
+            panel1.Size = new Size(496, 35);
             panel1.TabIndex = 1;
             // 
             // btnkapat
@@ -87,9 +87,9 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(575, 0);
+            btnkapat.Location = new Point(458, 0);
             btnkapat.Name = "btnkapat";
-            btnkapat.Size = new Size(38, 43);
+            btnkapat.Size = new Size(38, 35);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
@@ -102,7 +102,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(2, 5);
             label1.Name = "label1";
-            label1.Size = new Size(336, 32);
+            label1.Size = new Size(262, 25);
             label1.TabIndex = 1;
             label1.Text = "[YÖNETMEN KAYIT EKRANI]";
             // 
@@ -123,18 +123,18 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox1.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox1.Location = new Point(12, 49);
+            groupBox1.Location = new Point(6, 35);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(303, 291);
+            groupBox1.Size = new Size(242, 226);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.depositphotos_181131144_stock_illustration_female_gender_symbol;
-            pictureBox3.Location = new Point(242, 243);
+            pictureBox3.Location = new Point(202, 186);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(37, 32);
+            pictureBox3.Size = new Size(27, 32);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 12;
             pictureBox3.TabStop = false;
@@ -142,9 +142,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.png_clipart_gender_symbol_male_computer_icons_symbol_design_miscellaneous_blue;
-            pictureBox2.Location = new Point(102, 244);
+            pictureBox2.Location = new Point(78, 189);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(37, 32);
+            pictureBox2.Size = new Size(32, 29);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 11;
             pictureBox2.TabStop = false;
@@ -153,9 +153,10 @@
             // 
             rBKadin.AutoSize = true;
             rBKadin.FlatStyle = FlatStyle.Flat;
-            rBKadin.Location = new Point(154, 242);
+            rBKadin.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            rBKadin.Location = new Point(129, 190);
             rBKadin.Name = "rBKadin";
-            rBKadin.Size = new Size(92, 32);
+            rBKadin.Size = new Size(72, 24);
             rBKadin.TabIndex = 10;
             rBKadin.Text = "KADIN";
             rBKadin.UseVisualStyleBackColor = true;
@@ -166,9 +167,10 @@
             rBErkek.AutoSize = true;
             rBErkek.Checked = true;
             rBErkek.FlatStyle = FlatStyle.Flat;
-            rBErkek.Location = new Point(20, 242);
+            rBErkek.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            rBErkek.Location = new Point(13, 190);
             rBErkek.Name = "rBErkek";
-            rBErkek.Size = new Size(88, 32);
+            rBErkek.Size = new Size(69, 24);
             rBErkek.TabIndex = 9;
             rBErkek.TabStop = true;
             rBErkek.Text = "ERKEK";
@@ -178,9 +180,9 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(3, 215);
+            label5.Location = new Point(6, 170);
             label5.Name = "label5";
-            label5.Size = new Size(100, 28);
+            label5.Size = new Size(81, 21);
             label5.TabIndex = 7;
             label5.Text = "CİNSİYET:";
             // 
@@ -188,11 +190,11 @@
             // 
             nYil.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             nYil.ForeColor = Color.FromArgb(16, 46, 80);
-            nYil.Location = new Point(194, 183);
+            nYil.Location = new Point(152, 142);
             nYil.Maximum = new decimal(new int[] { 2200, 0, 0, 0 });
             nYil.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
             nYil.Name = "nYil";
-            nYil.Size = new Size(85, 30);
+            nYil.Size = new Size(78, 25);
             nYil.TabIndex = 6;
             nYil.Value = new decimal(new int[] { 2025, 0, 0, 0 });
             // 
@@ -200,11 +202,11 @@
             // 
             nAy.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             nAy.ForeColor = Color.FromArgb(16, 46, 80);
-            nAy.Location = new Point(107, 183);
+            nAy.Location = new Point(74, 142);
             nAy.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
             nAy.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nAy.Name = "nAy";
-            nAy.Size = new Size(81, 30);
+            nAy.Size = new Size(72, 25);
             nAy.TabIndex = 5;
             nAy.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -212,20 +214,20 @@
             // 
             nGun.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             nGun.ForeColor = Color.FromArgb(16, 46, 80);
-            nGun.Location = new Point(20, 183);
+            nGun.Location = new Point(9, 142);
             nGun.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
             nGun.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nGun.Name = "nGun";
-            nGun.Size = new Size(81, 30);
+            nGun.Size = new Size(59, 25);
             nGun.TabIndex = 4;
             nGun.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 149);
+            label4.Location = new Point(6, 118);
             label4.Name = "label4";
-            label4.Size = new Size(160, 28);
+            label4.Size = new Size(129, 21);
             label4.TabIndex = 4;
             label4.Text = "DOĞUM TARİHİ:";
             // 
@@ -233,17 +235,17 @@
             // 
             txtSoyad.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtSoyad.ForeColor = Color.FromArgb(16, 46, 80);
-            txtSoyad.Location = new Point(20, 117);
+            txtSoyad.Location = new Point(9, 90);
             txtSoyad.Name = "txtSoyad";
-            txtSoyad.Size = new Size(259, 30);
+            txtSoyad.Size = new Size(221, 25);
             txtSoyad.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(3, 82);
+            label3.Location = new Point(3, 66);
             label3.Name = "label3";
-            label3.Size = new Size(80, 28);
+            label3.Size = new Size(65, 21);
             label3.TabIndex = 2;
             label3.Text = "SOYAD:";
             // 
@@ -251,9 +253,9 @@
             // 
             txtAd.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtAd.ForeColor = Color.FromArgb(16, 46, 80);
-            txtAd.Location = new Point(20, 49);
+            txtAd.Location = new Point(9, 38);
             txtAd.Name = "txtAd";
-            txtAd.Size = new Size(259, 30);
+            txtAd.Size = new Size(220, 25);
             txtAd.TabIndex = 1;
             // 
             // label2
@@ -261,7 +263,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(3, 14);
             label2.Name = "label2";
-            label2.Size = new Size(44, 28);
+            label2.Size = new Size(36, 21);
             label2.TabIndex = 0;
             label2.Text = "AD:";
             // 
@@ -272,9 +274,9 @@
             groupBox2.Controls.Add(label6);
             groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox2.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox2.Location = new Point(321, 49);
+            groupBox2.Location = new Point(254, 35);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(280, 291);
+            groupBox2.Size = new Size(238, 226);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             // 
@@ -286,9 +288,9 @@
             BtnResimYukle.FlatStyle = FlatStyle.Flat;
             BtnResimYukle.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnResimYukle.ForeColor = Color.White;
-            BtnResimYukle.Location = new Point(17, 232);
+            BtnResimYukle.Location = new Point(6, 185);
             BtnResimYukle.Name = "BtnResimYukle";
-            BtnResimYukle.Size = new Size(238, 43);
+            BtnResimYukle.Size = new Size(224, 36);
             BtnResimYukle.TabIndex = 4;
             BtnResimYukle.Text = "YÜKLE";
             BtnResimYukle.UseVisualStyleBackColor = false;
@@ -298,9 +300,9 @@
             // 
             pBResim.BackColor = Color.FromArgb(79, 149, 157);
             pBResim.Image = Properties.Resources._10234;
-            pBResim.Location = new Point(17, 51);
+            pBResim.Location = new Point(6, 38);
             pBResim.Name = "pBResim";
-            pBResim.Size = new Size(238, 175);
+            pBResim.Size = new Size(224, 141);
             pBResim.SizeMode = PictureBoxSizeMode.Zoom;
             pBResim.TabIndex = 3;
             pBResim.TabStop = false;
@@ -310,7 +312,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(6, 14);
             label6.Name = "label6";
-            label6.Size = new Size(74, 28);
+            label6.Size = new Size(61, 21);
             label6.TabIndex = 2;
             label6.Text = "RESİM:";
             // 
@@ -322,16 +324,16 @@
             groupBox3.Controls.Add(label10);
             groupBox3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox3.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox3.Location = new Point(12, 346);
+            groupBox3.Location = new Point(4, 262);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(589, 292);
+            groupBox3.Size = new Size(488, 231);
             groupBox3.TabIndex = 4;
             groupBox3.TabStop = false;
             // 
             // lblKarakter
             // 
             lblKarakter.BackColor = Color.White;
-            lblKarakter.Location = new Point(524, 253);
+            lblKarakter.Location = new Point(435, 198);
             lblKarakter.Name = "lblKarakter";
             lblKarakter.RightToLeft = RightToLeft.Yes;
             lblKarakter.Size = new Size(47, 28);
@@ -342,9 +344,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label7.Location = new Point(415, 0);
+            label7.Location = new Point(346, 0);
             label7.Name = "label7";
-            label7.Size = new Size(155, 23);
+            label7.Size = new Size(127, 19);
             label7.TabIndex = 2;
             label7.Text = "(max 300 karakter)";
             // 
@@ -353,11 +355,11 @@
             txtBiyografi.Dock = DockStyle.Fill;
             txtBiyografi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtBiyografi.ForeColor = Color.FromArgb(16, 46, 80);
-            txtBiyografi.Location = new Point(3, 30);
+            txtBiyografi.Location = new Point(3, 25);
             txtBiyografi.MaxLength = 300;
             txtBiyografi.Multiline = true;
             txtBiyografi.Name = "txtBiyografi";
-            txtBiyografi.Size = new Size(583, 259);
+            txtBiyografi.Size = new Size(482, 203);
             txtBiyografi.TabIndex = 1;
             txtBiyografi.TextChanged += txtBiyografi_TextChanged;
             // 
@@ -366,7 +368,7 @@
             label10.AutoSize = true;
             label10.Location = new Point(9, 1);
             label10.Name = "label10";
-            label10.Size = new Size(117, 28);
+            label10.Size = new Size(95, 21);
             label10.TabIndex = 0;
             label10.Text = "BİYOGRAFİ:";
             // 
@@ -379,9 +381,9 @@
             BtnKaydet.FlatStyle = FlatStyle.Flat;
             BtnKaydet.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnKaydet.ForeColor = Color.White;
-            BtnKaydet.Location = new Point(0, 640);
+            BtnKaydet.Location = new Point(0, 499);
             BtnKaydet.Name = "BtnKaydet";
-            BtnKaydet.Size = new Size(613, 43);
+            BtnKaydet.Size = new Size(496, 43);
             BtnKaydet.TabIndex = 5;
             BtnKaydet.Text = "KAYIT TAMAMLA";
             BtnKaydet.UseVisualStyleBackColor = false;
@@ -389,10 +391,10 @@
             // 
             // FrmYonetmenkayit
             // 
-            AutoScaleDimensions = new SizeF(13F, 31F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(613, 683);
+            ClientSize = new Size(496, 542);
             Controls.Add(BtnKaydet);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -400,7 +402,7 @@
             Controls.Add(panel1);
             Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(750, 200);
+            Location = new Point(550, 100);
             Margin = new Padding(5, 6, 5, 6);
             Name = "FrmYonetmenkayit";
             StartPosition = FormStartPosition.Manual;
