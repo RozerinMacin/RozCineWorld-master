@@ -144,7 +144,7 @@
             Controls.Add(panel1);
             Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(500, 45);
+            Location = new Point(750, 200);
             Margin = new Padding(5);
             Name = "FrmYonetmenListesi";
             StartPosition = FormStartPosition.Manual;

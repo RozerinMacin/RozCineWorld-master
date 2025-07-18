@@ -142,7 +142,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(500, 45);
+            Location = new Point(750, 200);
             Name = "FrmOyuncuListesi";
             StartPosition = FormStartPosition.Manual;
             Text = "FrmOyuncuListesi";
