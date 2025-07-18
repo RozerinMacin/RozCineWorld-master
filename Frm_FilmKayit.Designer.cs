@@ -42,6 +42,9 @@
             groupBox4 = new GroupBox();
             rB4 = new RadioButton();
             groupBox5 = new GroupBox();
+            lblyonetmenara = new Label();
+            txtYonetmenara = new TextBox();
+            FYonetmenPaneli = new FlowLayoutPanel();
             rB8 = new RadioButton();
             rB7 = new RadioButton();
             groupBox6 = new GroupBox();
@@ -65,6 +68,7 @@
             BtnKaydet = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox5.SuspendLayout();
             groupBox6.SuspendLayout();
             groupBox8.SuspendLayout();
             groupBox9.SuspendLayout();
@@ -218,7 +222,6 @@
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
             groupBox4.Text = "Film Biçimi";
-            groupBox4.Enter += groupBox4_Enter;
             // 
             // rB4
             // 
@@ -234,6 +237,9 @@
             // 
             // groupBox5
             // 
+            groupBox5.Controls.Add(lblyonetmenara);
+            groupBox5.Controls.Add(txtYonetmenara);
+            groupBox5.Controls.Add(FYonetmenPaneli);
             groupBox5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox5.ForeColor = Color.FromArgb(16, 46, 80);
             groupBox5.Location = new Point(260, 38);
@@ -243,6 +249,37 @@
             groupBox5.TabIndex = 12;
             groupBox5.TabStop = false;
             groupBox5.Text = "Filmin Yönetmen";
+            // 
+            // lblyonetmenara
+            // 
+            lblyonetmenara.AutoSize = true;
+            lblyonetmenara.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblyonetmenara.Location = new Point(146, 114);
+            lblyonetmenara.Name = "lblyonetmenara";
+            lblyonetmenara.Size = new Size(104, 20);
+            lblyonetmenara.TabIndex = 6;
+            lblyonetmenara.Text = "Yönetmen ara";
+            lblyonetmenara.Visible = false;
+            // 
+            // txtYonetmenara
+            // 
+            txtYonetmenara.BackColor = Color.FromArgb(79, 149, 157);
+            txtYonetmenara.BorderStyle = BorderStyle.None;
+            txtYonetmenara.Location = new Point(10, 112);
+            txtYonetmenara.Name = "txtYonetmenara";
+            txtYonetmenara.Size = new Size(238, 22);
+            txtYonetmenara.TabIndex = 5;
+            txtYonetmenara.TextChanged += txtYonetmenara_TextChanged;
+            txtYonetmenara.MouseLeave += txtYonetmenara_MouseLeave;
+            txtYonetmenara.MouseMove += txtYonetmenara_MouseMove;
+            // 
+            // FYonetmenPaneli
+            // 
+            FYonetmenPaneli.AutoScroll = true;
+            FYonetmenPaneli.Location = new Point(10, 20);
+            FYonetmenPaneli.Name = "FYonetmenPaneli";
+            FYonetmenPaneli.Size = new Size(238, 87);
+            FYonetmenPaneli.TabIndex = 4;
             // 
             // rB8
             // 
@@ -544,6 +581,8 @@
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox5.ResumeLayout(false);
+            groupBox5.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
             groupBox8.ResumeLayout(false);
@@ -592,5 +631,8 @@
         private Label lblOyuncuAra;
         private TextBox txtOyuncuara;
         private FlowLayoutPanel FoyuncuPaneli;
+        private Label lblyonetmenara;
+        private TextBox txtYonetmenara;
+        private FlowLayoutPanel FYonetmenPaneli;
     }
 }
