@@ -52,15 +52,15 @@ namespace RozCineWorld
             int karaktersayisi = txtBiyografi.Text.Length;
             int geri = 300 - karaktersayisi;
             lblKarakter.Text = geri.ToString();
-            if (geri > 20)
+            if (geri > 50)
             {
                 lblKarakter.ForeColor = Color.FromArgb(16, 46, 80);
             }
-            if (geri <= 20)
+            if (geri <= 50)
             {
                 lblKarakter.ForeColor = Color.Orange;
             }
-            if (geri <= 10)
+            if (geri <= 25)
             {
                 lblKarakter.ForeColor = Color.Red;
             }
