@@ -20,8 +20,9 @@ namespace RozCineWorld
         private void btnkapat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
         }
-        public string kisiAdSoyad = "";
+        public string isimsoyad = "";
 
         private void FrmAnaForm_Load(object sender, EventArgs e)
         {
