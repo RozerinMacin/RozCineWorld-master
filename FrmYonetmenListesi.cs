@@ -45,7 +45,7 @@ namespace RozCineWorld
         {
             ListePaneli.Controls.Clear();
             connection.Open();
-            SqlCommand arama = new SqlCommand("select * from Tbl_Yonetmenler where AdSoyad LIKE '%"+txtarama.Text+"%' ORDER BY AdSoyad ASC", connection);
+            SqlCommand arama = new SqlCommand("select * from Tbl_Yonetmenler where AdSoyad LIKE '%"+txtarama.Text+"%' collate Turkish_CI_AS ORDER BY AdSoyad ASC", connection);
             SqlDataReader oku = arama.ExecuteReader();
             while (oku.Read())
             {

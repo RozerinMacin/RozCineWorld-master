@@ -132,7 +132,7 @@ namespace RozCineWorld
         }
         void OyuncuAra()
         {
-            string sorgu = "select * from Tbl_Oyuncular where AdSoyad LIKE '%" + txtOyuncuara.Text + "%' ORDER BY AdSoyad ASC";
+            string sorgu = "select * from Tbl_Oyuncular where AdSoyad LIKE '%" + txtOyuncuara.Text + "%' collate Turkish_CI_AS ORDER BY AdSoyad ASC";
             FoyuncuPaneli.Controls.Clear();
             connection.Open();
             SqlCommand komut = new SqlCommand(sorgu, connection);
@@ -175,7 +175,7 @@ namespace RozCineWorld
         }
         void YonetmenAra()
         {
-            string sorgu = "select * from Tbl_Yonetmenler where AdSoyad LIKE '%" + txtYonetmenara.Text + "%' ORDER BY AdSoyad ASC";
+            string sorgu = "select * from Tbl_Yonetmenler where AdSoyad LIKE '%" + txtYonetmenara.Text + "%'collate Turkish_CI_AS ORDER BY AdSoyad ASC";
             FYonetmenPaneli.Controls.Clear();
             connection.Open();
             SqlCommand komut = new SqlCommand(sorgu, connection);
