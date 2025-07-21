@@ -21,6 +21,10 @@ namespace RozCineWorld
         private void btnkapat_Click(object sender, EventArgs e)
         {
             this.Close();
+            connection.Open();
+            SqlCommand komut = new SqlCommand("delete from Tbl_Secilenler", connection);
+            komut.ExecuteNonQuery();
+            connection.Close();
         }
 
         private void rB1_CheckedChanged(object sender, EventArgs e)
@@ -187,6 +191,271 @@ namespace RozCineWorld
                 FYonetmenPaneli.Controls.Add(arac);
             }
             connection.Close();
+        }
+        private void lblAksiyon_Click(object sender, EventArgs e)
+        {
+            if (lblAksiyon.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblAksiyon.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblAksiyon.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void lblromantik_Click(object sender, EventArgs e)
+        {
+            if (lblromantik.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblromantik.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblromantik.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void lblFantastik_Click(object sender, EventArgs e)
+        {
+            if (lblFantastik.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblFantastik.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblFantastik.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void lblBilimKurgu_Click(object sender, EventArgs e)
+        {
+            if (lblBilimKurgu.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblBilimKurgu.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblBilimKurgu.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void lblDrama_Click(object sender, EventArgs e)
+        {
+            if (lblDrama.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblDrama.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblDrama.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void lblkomedi_Click(object sender, EventArgs e)
+        {
+            if (lblkomedi.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblkomedi.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblkomedi.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void lblsuc_Click(object sender, EventArgs e)
+        {
+            if (lblsuc.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblsuc.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblsuc.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string secilentur = "";
+            foreach (Control arac in gBFilm_turleri.Controls)
+            {
+                if (arac is Label)
+                {
+                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
+                    {
+
+                    }
+                    else
+                    {
+                        secilentur += " ," + arac.Text.ToString();
+                    }
+                }
+            }
+            if (secilentur.Length > 2)
+            {
+                MessageBox.Show(secilentur = secilentur.Substring(2));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen en az bir tür seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+        private void lblturkce_Click(object sender, EventArgs e)
+        {
+            if (lblturkce.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblturkce.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblturkce.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void lblaltyazi_Click(object sender, EventArgs e)
+        {
+            if (lblaltyazi.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblaltyazi.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblaltyazi.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+        private void lblingilizce_Click(object sender, EventArgs e)
+        {
+            if (lblingilizce.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblingilizce.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblingilizce.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string secilenBicim = "";
+            foreach (Control arac in gBFilm_bicimi.Controls)
+            {
+                if (arac is Label)
+                {
+                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
+                    {
+
+                    }
+                    else
+                    {
+                        secilenBicim += " ," + arac.Text.ToString();
+                    }
+                }
+            }
+            if (secilenBicim.Length > 2)
+            {
+                MessageBox.Show(secilenBicim = secilenBicim.Substring(2));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen en az bir tür seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void lblkorkusiddet_Click(object sender, EventArgs e)
+        {
+            if (lblkorkusiddet.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblkorkusiddet.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblkorkusiddet.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+
+        private void lblolumsuzicerik_Click(object sender, EventArgs e)
+        {
+            if (lblolumsuzicerik.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblolumsuzicerik.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblolumsuzicerik.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+
+        private void lblgenelizleyici_Click(object sender, EventArgs e)
+        {
+            if (lblgenelizleyici.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lblgenelizleyici.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lblgenelizleyici.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+
+        private void lbl_7_Click(object sender, EventArgs e)
+        {
+            if (lbl_7.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lbl_7.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lbl_7.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+
+        private void lbl_13_Click(object sender, EventArgs e)
+        {
+            if (lbl_13.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lbl_13.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lbl_13.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+
+        private void lbl_18_Click(object sender, EventArgs e)
+        {
+            if (lbl_18.ForeColor == Color.FromArgb(16, 46, 80))
+            {
+                lbl_18.ForeColor = Color.FromArgb(190, 61, 42);
+            }
+            else
+            {
+                lbl_18.ForeColor = Color.FromArgb(16, 46, 80);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string secilenOzellik = "";
+            foreach (Control arac in gBFilm_ozellik.Controls)
+            {
+                if (arac is Label)
+                {
+                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
+                    {
+
+                    }
+                    else
+                    {
+                        secilenOzellik += " ," + arac.Text.ToString();
+                    }
+                }
+            }
+            if (secilenOzellik.Length > 2)
+            {
+                MessageBox.Show(secilenOzellik = secilenOzellik.Substring(2));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen en az bir tür seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }

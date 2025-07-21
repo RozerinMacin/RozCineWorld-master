@@ -64,5 +64,6 @@ namespace RozCineWorld
             Frm_FilmKayit frm = new Frm_FilmKayit();
             frm.ShowDialog();
         }
+
     }
 }

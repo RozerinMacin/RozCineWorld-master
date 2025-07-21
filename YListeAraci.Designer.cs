@@ -41,7 +41,7 @@
             lbladi.ForeColor = Color.FromArgb(16, 46, 80);
             lbladi.Location = new Point(25, 1);
             lbladi.Name = "lbladi";
-            lbladi.Size = new Size(48, 20);
+            lbladi.Size = new Size(61, 25);
             lbladi.TabIndex = 3;
             lbladi.Text = "label1";
             lbladi.Click += lbladi_Click;
@@ -61,7 +61,7 @@
             // 
             // YListeAraci
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             Controls.Add(lbladi);
@@ -69,6 +69,7 @@
             Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
             Name = "YListeAraci";
             Size = new Size(210, 21);
+            Load += YListeAraci_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

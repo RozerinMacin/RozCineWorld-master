@@ -73,6 +73,26 @@ namespace RozCineWorld.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap Aksiyon {
+            get {
+                object obj = ResourceManager.GetObject("Aksiyon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap altyazı {
+            get {
+                object obj = ResourceManager.GetObject("altyazı", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap artı {
             get {
                 object obj = ResourceManager.GetObject("artı", resourceCulture);
@@ -86,6 +106,36 @@ namespace RozCineWorld.Properties {
         internal static System.Drawing.Bitmap artı1 {
             get {
                 object obj = ResourceManager.GetObject("artı1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bayrak_İ {
+            get {
+                object obj = ResourceManager.GetObject("Bayrak_İ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap bayrak_T {
+            get {
+                object obj = ResourceManager.GetObject("bayrak_T", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap bayrak_T1 {
+            get {
+                object obj = ResourceManager.GetObject("bayrak_T1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +186,16 @@ namespace RozCineWorld.Properties {
         internal static System.Drawing.Bitmap fotografyok1 {
             get {
                 object obj = ResourceManager.GetObject("fotografyok1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap kapalıkilit {
+            get {
+                object obj = ResourceManager.GetObject("kapalıkilit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
