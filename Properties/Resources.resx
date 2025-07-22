@@ -118,17 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="depositphotos_181131144-stock-illustration-female-gender-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\depositphotos_181131144-stock-illustration-female-gender-symbol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="olumsuzornek" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\olumsuzornek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Komedi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Komedi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="altyazı" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\altyazı.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bayrak_İ" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bayrak_İ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ErkekSimgesi1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ErkekSimgesi1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Drama" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Drama.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="artı" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\artı.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="10234" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10234.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fotografyok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fotografyok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,55 +142,70 @@
   <data name="koruvesiddet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\koruvesiddet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="7+" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\7+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="18+" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\18+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bayrak_T1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bayrak_T1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="13+" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\13+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="10234" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10234.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="koltukikonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\koltukikonu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="png-clipart-gender-symbol-male-computer-icons-symbol-design-miscellaneous-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-clipart-gender-symbol-male-computer-icons-symbol-design-miscellaneous-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ErkekSimgesi" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ErkekSimgesi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fotografyok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fotografyok1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bayrak_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bayrak_T.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="genelizleyici" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\genelizleyici.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ErkekSimgesi1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ErkekSimgesi1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="artı1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\artı1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="artı" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\artı.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="reyting" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reyting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Romantik" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Romantik.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kapalıkilit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kapalıkilit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="reyting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reyting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="artı1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\artı1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="7+" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="13+" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\13+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="depositphotos_181131144-stock-illustration-female-gender-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\depositphotos_181131144-stock-illustration-female-gender-symbol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png-clipart-gender-symbol-male-computer-icons-symbol-design-miscellaneous-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-clipart-gender-symbol-male-computer-icons-symbol-design-miscellaneous-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bilim_Kurgu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bilim_Kurgu1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="koltukikonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\koltukikonu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bayrak_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bayrak_T.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Aksiyon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Aksiyon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="18+" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\18+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bayrak_İ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bayrak_İ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bayrak_T1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bayrak_T1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="genelizleyici" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\genelizleyici.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Aksiyon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Aksiyon1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErkekSimgesi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ErkekSimgesi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Fantastik" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fantastik.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="olumsuzornek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\olumsuzornek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fotografyok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fotografyok1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Suç" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Suç.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
