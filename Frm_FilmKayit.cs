@@ -17,14 +17,14 @@ namespace RozCineWorld
         {
             InitializeComponent();
         }
-        SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
+        SqlConnection baglanti = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
         private void btnkapat_Click(object sender, EventArgs e)
         {
             this.Close();
-            connection.Open();
-            SqlCommand komut = new SqlCommand("delete from Tbl_Secilenler", connection);
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("delete from Tbl_Secilenler", baglanti);
             komut.ExecuteNonQuery();
-            connection.Close();
+            baglanti.Close();
         }
 
         private void rB1_CheckedChanged(object sender, EventArgs e)
@@ -103,13 +103,21 @@ namespace RozCineWorld
         {
             oListeGetir();
             yListeGetir();
+            bugununtarihi();
+
+        }
+        void bugununtarihi()
+        {
+            nGun.Value = DateTime.Today.Day;
+            nAy.Value = DateTime.Today.Month;
+            nYil.Value = DateTime.Today.Year;
         }
         void oListeGetir()
         {
             string sorgu = "select * from Tbl_Oyuncular ORDER BY AdSoyad ASC";
             FoyuncuPaneli.Controls.Clear();
-            connection.Open();
-            SqlCommand komut = new SqlCommand(sorgu, connection);
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand(sorgu, baglanti);
             SqlDataReader oku = komut.ExecuteReader();
             while (oku.Read())
             {
@@ -117,7 +125,7 @@ namespace RozCineWorld
                 arac.lbladi.Text = oku["AdSoyad"].ToString();
                 FoyuncuPaneli.Controls.Add(arac);
             }
-            connection.Close();
+            baglanti.Close();
         }
 
         private void txtOyuncuara_MouseMove(object sender, MouseEventArgs e)
@@ -138,8 +146,8 @@ namespace RozCineWorld
         {
             string sorgu = "select * from Tbl_Oyuncular where AdSoyad LIKE '%" + txtOyuncuara.Text + "%' collate Turkish_CI_AS ORDER BY AdSoyad ASC";
             FoyuncuPaneli.Controls.Clear();
-            connection.Open();
-            SqlCommand komut = new SqlCommand(sorgu, connection);
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand(sorgu, baglanti);
             SqlDataReader oku = komut.ExecuteReader();
             while (oku.Read())
             {
@@ -147,14 +155,14 @@ namespace RozCineWorld
                 arac.lbladi.Text = oku["AdSoyad"].ToString();
                 FoyuncuPaneli.Controls.Add(arac);
             }
-            connection.Close();
+            baglanti.Close();
         }
         void yListeGetir()
         {
             string sorgu = "select * from Tbl_Yonetmenler ORDER BY AdSoyad ASC";
             FYonetmenPaneli.Controls.Clear();
-            connection.Open();
-            SqlCommand komut = new SqlCommand(sorgu, connection);
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand(sorgu, baglanti);
             SqlDataReader oku = komut.ExecuteReader();
             while (oku.Read())
             {
@@ -162,7 +170,7 @@ namespace RozCineWorld
                 arac.lbladi.Text = oku["AdSoyad"].ToString();
                 FYonetmenPaneli.Controls.Add(arac);
             }
-            connection.Close();
+            baglanti.Close();
         }
 
         private void txtYonetmenara_MouseMove(object sender, MouseEventArgs e)
@@ -181,8 +189,8 @@ namespace RozCineWorld
         {
             string sorgu = "select * from Tbl_Yonetmenler where AdSoyad LIKE '%" + txtYonetmenara.Text + "%'collate Turkish_CI_AS ORDER BY AdSoyad ASC";
             FYonetmenPaneli.Controls.Clear();
-            connection.Open();
-            SqlCommand komut = new SqlCommand(sorgu, connection);
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand(sorgu, baglanti);
             SqlDataReader oku = komut.ExecuteReader();
             while (oku.Read())
             {
@@ -190,7 +198,7 @@ namespace RozCineWorld
                 arac.lbladi.Text = oku["AdSoyad"].ToString();
                 FYonetmenPaneli.Controls.Add(arac);
             }
-            connection.Close();
+            baglanti.Close();
         }
         private void lblAksiyon_Click(object sender, EventArgs e)
         {
@@ -269,33 +277,6 @@ namespace RozCineWorld
                 lblsuc.ForeColor = Color.FromArgb(16, 46, 80);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string secilentur = "";
-            foreach (Control arac in gBFilm_turleri.Controls)
-            {
-                if (arac is Label)
-                {
-                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
-                    {
-
-                    }
-                    else
-                    {
-                        secilentur += " ," + arac.Text.ToString();
-                    }
-                }
-            }
-            if (secilentur.Length > 2)
-            {
-                MessageBox.Show(secilentur = secilentur.Substring(2));
-            }
-            else
-            {
-                MessageBox.Show("Lütfen en az bir tür seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-        }
         private void lblturkce_Click(object sender, EventArgs e)
         {
             if (lblturkce.ForeColor == Color.FromArgb(16, 46, 80))
@@ -329,35 +310,6 @@ namespace RozCineWorld
                 lblingilizce.ForeColor = Color.FromArgb(16, 46, 80);
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string secilenBicim = "";
-            foreach (Control arac in gBFilm_bicimi.Controls)
-            {
-                if (arac is Label)
-                {
-                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
-                    {
-
-                    }
-                    else
-                    {
-                        secilenBicim += " ," + arac.Text.ToString();
-                    }
-                }
-            }
-            if (secilenBicim.Length > 2)
-            {
-                MessageBox.Show(secilenBicim = secilenBicim.Substring(2));
-            }
-            else
-            {
-                MessageBox.Show("Lütfen en az bir tür seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-        }
-
         private void lblkorkusiddet_Click(object sender, EventArgs e)
         {
             if (lblkorkusiddet.ForeColor == Color.FromArgb(16, 46, 80))
@@ -429,10 +381,173 @@ namespace RozCineWorld
                 lbl_18.ForeColor = Color.FromArgb(16, 46, 80);
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btntarihsec_Click(object sender, EventArgs e)
         {
-            string secilenOzellik = "";
+            Vizyontarihi();
+        }
+        string vTarih = "";
+        string durum = "0";
+        void Vizyontarihi()
+        {
+            vTarih = nGun.Value + "." + nAy.Value + "." + nYil.Value;
+            DateTime dVTarih = Convert.ToDateTime(vTarih);
+            DateTime bugun = DateTime.Today;
+
+            TimeSpan TSpan = dVTarih - bugun;
+            if (TSpan.TotalDays < 0)
+            {
+                MessageBox.Show("Geçmiş tarihlere ait film eklenmesi yapılamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                bugununtarihi();
+            }
+            else if (TSpan.TotalDays == 0)
+            {
+                MessageBox.Show(txtfilmAdi.Text + " :Filmi şuan vizyonda.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                durum = "1"; // film vizyonda.
+            }
+            else
+            {
+                MessageBox.Show("Vizyon tarihi: " + vTarih, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                durum = "0"; // film vizyona girmedi.
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbltarih.Text = DateTime.Now.ToShortDateString();
+        }
+        string yonetmen = "";
+        string oyuncu = "";
+        void Soyuncu()
+        {
+            string sorgu = "select * from Tbl_Secilenler where Tur = 'OYUNCU'";
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand(sorgu, baglanti);
+            SqlDataReader oku = komut.ExecuteReader();
+            while (oku.Read())
+            {
+                oyuncu += " ," + oku["Kisi"].ToString();
+            }
+            baglanti.Close();
+        }
+        void Syonetmen() 
+        {
+            string sorgu = "select * from Tbl_Secilenler where Tur = 'YÖNETMEN'";
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand(sorgu,baglanti);
+            baglanti.Close();
+            SqlDataReader oku = komut.ExecuteReader();
+            while (oku.Read())
+            {
+                yonetmen += " ," + oku["Kisi"].ToString();
+            }
+            baglanti.Close();
+        }
+        private void BtnKaydet_Click(object sender, EventArgs e)
+        {
+            //insert into deyimini kullanarak veritabanına film bilgilerini ekleyeceğiz.
+            //input kontrolleri yapacağız.
+            Syonetmen();
+            Soyuncu();
+            Tur();
+            bicim();
+            ozellikler();
+
+            string sorgu = "INSERT INTO Tbl_Filmler (Film_Adi,Film_Türü,Film_Ozellikleri,Film_Bicimi,Film_Yonetmeni,Film_Oyuncuları,Film_VizyonTarihi,Film_IMDB_Puanı,Film_Detayi,Film_Afisi,Film_Durumu) VALUES (@adi,@turu,@ozellikleri,@bicimi,@yonetmen,@oyuncu,@vizyontarihi,@puan,@detay,@afis,@durum)";
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand(sorgu, baglanti);
+            komut.Parameters.AddWithValue("@adi",txtfilmAdi.Text.ToUpper());
+            if (secilentur.Length > 2)
+            {
+                komut.Parameters.AddWithValue("@turu", secilentur.Substring(2));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen en az bir tür seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (secilenOzellik.Length > 2)
+            {
+                komut.Parameters.AddWithValue("@ozellikleri", secilenOzellik.Substring(2));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen en az bir özellik seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (secilenBicim.Length > 2)
+            {
+                komut.Parameters.AddWithValue("@bicimi", secilenBicim.Substring(2));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen en az bir biçim seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (yonetmen.Length > 2)
+            {
+                komut.Parameters.AddWithValue("@yonetmen", yonetmen.Substring(2));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen en az bir yönetmen seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (oyuncu.Length > 2)
+            {
+                komut.Parameters.AddWithValue("@oyuncu", oyuncu.Substring(2));
+            }
+            else
+            {
+                MessageBox.Show("Lütfen en az bir oyuncu seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            komut.Parameters.AddWithValue("@vizyontarihi",vTarih);
+            komut.Parameters.AddWithValue("@puan",lblReyting.Text);
+            komut.Parameters.AddWithValue("@detay",txtFilmDetay.Text.ToUpper());
+            komut.Parameters.AddWithValue("@afis",resimyolu);
+            komut.Parameters.AddWithValue("@durum",durum);
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        string secilentur = "";
+        void Tur()
+        {
+            foreach (Control arac in gBFilm_turleri.Controls)
+            {
+                if (arac is Label)
+                {
+                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
+                    {
+
+                    }
+                    else
+                    {
+                        secilentur += " ," + arac.Text.ToString();
+                    }
+                }
+            }
+        }
+        string secilenBicim = "";
+        void bicim() 
+        {
+            foreach (Control arac in gBFilm_bicimi.Controls)
+            {
+                if (arac is Label)
+                {
+                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
+                    {
+
+                    }
+                    else
+                    {
+                        secilenBicim += " ," + arac.Text.ToString();
+                    }
+                }
+            }
+        }
+        string secilenOzellik = "";
+        void ozellikler() 
+        {
             foreach (Control arac in gBFilm_ozellik.Controls)
             {
                 if (arac is Label)
@@ -446,15 +561,6 @@ namespace RozCineWorld
                         secilenOzellik += " ," + arac.Text.ToString();
                     }
                 }
-            }
-            if (secilenOzellik.Length > 2)
-            {
-                MessageBox.Show(secilenOzellik = secilenOzellik.Substring(2));
-            }
-            else
-            {
-                MessageBox.Show("Lütfen en az bir tür seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
             }
         }
     }

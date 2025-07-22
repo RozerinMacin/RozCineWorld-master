@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_FilmKayit));
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
             btnkapat = new Button();
             label1 = new Label();
             groupBox1 = new GroupBox();
-            textBox1 = new TextBox();
+            txtfilmAdi = new TextBox();
             gBFilm_turleri = new GroupBox();
             pictureBox7 = new PictureBox();
             lblsuc = new Label();
@@ -92,6 +89,15 @@
             rB2 = new RadioButton();
             rB1 = new RadioButton();
             groupBox7 = new GroupBox();
+            lbltarih = new Label();
+            label6 = new Label();
+            btntarihsec = new Button();
+            label5 = new Label();
+            label3 = new Label();
+            nYil = new NumericUpDown();
+            nGun = new NumericUpDown();
+            label4 = new Label();
+            nAy = new NumericUpDown();
             groupBox8 = new GroupBox();
             groupBox9 = new GroupBox();
             BtnResimYukle = new Button();
@@ -102,6 +108,7 @@
             label7 = new Label();
             txtFilmDetay = new TextBox();
             BtnKaydet = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             gBFilm_turleri.SuspendLayout();
@@ -125,6 +132,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
             groupBox5.SuspendLayout();
             groupBox6.SuspendLayout();
+            groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nYil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nGun).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nAy).BeginInit();
             groupBox8.SuspendLayout();
             groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pBResim).BeginInit();
@@ -134,9 +145,6 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(16, 46, 80);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(btnkapat);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -144,39 +152,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(763, 37);
             panel1.TabIndex = 7;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button3.Location = new Point(538, 5);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 29);
-            button3.TabIndex = 4;
-            button3.Text = "özellik";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button2.Location = new Point(437, 5);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 3;
-            button2.Text = "Biçim";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button1.Location = new Point(337, 6);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Tür";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // btnkapat
             // 
@@ -208,27 +183,27 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(txtfilmAdi);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox1.ForeColor = Color.FromArgb(16, 46, 80);
             groupBox1.Location = new Point(6, 37);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(10, 3, 3, 3);
-            groupBox1.Size = new Size(247, 53);
+            groupBox1.Size = new Size(247, 59);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "Film Adı";
             // 
-            // textBox1
+            // txtfilmAdi
             // 
-            textBox1.BackColor = Color.FromArgb(79, 149, 157);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Dock = DockStyle.Bottom;
-            textBox1.ForeColor = Color.FromArgb(16, 46, 80);
-            textBox1.Location = new Point(10, 23);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(234, 27);
-            textBox1.TabIndex = 0;
+            txtfilmAdi.BackColor = Color.FromArgb(79, 149, 157);
+            txtfilmAdi.BorderStyle = BorderStyle.None;
+            txtfilmAdi.Dock = DockStyle.Bottom;
+            txtfilmAdi.ForeColor = Color.FromArgb(16, 46, 80);
+            txtfilmAdi.Location = new Point(10, 29);
+            txtfilmAdi.Name = "txtfilmAdi";
+            txtfilmAdi.Size = new Size(234, 27);
+            txtfilmAdi.TabIndex = 0;
             // 
             // gBFilm_turleri
             // 
@@ -248,18 +223,18 @@
             gBFilm_turleri.Controls.Add(lblAksiyon);
             gBFilm_turleri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             gBFilm_turleri.ForeColor = Color.FromArgb(16, 46, 80);
-            gBFilm_turleri.Location = new Point(6, 89);
+            gBFilm_turleri.Location = new Point(6, 99);
             gBFilm_turleri.Name = "gBFilm_turleri";
             gBFilm_turleri.Padding = new Padding(10, 3, 3, 3);
-            gBFilm_turleri.Size = new Size(247, 134);
+            gBFilm_turleri.Size = new Size(247, 176);
             gBFilm_turleri.TabIndex = 9;
             gBFilm_turleri.TabStop = false;
             gBFilm_turleri.Text = "Film Türü";
             // 
             // pictureBox7
             // 
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(130, 80);
+            pictureBox7.Image = Properties.Resources.Suç;
+            pictureBox7.Location = new Point(130, 93);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(30, 25);
             pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -271,7 +246,7 @@
             lblsuc.AutoSize = true;
             lblsuc.Cursor = Cursors.Hand;
             lblsuc.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblsuc.Location = new Point(160, 81);
+            lblsuc.Location = new Point(160, 94);
             lblsuc.Name = "lblsuc";
             lblsuc.Size = new Size(37, 23);
             lblsuc.TabIndex = 12;
@@ -280,8 +255,8 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(130, 54);
+            pictureBox6.Image = Properties.Resources.Komedi;
+            pictureBox6.Location = new Point(130, 63);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(30, 25);
             pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -293,7 +268,7 @@
             lblkomedi.AutoSize = true;
             lblkomedi.Cursor = Cursors.Hand;
             lblkomedi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblkomedi.Location = new Point(160, 55);
+            lblkomedi.Location = new Point(160, 64);
             lblkomedi.Name = "lblkomedi";
             lblkomedi.Size = new Size(68, 23);
             lblkomedi.TabIndex = 10;
@@ -302,8 +277,8 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(130, 27);
+            pictureBox5.Image = Properties.Resources.Drama;
+            pictureBox5.Location = new Point(130, 32);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(30, 25);
             pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -315,7 +290,7 @@
             lblDrama.AutoSize = true;
             lblDrama.Cursor = Cursors.Hand;
             lblDrama.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblDrama.Location = new Point(160, 28);
+            lblDrama.Location = new Point(160, 33);
             lblDrama.Name = "lblDrama";
             lblDrama.Size = new Size(61, 23);
             lblDrama.TabIndex = 8;
@@ -324,8 +299,8 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(6, 53);
+            pictureBox4.Image = Properties.Resources.Romantik;
+            pictureBox4.Location = new Point(6, 61);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(30, 25);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -337,7 +312,7 @@
             lblromantik.AutoSize = true;
             lblromantik.Cursor = Cursors.Hand;
             lblromantik.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblromantik.Location = new Point(35, 54);
+            lblromantik.Location = new Point(35, 62);
             lblromantik.Name = "lblromantik";
             lblromantik.Size = new Size(84, 23);
             lblromantik.TabIndex = 6;
@@ -346,8 +321,8 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(6, 80);
+            pictureBox3.Image = Properties.Resources.Fantastik;
+            pictureBox3.Location = new Point(6, 93);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(30, 25);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -359,7 +334,7 @@
             lblFantastik.AutoSize = true;
             lblFantastik.Cursor = Cursors.Hand;
             lblFantastik.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblFantastik.Location = new Point(34, 81);
+            lblFantastik.Location = new Point(34, 94);
             lblFantastik.Name = "lblFantastik";
             lblFantastik.Size = new Size(78, 23);
             lblFantastik.TabIndex = 4;
@@ -368,8 +343,8 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(5, 107);
+            pictureBox2.Image = Properties.Resources.Bilim_Kurgu1;
+            pictureBox2.Location = new Point(5, 127);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 25);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -381,7 +356,7 @@
             lblBilimKurgu.AutoSize = true;
             lblBilimKurgu.Cursor = Cursors.Hand;
             lblBilimKurgu.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblBilimKurgu.Location = new Point(37, 107);
+            lblBilimKurgu.Location = new Point(37, 131);
             lblBilimKurgu.Name = "lblBilimKurgu";
             lblBilimKurgu.Size = new Size(98, 23);
             lblBilimKurgu.TabIndex = 2;
@@ -390,8 +365,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Aksiyon;
-            pictureBox1.Location = new Point(5, 27);
+            pictureBox1.Image = Properties.Resources.Aksiyon1;
+            pictureBox1.Location = new Point(5, 30);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 25);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -403,7 +378,7 @@
             lblAksiyon.AutoSize = true;
             lblAksiyon.Cursor = Cursors.Hand;
             lblAksiyon.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblAksiyon.Location = new Point(35, 28);
+            lblAksiyon.Location = new Point(35, 31);
             lblAksiyon.Name = "lblAksiyon";
             lblAksiyon.Size = new Size(70, 23);
             lblAksiyon.TabIndex = 0;
@@ -414,7 +389,7 @@
             // 
             rB9.AutoSize = true;
             rB9.FlatStyle = FlatStyle.Flat;
-            rB9.Location = new Point(135, 57);
+            rB9.Location = new Point(133, 56);
             rB9.Name = "rB9";
             rB9.Size = new Size(43, 32);
             rB9.TabIndex = 1;
@@ -426,7 +401,7 @@
             // 
             rb6.AutoSize = true;
             rb6.FlatStyle = FlatStyle.Flat;
-            rb6.Location = new Point(13, 57);
+            rb6.Location = new Point(7, 55);
             rb6.Name = "rb6";
             rb6.Size = new Size(43, 32);
             rb6.TabIndex = 0;
@@ -450,7 +425,7 @@
             gBFilm_ozellik.Controls.Add(lblgenelizleyici);
             gBFilm_ozellik.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             gBFilm_ozellik.ForeColor = Color.FromArgb(16, 46, 80);
-            gBFilm_ozellik.Location = new Point(6, 229);
+            gBFilm_ozellik.Location = new Point(6, 281);
             gBFilm_ozellik.Name = "gBFilm_ozellik";
             gBFilm_ozellik.Padding = new Padding(10, 3, 3, 3);
             gBFilm_ozellik.Size = new Size(248, 118);
@@ -460,7 +435,7 @@
             // 
             // pictureBox16
             // 
-            pictureBox16.Image = Properties.Resources.kapalıkilit;
+            pictureBox16.Image = Properties.Resources._18_;
             pictureBox16.Location = new Point(164, 84);
             pictureBox16.Name = "pictureBox16";
             pictureBox16.Size = new Size(30, 25);
@@ -477,12 +452,12 @@
             lbl_18.Name = "lbl_18";
             lbl_18.Size = new Size(38, 23);
             lbl_18.TabIndex = 24;
-            lbl_18.Text = "+18";
+            lbl_18.Text = "18+";
             lbl_18.Click += lbl_18_Click;
             // 
             // pictureBox8
             // 
-            pictureBox8.Image = Properties.Resources.kapalıkilit;
+            pictureBox8.Image = Properties.Resources._13_;
             pictureBox8.Location = new Point(164, 55);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(30, 25);
@@ -499,12 +474,12 @@
             lbl_13.Name = "lbl_13";
             lbl_13.Size = new Size(38, 23);
             lbl_13.TabIndex = 22;
-            lbl_13.Text = "+13";
+            lbl_13.Text = "13+";
             lbl_13.Click += lbl_13_Click;
             // 
             // pictureBox9
             // 
-            pictureBox9.Image = Properties.Resources.kapalıkilit;
+            pictureBox9.Image = Properties.Resources._7_;
             pictureBox9.Location = new Point(164, 28);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(30, 25);
@@ -521,12 +496,12 @@
             lbl_7.Name = "lbl_7";
             lbl_7.Size = new Size(31, 23);
             lbl_7.TabIndex = 20;
-            lbl_7.Text = "+7";
+            lbl_7.Text = "7+";
             lbl_7.Click += lbl_7_Click;
             // 
             // pictureBox10
             // 
-            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Image = Properties.Resources.koruvesiddet;
             pictureBox10.Location = new Point(10, 27);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(30, 25);
@@ -548,7 +523,7 @@
             // 
             // pictureBox11
             // 
-            pictureBox11.Image = Properties.Resources.kapalıkilit;
+            pictureBox11.Image = Properties.Resources.olumsuzornek;
             pictureBox11.Location = new Point(10, 54);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(30, 25);
@@ -570,7 +545,7 @@
             // 
             // pictureBox12
             // 
-            pictureBox12.Image = Properties.Resources.kapalıkilit;
+            pictureBox12.Image = Properties.Resources.genelizleyici;
             pictureBox12.Location = new Point(11, 81);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(30, 25);
@@ -594,7 +569,7 @@
             // 
             rB10.AutoSize = true;
             rB10.FlatStyle = FlatStyle.Flat;
-            rB10.Location = new Point(177, 57);
+            rB10.Location = new Point(176, 55);
             rB10.Name = "rB10";
             rB10.Size = new Size(51, 32);
             rB10.TabIndex = 1;
@@ -624,7 +599,7 @@
             gBFilm_bicimi.Controls.Add(lblingilizce);
             gBFilm_bicimi.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             gBFilm_bicimi.ForeColor = Color.FromArgb(16, 46, 80);
-            gBFilm_bicimi.Location = new Point(6, 353);
+            gBFilm_bicimi.Location = new Point(6, 405);
             gBFilm_bicimi.Name = "gBFilm_bicimi";
             gBFilm_bicimi.Padding = new Padding(10, 3, 3, 3);
             gBFilm_bicimi.Size = new Size(248, 124);
@@ -702,7 +677,7 @@
             // 
             rB4.AutoSize = true;
             rB4.FlatStyle = FlatStyle.Flat;
-            rB4.Location = new Point(135, 28);
+            rB4.Location = new Point(133, 27);
             rB4.Name = "rB4";
             rB4.Size = new Size(44, 32);
             rB4.TabIndex = 0;
@@ -720,7 +695,7 @@
             groupBox5.Location = new Point(260, 37);
             groupBox5.Name = "groupBox5";
             groupBox5.Padding = new Padding(10, 3, 3, 3);
-            groupBox5.Size = new Size(258, 186);
+            groupBox5.Size = new Size(258, 238);
             groupBox5.TabIndex = 12;
             groupBox5.TabStop = false;
             groupBox5.Text = "Filmin Yönetmen";
@@ -729,7 +704,7 @@
             // 
             lblyonetmenara.AutoSize = true;
             lblyonetmenara.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblyonetmenara.Location = new Point(124, 145);
+            lblyonetmenara.Location = new Point(124, 197);
             lblyonetmenara.Name = "lblyonetmenara";
             lblyonetmenara.Size = new Size(130, 25);
             lblyonetmenara.TabIndex = 6;
@@ -740,7 +715,7 @@
             // 
             txtYonetmenara.BackColor = Color.FromArgb(79, 149, 157);
             txtYonetmenara.BorderStyle = BorderStyle.None;
-            txtYonetmenara.Location = new Point(10, 147);
+            txtYonetmenara.Location = new Point(10, 199);
             txtYonetmenara.Name = "txtYonetmenara";
             txtYonetmenara.Size = new Size(238, 27);
             txtYonetmenara.TabIndex = 5;
@@ -753,14 +728,14 @@
             FYonetmenPaneli.AutoScroll = true;
             FYonetmenPaneli.Location = new Point(8, 29);
             FYonetmenPaneli.Name = "FYonetmenPaneli";
-            FYonetmenPaneli.Size = new Size(238, 113);
+            FYonetmenPaneli.Size = new Size(238, 165);
             FYonetmenPaneli.TabIndex = 4;
             // 
             // rB8
             // 
             rB8.AutoSize = true;
             rB8.FlatStyle = FlatStyle.Flat;
-            rB8.Location = new Point(90, 57);
+            rB8.Location = new Point(87, 55);
             rB8.Name = "rB8";
             rB8.Size = new Size(43, 32);
             rB8.TabIndex = 1;
@@ -772,7 +747,7 @@
             // 
             rB7.AutoSize = true;
             rB7.FlatStyle = FlatStyle.Flat;
-            rB7.Location = new Point(50, 56);
+            rB7.Location = new Point(47, 56);
             rB7.Name = "rB7";
             rB7.Size = new Size(43, 32);
             rB7.TabIndex = 0;
@@ -787,7 +762,7 @@
             groupBox6.Controls.Add(txtOyuncuara);
             groupBox6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox6.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox6.Location = new Point(261, 229);
+            groupBox6.Location = new Point(261, 281);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(10, 3, 3, 3);
             groupBox6.Size = new Size(258, 249);
@@ -829,9 +804,10 @@
             // lblReyting
             // 
             lblReyting.AutoSize = true;
-            lblReyting.Location = new Point(209, 14);
+            lblReyting.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblReyting.Location = new Point(209, 15);
             lblReyting.Name = "lblReyting";
-            lblReyting.Size = new Size(20, 28);
+            lblReyting.Size = new Size(15, 19);
             lblReyting.TabIndex = 0;
             lblReyting.Text = "1";
             lblReyting.Visible = false;
@@ -840,7 +816,7 @@
             // 
             rB3.AutoSize = true;
             rB3.FlatStyle = FlatStyle.Flat;
-            rB3.Location = new Point(92, 27);
+            rB3.Location = new Point(87, 28);
             rB3.Name = "rB3";
             rB3.Size = new Size(43, 32);
             rB3.TabIndex = 2;
@@ -852,7 +828,7 @@
             // 
             rB2.AutoSize = true;
             rB2.FlatStyle = FlatStyle.Flat;
-            rB2.Location = new Point(52, 26);
+            rB2.Location = new Point(47, 27);
             rB2.Name = "rB2";
             rB2.Size = new Size(43, 32);
             rB2.TabIndex = 1;
@@ -865,7 +841,7 @@
             rB1.AutoSize = true;
             rB1.Checked = true;
             rB1.FlatStyle = FlatStyle.Flat;
-            rB1.Location = new Point(11, 25);
+            rB1.Location = new Point(7, 27);
             rB1.Name = "rB1";
             rB1.Size = new Size(40, 32);
             rB1.TabIndex = 0;
@@ -876,15 +852,129 @@
             // 
             // groupBox7
             // 
+            groupBox7.Controls.Add(lbltarih);
+            groupBox7.Controls.Add(label6);
+            groupBox7.Controls.Add(btntarihsec);
+            groupBox7.Controls.Add(label5);
+            groupBox7.Controls.Add(label3);
+            groupBox7.Controls.Add(nYil);
+            groupBox7.Controls.Add(nGun);
+            groupBox7.Controls.Add(label4);
+            groupBox7.Controls.Add(nAy);
             groupBox7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox7.ForeColor = Color.FromArgb(16, 46, 80);
             groupBox7.Location = new Point(525, 37);
             groupBox7.Name = "groupBox7";
             groupBox7.Padding = new Padding(10, 3, 3, 3);
-            groupBox7.Size = new Size(231, 82);
+            groupBox7.Size = new Size(231, 138);
             groupBox7.TabIndex = 14;
             groupBox7.TabStop = false;
             groupBox7.Text = "Filmin Vizyon Tarihi";
+            // 
+            // lbltarih
+            // 
+            lbltarih.AutoSize = true;
+            lbltarih.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            lbltarih.ForeColor = Color.FromArgb(16, 46, 80);
+            lbltarih.Location = new Point(117, 108);
+            lbltarih.Name = "lbltarih";
+            lbltarih.Size = new Size(58, 20);
+            lbltarih.TabIndex = 25;
+            lbltarih.Text = "lbltarih";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(16, 46, 80);
+            label6.Location = new Point(66, 108);
+            label6.Name = "label6";
+            label6.Size = new Size(54, 20);
+            label6.TabIndex = 24;
+            label6.Text = "TARİH:";
+            // 
+            // btntarihsec
+            // 
+            btntarihsec.BackColor = Color.FromArgb(190, 61, 42);
+            btntarihsec.Cursor = Cursors.Hand;
+            btntarihsec.FlatAppearance.BorderSize = 0;
+            btntarihsec.FlatStyle = FlatStyle.Flat;
+            btntarihsec.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btntarihsec.ForeColor = Color.White;
+            btntarihsec.Location = new Point(7, 75);
+            btntarihsec.Name = "btntarihsec";
+            btntarihsec.Size = new Size(217, 30);
+            btntarihsec.TabIndex = 23;
+            btntarihsec.Text = "TARİH SEÇ";
+            btntarihsec.UseVisualStyleBackColor = false;
+            btntarihsec.Click += btntarihsec_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label5.Location = new Point(145, 25);
+            label5.Name = "label5";
+            label5.Size = new Size(30, 20);
+            label5.TabIndex = 22;
+            label5.Text = "Yıl:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label3.Location = new Point(72, 25);
+            label3.Name = "label3";
+            label3.Size = new Size(31, 20);
+            label3.TabIndex = 21;
+            label3.Text = "Ay:";
+            // 
+            // nYil
+            // 
+            nYil.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            nYil.ForeColor = Color.FromArgb(16, 46, 80);
+            nYil.Location = new Point(151, 45);
+            nYil.Maximum = new decimal(new int[] { 2200, 0, 0, 0 });
+            nYil.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
+            nYil.Name = "nYil";
+            nYil.Size = new Size(75, 27);
+            nYil.TabIndex = 22;
+            nYil.Value = new decimal(new int[] { 2025, 0, 0, 0 });
+            // 
+            // nGun
+            // 
+            nGun.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            nGun.ForeColor = Color.FromArgb(16, 46, 80);
+            nGun.Location = new Point(9, 45);
+            nGun.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
+            nGun.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nGun.Name = "nGun";
+            nGun.Size = new Size(64, 27);
+            nGun.TabIndex = 19;
+            nGun.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label4.ForeColor = Color.FromArgb(16, 46, 80);
+            label4.Location = new Point(4, 25);
+            label4.Name = "label4";
+            label4.Size = new Size(41, 20);
+            label4.TabIndex = 20;
+            label4.Text = "Gün:";
+            // 
+            // nAy
+            // 
+            nAy.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            nAy.ForeColor = Color.FromArgb(16, 46, 80);
+            nAy.Location = new Point(79, 45);
+            nAy.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
+            nAy.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nAy.Name = "nAy";
+            nAy.Size = new Size(66, 27);
+            nAy.TabIndex = 21;
+            nAy.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // groupBox8
             // 
@@ -901,10 +991,10 @@
             groupBox8.Controls.Add(rb6);
             groupBox8.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox8.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox8.Location = new Point(525, 125);
+            groupBox8.Location = new Point(525, 181);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(10, 3, 3, 3);
-            groupBox8.Size = new Size(231, 98);
+            groupBox8.Size = new Size(231, 94);
             groupBox8.TabIndex = 15;
             groupBox8.TabStop = false;
             groupBox8.Text = "Film IMDB Puanı";
@@ -916,10 +1006,10 @@
             groupBox9.Controls.Add(label2);
             groupBox9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox9.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox9.Location = new Point(527, 230);
+            groupBox9.Location = new Point(527, 281);
             groupBox9.Name = "groupBox9";
             groupBox9.Padding = new Padding(10, 3, 3, 3);
-            groupBox9.Size = new Size(231, 248);
+            groupBox9.Size = new Size(231, 249);
             groupBox9.TabIndex = 16;
             groupBox9.TabStop = false;
             groupBox9.Text = "Film Afişi";
@@ -968,7 +1058,7 @@
             groupBox10.Controls.Add(txtFilmDetay);
             groupBox10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox10.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox10.Location = new Point(4, 483);
+            groupBox10.Location = new Point(4, 534);
             groupBox10.Name = "groupBox10";
             groupBox10.Padding = new Padding(10, 3, 3, 3);
             groupBox10.Size = new Size(754, 158);
@@ -1019,19 +1109,25 @@
             BtnKaydet.FlatStyle = FlatStyle.Flat;
             BtnKaydet.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnKaydet.ForeColor = Color.White;
-            BtnKaydet.Location = new Point(0, 647);
+            BtnKaydet.Location = new Point(0, 698);
             BtnKaydet.Name = "BtnKaydet";
             BtnKaydet.Size = new Size(763, 43);
             BtnKaydet.TabIndex = 18;
             BtnKaydet.Text = "KAYIT TAMAMLA";
             BtnKaydet.UseVisualStyleBackColor = false;
+            BtnKaydet.Click += BtnKaydet_Click;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
             // 
             // Frm_FilmKayit
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(763, 690);
+            ClientSize = new Size(763, 741);
             Controls.Add(BtnKaydet);
             Controls.Add(groupBox10);
             Controls.Add(groupBox9);
@@ -1082,6 +1178,11 @@
             groupBox5.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox6.PerformLayout();
+            groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nYil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nGun).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nAy).EndInit();
             groupBox8.ResumeLayout(false);
             groupBox8.PerformLayout();
             groupBox9.ResumeLayout(false);
@@ -1097,7 +1198,7 @@
         private Button btnkapat;
         private Label label1;
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox txtfilmAdi;
         private GroupBox gBFilm_turleri;
         private GroupBox gBFilm_ozellik;
         private GroupBox gBFilm_bicimi;
@@ -1145,7 +1246,6 @@
         private Label lblDrama;
         private PictureBox pictureBox7;
         private Label lblsuc;
-        private Button button1;
         private PictureBox pictureBox8;
         private Label lbl_13;
         private PictureBox pictureBox9;
@@ -1164,7 +1264,15 @@
         private Label lblingilizce;
         private PictureBox pictureBox16;
         private Label lbl_18;
-        private Button button2;
-        private Button button3;
+        private Label label5;
+        private Label label3;
+        private NumericUpDown nYil;
+        private NumericUpDown nGun;
+        private Label label4;
+        private NumericUpDown nAy;
+        private Button btntarihsec;
+        private Label lbltarih;
+        private Label label6;
+        private System.Windows.Forms.Timer timer1;
     }
 }
