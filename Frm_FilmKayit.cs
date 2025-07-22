@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace RozCineWorld
 {
+
     public partial class Frm_FilmKayit : Form
     {
         public Frm_FilmKayit()
@@ -18,7 +19,9 @@ namespace RozCineWorld
             InitializeComponent();
         }
         SqlConnection baglanti = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
-        private void btnkapat_Click(object sender, EventArgs e)
+
+      
+    private void btnkapat_Click(object sender, EventArgs e)
         {
             this.Close();
             baglanti.Open();
@@ -430,16 +433,34 @@ namespace RozCineWorld
         }
         void Syonetmen() 
         {
-            string sorgu = "select * from Tbl_Secilenler where Tur = 'YÖNETMEN'";
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand(sorgu,baglanti);
-            baglanti.Close();
-            SqlDataReader oku = komut.ExecuteReader();
-            while (oku.Read())
+            try
             {
-                yonetmen += " ," + oku["Kisi"].ToString();
+                string sorgu = "select * from Tbl_Secilenler where Tur = 'YÖNETMEN'";
+                if (baglanti.State == ConnectionState.Closed)
+                {
+                    baglanti.Open();
+                }
+                SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                SqlDataReader oku = komut.ExecuteReader();
+                while (oku.Read())
+                {
+                    yonetmen += " ," + oku["Kisi"].ToString();
+                }
+               
             }
-            baglanti.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            finally
+            {
+                if (baglanti.State == ConnectionState.Open)
+                {
+                    baglanti.Close();
+                }
+            }
+            
         }
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
