@@ -15,12 +15,10 @@ namespace RozCineWorld
     public partial class Frm_FilmKayit : Form
     {
         public Frm_FilmKayit()
-        {
+        {   
             InitializeComponent();
         }
-        SqlConnection baglanti = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
-
-      
+        SqlConnection baglanti = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");     
     private void btnkapat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -421,6 +419,7 @@ namespace RozCineWorld
         string oyuncu = "";
         void Soyuncu()
         {
+            oyuncu = "";
             string sorgu = "select * from Tbl_Secilenler where Tur = 'OYUNCU'";
             baglanti.Open();
             SqlCommand komut = new SqlCommand(sorgu, baglanti);
@@ -435,6 +434,7 @@ namespace RozCineWorld
         {
             try
             {
+                yonetmen = "";
                 string sorgu = "select * from Tbl_Secilenler where Tur = 'YÖNETMEN'";
                 if (baglanti.State == ConnectionState.Closed)
                 {
@@ -471,64 +471,69 @@ namespace RozCineWorld
             Tur();
             bicim();
             ozellikler();
+            if (txtfilmAdi.Text != "" && txtFilmDetay.Text != "" && yonetmen != "" && oyuncu != "" && resimyolu != "" && vTarih != "" && secilentur != "" && secilenOzellik != "" && secilenBicim != "")
+            {
+                string sorgu = "INSERT INTO Tbl_Filmler (Film_Adi,Film_Türü,Film_Ozellikleri,Film_Bicimi,Film_Yonetmeni,Film_Oyuncuları,Film_VizyonTarihi,Film_IMDB_Puanı,Film_Detayi,Film_Afisi,Film_Durumu) VALUES (@adi,@turu,@ozellikleri,@bicimi,@yonetmen,@oyuncu,@vizyontarihi,@puan,@detay,@afis,@durum)";
+                baglanti.Open();
+                SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                komut.Parameters.AddWithValue("@adi", txtfilmAdi.Text.ToUpper());
+                if (secilentur.Length > 2)
+                {
+                    komut.Parameters.AddWithValue("@turu", secilentur.Substring(2));
+                }
+                else
+                {
+                    komut.Parameters.AddWithValue("@turu", secilentur);
+                    secilentur = "";
+                }
+                if (secilenOzellik.Length > 2)
+                {
+                    komut.Parameters.AddWithValue("@ozellikleri", secilenOzellik.Substring(2));
+                }
+                else
+                {
+                    komut.Parameters.AddWithValue("@ozellikleri", secilenOzellik);
+                    secilenOzellik = "";
+                }
+                if (secilenBicim.Length > 2)
+                {
+                    komut.Parameters.AddWithValue("@bicimi", secilenBicim.Substring(2));
+                }
+                else
+                {
+                    komut.Parameters.AddWithValue("@bicimi", secilenBicim);
+                    secilenBicim = "";
 
-            string sorgu = "INSERT INTO Tbl_Filmler (Film_Adi,Film_Türü,Film_Ozellikleri,Film_Bicimi,Film_Yonetmeni,Film_Oyuncuları,Film_VizyonTarihi,Film_IMDB_Puanı,Film_Detayi,Film_Afisi,Film_Durumu) VALUES (@adi,@turu,@ozellikleri,@bicimi,@yonetmen,@oyuncu,@vizyontarihi,@puan,@detay,@afis,@durum)";
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand(sorgu, baglanti);
-            komut.Parameters.AddWithValue("@adi",txtfilmAdi.Text.ToUpper());
-            if (secilentur.Length > 2)
-            {
-                komut.Parameters.AddWithValue("@turu", secilentur.Substring(2));
+                }
+                if (yonetmen.Length > 2)
+                {
+                    komut.Parameters.AddWithValue("@yonetmen", yonetmen.Substring(2));
+                }
+                else
+                {
+                    komut.Parameters.AddWithValue("@yonetmen", yonetmen);
+                }
+                if (oyuncu.Length > 2)
+                {
+                    komut.Parameters.AddWithValue("@oyuncu", oyuncu.Substring(2));
+                }
+                else
+                {
+                    komut.Parameters.AddWithValue("@oyuncu", oyuncu);
+                }
+                komut.Parameters.AddWithValue("@vizyontarihi", vTarih);
+                komut.Parameters.AddWithValue("@puan", lblReyting.Text);
+                komut.Parameters.AddWithValue("@detay", txtFilmDetay.Text.ToUpper());
+                komut.Parameters.AddWithValue("@afis", resimyolu);
+                komut.Parameters.AddWithValue("@durum", durum);
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+                MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-            {
-                MessageBox.Show("Lütfen en az bir tür seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                {
+                MessageBox.Show("Lütfen ilgili Alanları doldurunuz!");
             }
-            if (secilenOzellik.Length > 2)
-            {
-                komut.Parameters.AddWithValue("@ozellikleri", secilenOzellik.Substring(2));
-            }
-            else
-            {
-                MessageBox.Show("Lütfen en az bir özellik seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (secilenBicim.Length > 2)
-            {
-                komut.Parameters.AddWithValue("@bicimi", secilenBicim.Substring(2));
-            }
-            else
-            {
-                MessageBox.Show("Lütfen en az bir biçim seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (yonetmen.Length > 2)
-            {
-                komut.Parameters.AddWithValue("@yonetmen", yonetmen.Substring(2));
-            }
-            else
-            {
-                MessageBox.Show("Lütfen en az bir yönetmen seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (oyuncu.Length > 2)
-            {
-                komut.Parameters.AddWithValue("@oyuncu", oyuncu.Substring(2));
-            }
-            else
-            {
-                MessageBox.Show("Lütfen en az bir oyuncu seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            komut.Parameters.AddWithValue("@vizyontarihi",vTarih);
-            komut.Parameters.AddWithValue("@puan",lblReyting.Text);
-            komut.Parameters.AddWithValue("@detay",txtFilmDetay.Text.ToUpper());
-            komut.Parameters.AddWithValue("@afis",resimyolu);
-            komut.Parameters.AddWithValue("@durum",durum);
-            komut.ExecuteNonQuery();
-            baglanti.Close();
-            MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         string secilentur = "";
         void Tur()
