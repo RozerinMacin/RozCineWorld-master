@@ -456,16 +456,18 @@ namespace RozCineWorld
             TurleriAl();
             BicimleriAl();
             OzellikleriAl();
+            // Film adı, detay, yönetmen, oyuncu, resim yolu, vizyon tarihi, tür, özellik ve biçim bilgilerini kontrol ediyoruz.
             if (txtfilmAdi.Text != "" && txtFilmDetay.Text != "" && yonetmen != "" && oyuncu != "" && resimyolu != "" && vTarih != "" && secilenTur != "" && secilenOzellik != "" && secilenBicim != "")
             {
-                try
+                try// Bağlantı açılır ve film verileri eklenir.hata yakalamak için try-catch bloğu kullanıyoruz.
                 {
+                    // Film bilgilerini veritabanına eklemek için sorgu hazırlıyoruz.
                     string sorgu = "INSERT INTO Tbl_Filmler (Film_Adi,Film_Türü,Film_Ozellikleri,Film_Bicimi,Film_Yonetmeni,Film_Oyuncuları,Film_VizyonTarihi,Film_IMDB_Puanı,Film_Detayi,Film_Afisi,Film_Durumu) VALUES (@adi,@turu,@ozellikleri,@bicimi,@yonetmen,@oyuncu,@vizyontarihi,@puan,@detay,@afis,@durum)";
                     if (baglanti.State == ConnectionState.Closed)// Bağlantı kapalıysa açıyoruz.
                     {
                         baglanti.Open();
                     }
-                    SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                    SqlCommand komut = new SqlCommand(sorgu, baglanti);// SqlCommand sınıfından bir komut nesnesi oluşturuyoruz.
                     komut.Parameters.AddWithValue("@adi", txtfilmAdi.Text.ToUpper());
                     if (secilenTur.Length > 2)
                     {
@@ -502,7 +504,7 @@ namespace RozCineWorld
                     komut.Parameters.AddWithValue("@durum", durum);
                     komut.ExecuteNonQuery();
                 }
-                catch (Exception ex)
+                catch (Exception ex)// Hata oluşursa kullanıcıya mesaj gösteriyoruz.
                 {
                     MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -512,10 +514,11 @@ namespace RozCineWorld
                     {
                         baglanti.Close();
                     }
+                    // Film kaydı başarılı ise kullanıcıya bilgi mesajı gösteriyoruz.
                     MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            else// Eğer gerekli alanlar doldurulmamışsa kullanıcıya uyarı mesajı gösteriyoruz.
             {
                 MessageBox.Show("Lütfen ilgili Alanları doldurunuz!");
             }
