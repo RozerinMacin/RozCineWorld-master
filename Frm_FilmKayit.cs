@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace RozCineWorld
 {
-
     public partial class Frm_FilmKayit : Form
     {
         public Frm_FilmKayit()
@@ -113,7 +112,6 @@ namespace RozCineWorld
             oListeGetir();
             yListeGetir();
             bugununtarihi();
-
         }
         void bugununtarihi()// Bugünün tarihini alır ve ilgili numeric up down kontrollerine atar.
         {
@@ -152,12 +150,10 @@ namespace RozCineWorld
                 }
             }
         }
-
         private void txtOyuncuara_MouseMove(object sender, MouseEventArgs e)// Oyuncu arama kutusuna fare ile gelindiğinde etiket görünür hale gelir.
         {
             lblOyuncuAra.Visible = true;
         }
-
         private void txtOyuncuara_MouseLeave(object sender, EventArgs e)// Oyuncu arama kutusundan fare ayrıldığında etiket gizlenir.
         {
             lblOyuncuAra.Visible = false;
