@@ -79,7 +79,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(2, 5);
             label1.Name = "label1";
-            label1.Size = new Size(220, 25);
+            label1.Size = new Size(283, 32);
             label1.TabIndex = 1;
             label1.Text = "[SALON KAYIT EKRANI]";
             // 
@@ -106,7 +106,7 @@
             BtnSalonKaydet.FlatStyle = FlatStyle.Flat;
             BtnSalonKaydet.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnSalonKaydet.ForeColor = Color.White;
-            BtnSalonKaydet.Location = new Point(319, 70);
+            BtnSalonKaydet.Location = new Point(319, 72);
             BtnSalonKaydet.Name = "BtnSalonKaydet";
             BtnSalonKaydet.Size = new Size(157, 32);
             BtnSalonKaydet.TabIndex = 5;
@@ -121,15 +121,16 @@
             cBkoltukSayisi.FormattingEnabled = true;
             cBkoltukSayisi.Location = new Point(258, 39);
             cBkoltukSayisi.Name = "cBkoltukSayisi";
-            cBkoltukSayisi.Size = new Size(220, 25);
+            cBkoltukSayisi.Size = new Size(220, 31);
             cBkoltukSayisi.TabIndex = 3;
+            cBkoltukSayisi.TextChanged += cBkoltukSayisi_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(234, 15);
+            label3.Location = new Point(236, 15);
             label3.Name = "label3";
-            label3.Size = new Size(123, 21);
+            label3.Size = new Size(152, 28);
             label3.TabIndex = 2;
             label3.Text = "KOLTUK SAYISI:";
             // 
@@ -139,7 +140,7 @@
             txtSalonAdi.ForeColor = Color.FromArgb(16, 46, 80);
             txtSalonAdi.Location = new Point(22, 38);
             txtSalonAdi.Name = "txtSalonAdi";
-            txtSalonAdi.Size = new Size(214, 25);
+            txtSalonAdi.Size = new Size(214, 30);
             txtSalonAdi.TabIndex = 1;
             // 
             // label2
@@ -147,7 +148,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(6, 14);
             label2.Name = "label2";
-            label2.Size = new Size(97, 21);
+            label2.Size = new Size(119, 28);
             label2.TabIndex = 0;
             label2.Text = "SALON ADI:";
             // 
@@ -166,14 +167,14 @@
             // 
             Panelsalon.AutoScroll = true;
             Panelsalon.Dock = DockStyle.Fill;
-            Panelsalon.Location = new Point(3, 25);
+            Panelsalon.Location = new Point(3, 30);
             Panelsalon.Name = "Panelsalon";
-            Panelsalon.Size = new Size(484, 368);
+            Panelsalon.Size = new Size(484, 363);
             Panelsalon.TabIndex = 0;
             // 
             // FrmSalonKayit
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             ClientSize = new Size(500, 542);
