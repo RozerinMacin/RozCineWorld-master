@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.SqlClient;// sql bağlantısı için gerekli kütüphane.
 
 namespace RozCineWorld
 {
@@ -17,45 +17,79 @@ namespace RozCineWorld
         {
             InitializeComponent();
         }
+        // Sql bağlantısı için gerekli olan bağlantı dizesi.
         SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
-        private void btnkapat_Click(object sender, EventArgs e)
+        private void btnkapat_Click(object sender, EventArgs e)// Kapatma butonuna tıklandığında formu kapatma işlemi için yazılan kod bloğu.
         {
             this.Close();
         }
-
+        // Form yüklendiğinde yönetmen listesini veritabanından çekip listeleme işlemi için yazılan kod bloğu.
         private void FrmYonetmenListesi_Load(object sender, EventArgs e)
         {
-            ListePaneli.Controls.Clear();
-            connection.Open();
-            string sorgu = "select * from Tbl_Yonetmenler ORDER BY AdSoyad ASC ";
-            SqlCommand command = new SqlCommand(sorgu, connection);
-            SqlDataReader oku = command.ExecuteReader();
-            while (oku.Read())
+            try// Bağlantı açma işlemi için gerekli olan kod bloğu.
             {
-                YonetmenlerListesi arac = new YonetmenlerListesi();
-                arac.lblID.Text = oku["ID"].ToString();
-                arac.lblAdSoyad.Text = oku["AdSoyad"].ToString();
-                arac.pBResim.ImageLocation = oku["Resim"].ToString();
-                ListePaneli.Controls.Add(arac);
+                ListePaneli.Controls.Clear();// ListePaneli içeriğini temizleme işlemi.
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                string sorgu = "select * from Tbl_Yonetmenler ORDER BY AdSoyad ASC ";
+                SqlCommand command = new SqlCommand(sorgu, connection);
+                SqlDataReader oku = command.ExecuteReader();
+                while (oku.Read())// Veritabanından okunan her bir yönetmen kaydı için YonetmenlerListesi kontrolünü oluşturma işlemi.
+                {
+                    YonetmenlerListesi arac = new YonetmenlerListesi();
+                    arac.lblID.Text = oku["ID"].ToString();
+                    arac.lblAdSoyad.Text = oku["AdSoyad"].ToString();
+                    arac.pBResim.ImageLocation = oku["Resim"].ToString();
+                    ListePaneli.Controls.Add(arac);
+                }
             }
-            connection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
-
+        // Yönetmen arama işlemi için yazılan kod bloğu.
         private void txtarama_TextChanged(object sender, EventArgs e)
         {
-            ListePaneli.Controls.Clear();
-            connection.Open();
-            SqlCommand arama = new SqlCommand("select * from Tbl_Yonetmenler where AdSoyad LIKE '%"+txtarama.Text+"%' collate Turkish_CI_AS ORDER BY AdSoyad ASC", connection);
-            SqlDataReader oku = arama.ExecuteReader();
-            while (oku.Read())
+            // Arama kutusuna yazılan metne göre yönetmen listesini filtreleme işlemi.
+            try
             {
-                YonetmenlerListesi arac = new YonetmenlerListesi();
-                arac.lblID.Text = oku["ID"].ToString();
-                arac.lblAdSoyad.Text = oku["AdSoyad"].ToString();
-                arac.pBResim.ImageLocation = oku["Resim"].ToString();
-                ListePaneli.Controls.Add(arac);
+                ListePaneli.Controls.Clear();
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                SqlCommand arama = new SqlCommand("select * from Tbl_Yonetmenler where AdSoyad LIKE '%" + txtarama.Text + "%' collate Turkish_CI_AS ORDER BY AdSoyad ASC", connection);
+                SqlDataReader oku = arama.ExecuteReader();
+                while (oku.Read())// Veritabanından okunan her bir yönetmen kaydı için YonetmenlerListesi kontrolünü oluşturma işlemi.
+                {
+                    YonetmenlerListesi arac = new YonetmenlerListesi();
+                    arac.lblID.Text = oku["ID"].ToString();
+                    arac.lblAdSoyad.Text = oku["AdSoyad"].ToString();
+                    arac.pBResim.ImageLocation = oku["Resim"].ToString();
+                    ListePaneli.Controls.Add(arac);
+                }
             }
-            connection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }
