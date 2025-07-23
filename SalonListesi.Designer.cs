@@ -66,7 +66,6 @@
             lblsalonadi.Size = new Size(70, 30);
             lblsalonadi.TabIndex = 2;
             lblsalonadi.Text = "label1";
-            lblsalonadi.Click += lblsalonadi_Click;
             lblsalonadi.MouseLeave += ayrıl;
             lblsalonadi.MouseMove += gel;
             // 

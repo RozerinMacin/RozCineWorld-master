@@ -26,6 +26,5 @@ namespace RozCineWorld
         {
             lblsalonadi.ForeColor = Color.FromArgb(16, 46, 80);
         }
-
     }
 }
