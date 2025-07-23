@@ -9,37 +9,55 @@ namespace RozCineWorld
         {
             InitializeComponent();
         }
-        
+        //sqlconnection nesnesi oluþturuz.
         SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
-   
-        private void btnkapat_Click(object sender, EventArgs e)
+        private void btnkapat_Click(object sender, EventArgs e)// Kapatma butonuna týklandýðýnda çalýþacak kod
         {
             Application.Exit();
         }
-
+        // Form yüklendiðinde çalýþacak kod
         private void btngiris_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            SqlCommand command = new SqlCommand("SELECT * FROM Tbl_kullanicilar WHERE KullaniciAdi = @KullaniciAdi AND Sifre = @Sifre",connection);
-            command.Parameters.AddWithValue("@KullaniciAdi",txtkullaniciadi.Text);
-            command.Parameters.AddWithValue("@Sifre", txtsifre.Text);
-            SqlDataReader Reader = command.ExecuteReader();
-            if (Reader.Read())
+            try
             {
-                FrmAnaForm frmAnaForm = new FrmAnaForm();
-                frmAnaForm.kisiAdSoyad = Reader["AdSoyad"].ToString();
-                frmAnaForm.Show();
-                this.Hide();
+                // SqlConnection nesnesi ile veritabanýna baðlantý açýlýr.
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                // Kullanýcý adý ve þifre ile veritabanýnda sorgu yapýlýr.
+                SqlCommand command = new SqlCommand("SELECT * FROM Tbl_kullanicilar WHERE KullaniciAdi = @KullaniciAdi AND Sifre = @Sifre", connection);
+                command.Parameters.AddWithValue("@KullaniciAdi", txtkullaniciadi.Text);
+                command.Parameters.AddWithValue("@Sifre", txtsifre.Text);
+                SqlDataReader Reader = command.ExecuteReader();
+                if (Reader.Read())// Eðer kullanýcý adý ve þifre doðruysa
+                {
+                    // Ana formu açar ve kullanýcý adýný gösterir.
+                    // FrmAnaForm sýnýfý, ana formun tasarýmýný içerir.
+                    FrmAnaForm frmAnaForm = new FrmAnaForm();
+                    frmAnaForm.kisiAdSoyad = Reader["AdSoyad"].ToString();
+                    frmAnaForm.Show();
+                    this.Hide();
+                }
+                else// Eðer kullanýcý adý ve þifre yanlýþsa hatta mesajý gösterir.
+                {
+                    MessageBox.Show("KULLANICI KAYDI BULUNAMADI! KULLANICI ADI YA DA ÞÝFRE HATALI!");
+                }
             }
-            else
+            catch (Exception ex)// Eðer bir hata oluþursa mesaj kutusunda gösterir.
             {
-                MessageBox.Show("KULLANICI KAYDI BULUNAMADI! KULLANICI ADI YA DA ÞÝFRE HATALI!");
+                MessageBox.Show(ex.Message, "Uyarý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            connection.Close();
-
-            txtkullaniciadi.Text = "";
-            txtsifre.Text = "";
-            txtkullaniciadi.Focus();         
+            finally// Baðlantý kapatýlýr ve kullanýcý adý ve þifre alanlarý temizlenir.
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+                txtkullaniciadi.Text = "";
+                txtsifre.Text = "";
+                txtkullaniciadi.Focus();
+            }       
         }
     }
 }
