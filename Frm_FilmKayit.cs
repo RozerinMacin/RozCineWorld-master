@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient;//sql bağlantısı için gerekli olacak kütüphane.
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,19 +15,21 @@ namespace RozCineWorld
     public partial class Frm_FilmKayit : Form
     {
         public Frm_FilmKayit()
-        {   
+        {
             InitializeComponent();
         }
-        SqlConnection baglanti = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");     
-    private void btnkapat_Click(object sender, EventArgs e)
+        // SqlConnection sınıfından bir bağlantı nesnesi oluşturuyoruz.
+        SqlConnection baglanti = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
+        private void btnkapat_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close();//bulunduğumuz formu kapatıyoruz.
+            // Seçilen oyuncu ve yönetmenleri temizliyoruz forum kapandıktan sonra.
             baglanti.Open();
             SqlCommand komut = new SqlCommand("delete from Tbl_Secilenler", baglanti);
             komut.ExecuteNonQuery();
             baglanti.Close();
         }
-
+        // Bu metodlar, radyo düğmesi seçildiğinde çağrılır.
         private void rB1_CheckedChanged(object sender, EventArgs e)
         {
             lblReyting.Text = "1";
@@ -68,6 +70,7 @@ namespace RozCineWorld
         {
             lblReyting.Text = "10";
         }
+        // Resim yükleme butonuna tıklandığında çalışacak kod.
         public string resimyolu = "";
         private void BtnResimYukle_Click(object sender, EventArgs e)
         {
@@ -82,6 +85,7 @@ namespace RozCineWorld
                 resimyolu = ofd.FileName.ToString();
             }
         }
+        // Film detay metni değiştiğinde karakter sayısını kontrol eden kod.
         private void txtFilmDetay_TextChanged(object sender, EventArgs e)
         {
             int karaktersayisi = txtFilmDetay.Text.Length;
@@ -102,335 +106,318 @@ namespace RozCineWorld
         }
         private void Frm_FilmKayit_Load(object sender, EventArgs e)
         {
+            // Form yüklendiğinde gerekli verileri getiriyoruz.
+            // Oyuncu ve yönetmen listelerini getiriyoruz.
+            // Ayrıca bugünün tarihini de ayarlıyoruz.
+
             oListeGetir();
             yListeGetir();
             bugununtarihi();
 
         }
-        void bugununtarihi()
+        void bugununtarihi()// Bugünün tarihini alır ve ilgili numeric up down kontrollerine atar.
         {
             nGun.Value = DateTime.Today.Day;
             nAy.Value = DateTime.Today.Month;
             nYil.Value = DateTime.Today.Year;
         }
-        void oListeGetir()
+        void oListeGetir()// Oyuncu listesini veritabanından alır ve panelde gösterir.
         {
-            string sorgu = "select * from Tbl_Oyuncular ORDER BY AdSoyad ASC";
-            FoyuncuPaneli.Controls.Clear();
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand(sorgu, baglanti);
-            SqlDataReader oku = komut.ExecuteReader();
-            while (oku.Read())
+            try// Bağlantı açılır ve oyuncu verileri çekilir.hata yakalamak için try-catch bloğu kullanıyoruz.
             {
-                OListeAraci arac = new OListeAraci();
-                arac.lbladi.Text = oku["AdSoyad"].ToString();
-                FoyuncuPaneli.Controls.Add(arac);
+                string sorgu = "select * from Tbl_Oyuncular ORDER BY AdSoyad ASC";
+                FoyuncuPaneli.Controls.Clear();
+                if (baglanti.State == ConnectionState.Closed)// Bağlantı kapalıysa açıyoruz.
+                {
+                    baglanti.Open();
+                }
+                SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                SqlDataReader oku = komut.ExecuteReader();
+                while (oku.Read())
+                {
+                    OListeAraci arac = new OListeAraci();
+                    arac.lbladi.Text = oku["AdSoyad"].ToString();
+                    FoyuncuPaneli.Controls.Add(arac);
+                }
             }
-            baglanti.Close();
+            catch (Exception ex)// Hata oluşursa kullanıcıya mesaj gösteriyoruz.
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally// Bağlantı açık ise kapatıyoruz.
+            {
+                if (baglanti.State == ConnectionState.Open)
+                {
+                    baglanti.Close();
+                }
+            }
         }
 
-        private void txtOyuncuara_MouseMove(object sender, MouseEventArgs e)
+        private void txtOyuncuara_MouseMove(object sender, MouseEventArgs e)// Oyuncu arama kutusuna fare ile gelindiğinde etiket görünür hale gelir.
         {
             lblOyuncuAra.Visible = true;
         }
 
-        private void txtOyuncuara_MouseLeave(object sender, EventArgs e)
+        private void txtOyuncuara_MouseLeave(object sender, EventArgs e)// Oyuncu arama kutusundan fare ayrıldığında etiket gizlenir.
         {
             lblOyuncuAra.Visible = false;
         }
-
-        private void txtOyuncuara_TextChanged(object sender, EventArgs e)
+        private void txtOyuncuara_TextChanged(object sender, EventArgs e)// Oyuncu arama kutusundaki metin değiştiğinde OyuncuAra metodunu çağırır.
         {
             OyuncuAra();
         }
-        void OyuncuAra()
+        void OyuncuAra()// Oyuncu arama işlemini gerçekleştirir.veritabanından oyuncu adını arar ve sonuçları panelde gösterir.
         {
-            string sorgu = "select * from Tbl_Oyuncular where AdSoyad LIKE '%" + txtOyuncuara.Text + "%' collate Turkish_CI_AS ORDER BY AdSoyad ASC";
-            FoyuncuPaneli.Controls.Clear();
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand(sorgu, baglanti);
-            SqlDataReader oku = komut.ExecuteReader();
-            while (oku.Read())
+            try
             {
-                OListeAraci arac = new OListeAraci();
-                arac.lbladi.Text = oku["AdSoyad"].ToString();
-                FoyuncuPaneli.Controls.Add(arac);
+                string sorgu = "select * from Tbl_Oyuncular where AdSoyad LIKE '%" + txtOyuncuara.Text + "%' collate Turkish_CI_AS ORDER BY AdSoyad ASC";
+                FoyuncuPaneli.Controls.Clear();
+                if (baglanti.State == ConnectionState.Closed)// Bağlantı kapalıysa açıyoruz.
+                {
+                    baglanti.Open();
+                }
+                SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                SqlDataReader oku = komut.ExecuteReader();
+                while (oku.Read())
+                {
+                    OListeAraci arac = new OListeAraci();
+                    arac.lbladi.Text = oku["AdSoyad"].ToString();
+                    FoyuncuPaneli.Controls.Add(arac);
+                }
             }
-            baglanti.Close();
+            catch (Exception ex)// Hata oluşursa kullanıcıya mesaj gösteriyoruz.
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally// Bağlantı açık ise kapatıyoruz.
+            {
+                if (baglanti.State == ConnectionState.Open)
+                {
+                    baglanti.Close();
+                }
+            }
         }
-        void yListeGetir()
+        void yListeGetir()// Yönetmen listesini veritabanından alır ve panelde gösterir.
         {
-            string sorgu = "select * from Tbl_Yonetmenler ORDER BY AdSoyad ASC";
-            FYonetmenPaneli.Controls.Clear();
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand(sorgu, baglanti);
-            SqlDataReader oku = komut.ExecuteReader();
-            while (oku.Read())
+            try
             {
-                YListeAraci arac = new YListeAraci();
-                arac.lbladi.Text = oku["AdSoyad"].ToString();
-                FYonetmenPaneli.Controls.Add(arac);
+                string sorgu = "select * from Tbl_Yonetmenler ORDER BY AdSoyad ASC";
+                FYonetmenPaneli.Controls.Clear();
+                if (baglanti.State == ConnectionState.Closed)
+                {
+                    baglanti.Open();
+                }
+                SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                SqlDataReader oku = komut.ExecuteReader();
+                while (oku.Read())
+                {
+                    YListeAraci arac = new YListeAraci();
+                    arac.lbladi.Text = oku["AdSoyad"].ToString();
+                    FYonetmenPaneli.Controls.Add(arac);
+                }
             }
-            baglanti.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (baglanti.State == ConnectionState.Open)
+                {
+                    baglanti.Close();
+                }
+            }
         }
-
-        private void txtYonetmenara_MouseMove(object sender, MouseEventArgs e)
+        private void txtYonetmenara_MouseMove(object sender, MouseEventArgs e)// Yönetmen arama kutusuna fare ile gelindiğinde etiket görünür hale gelir.
         {
             lblyonetmenara.Visible = true;
         }
-        private void txtYonetmenara_MouseLeave(object sender, EventArgs e)
+        private void txtYonetmenara_MouseLeave(object sender, EventArgs e)// Yönetmen arama kutusundan fare ayrıldığında etiket gizlenir.
         {
             lblyonetmenara.Visible = false;
         }
-        private void txtYonetmenara_TextChanged(object sender, EventArgs e)
+        private void txtYonetmenara_TextChanged(object sender, EventArgs e)// Yönetmen arama kutusundaki metin değiştiğinde YonetmenAra metodunu çağırır.
         {
             YonetmenAra();
         }
-        void YonetmenAra()
+        void YonetmenAra()// Yönetmen arama işlemini gerçekleştirir.veritabanından yönetmen adını arar ve sonuçları panelde gösterir.
         {
-            string sorgu = "select * from Tbl_Yonetmenler where AdSoyad LIKE '%" + txtYonetmenara.Text + "%'collate Turkish_CI_AS ORDER BY AdSoyad ASC";
-            FYonetmenPaneli.Controls.Clear();
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand(sorgu, baglanti);
-            SqlDataReader oku = komut.ExecuteReader();
-            while (oku.Read())
+            try
             {
-                YListeAraci arac = new YListeAraci();
-                arac.lbladi.Text = oku["AdSoyad"].ToString();
-                FYonetmenPaneli.Controls.Add(arac);
+                string sorgu = "select * from Tbl_Yonetmenler where AdSoyad LIKE '%" + txtYonetmenara.Text + "%'collate Turkish_CI_AS ORDER BY AdSoyad ASC";
+                FYonetmenPaneli.Controls.Clear();
+                if (baglanti.State == ConnectionState.Closed)
+                {
+                    baglanti.Open();
+                }
+                SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                SqlDataReader oku = komut.ExecuteReader();
+                while (oku.Read())
+                {
+                    YListeAraci arac = new YListeAraci();
+                    arac.lbladi.Text = oku["AdSoyad"].ToString();
+                    FYonetmenPaneli.Controls.Add(arac);
+                }
             }
-            baglanti.Close();
-        }
-        private void lblAksiyon_Click(object sender, EventArgs e)
-        {
-            if (lblAksiyon.ForeColor == Color.FromArgb(16, 46, 80))
+            catch (Exception ex)
             {
-                lblAksiyon.ForeColor = Color.FromArgb(190, 61, 42);
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (baglanti.State == ConnectionState.Open)
+                {
+                    baglanti.Close();
+                }
+            }
+        }
+        void EtiketRenginiDegistir(Label Etiket)// Etiket rengini değiştirir. Eğer etiketin rengi varsayılan mavi ise, seçilen renge (kırmızı) değiştirir, aksi halde varsayılan renge geri döner.
+        {
+            Color varsayilanrenk = Color.FromArgb(16, 46, 80);
+            Color secilenrenk = Color.FromArgb(190, 61, 42);
+            if (Etiket.ForeColor == varsayilanrenk)
+            {
+                Etiket.ForeColor = secilenrenk;
             }
             else
             {
-                lblAksiyon.ForeColor = Color.FromArgb(16, 46, 80);
+                Etiket.ForeColor = varsayilanrenk;
             }
+        }
+        // Etiketlere tıklandığında rengini değiştiren olaylar.
+        private void lblAksiyon_Click(object sender, EventArgs e)
+        {
+            EtiketRenginiDegistir(lblAksiyon);
         }
         private void lblromantik_Click(object sender, EventArgs e)
         {
-            if (lblromantik.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblromantik.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblromantik.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblromantik);
         }
         private void lblFantastik_Click(object sender, EventArgs e)
         {
-            if (lblFantastik.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblFantastik.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblFantastik.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblFantastik);
         }
         private void lblBilimKurgu_Click(object sender, EventArgs e)
         {
-            if (lblBilimKurgu.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblBilimKurgu.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblBilimKurgu.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblBilimKurgu);
         }
         private void lblDrama_Click(object sender, EventArgs e)
         {
-            if (lblDrama.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblDrama.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblDrama.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblDrama);
         }
         private void lblkomedi_Click(object sender, EventArgs e)
         {
-            if (lblkomedi.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblkomedi.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblkomedi.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblkomedi);
         }
         private void lblsuc_Click(object sender, EventArgs e)
         {
-            if (lblsuc.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblsuc.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblsuc.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblsuc);
         }
         private void lblturkce_Click(object sender, EventArgs e)
         {
-            if (lblturkce.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblturkce.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblturkce.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblturkce);
         }
         private void lblaltyazi_Click(object sender, EventArgs e)
         {
-            if (lblaltyazi.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblaltyazi.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblaltyazi.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblaltyazi);
         }
         private void lblingilizce_Click(object sender, EventArgs e)
         {
-            if (lblingilizce.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblingilizce.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblingilizce.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblingilizce);
         }
         private void lblkorkusiddet_Click(object sender, EventArgs e)
         {
-            if (lblkorkusiddet.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblkorkusiddet.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblkorkusiddet.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblkorkusiddet);
         }
-
         private void lblolumsuzicerik_Click(object sender, EventArgs e)
         {
-            if (lblolumsuzicerik.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblolumsuzicerik.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblolumsuzicerik.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblolumsuzicerik);
         }
-
         private void lblgenelizleyici_Click(object sender, EventArgs e)
         {
-            if (lblgenelizleyici.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lblgenelizleyici.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lblgenelizleyici.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lblgenelizleyici);
         }
-
         private void lbl_7_Click(object sender, EventArgs e)
         {
-            if (lbl_7.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lbl_7.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lbl_7.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lbl_7);
         }
-
         private void lbl_13_Click(object sender, EventArgs e)
         {
-            if (lbl_13.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lbl_13.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lbl_13.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lbl_13);
         }
-
         private void lbl_18_Click(object sender, EventArgs e)
         {
-            if (lbl_18.ForeColor == Color.FromArgb(16, 46, 80))
-            {
-                lbl_18.ForeColor = Color.FromArgb(190, 61, 42);
-            }
-            else
-            {
-                lbl_18.ForeColor = Color.FromArgb(16, 46, 80);
-            }
+            EtiketRenginiDegistir(lbl_18);
         }
-        private void btntarihsec_Click(object sender, EventArgs e)
+        private void btntarihsec_Click(object sender, EventArgs e)// Vizyon tarihi seçme butonuna tıklandığında çalışacak kod.
         {
+            // NumericUpDown kontrollerinden vizyon tarihini alır ve kontrol eder.
+            // Eğer tarih geçmişte ise kullanıcıya uyarı verir.
+            // Eğer tarih bugünün tarihi ise film vizyonda olarak kabul edilir.
+            // Aksi halde film vizyona girmemiş olarak kabul edilir.
             Vizyontarihi();
         }
         string vTarih = "";
         string durum = "0";
-        void Vizyontarihi()
+        void Vizyontarihi()// Vizyon tarihini kontrol eder.
         {
             vTarih = nGun.Value + "." + nAy.Value + "." + nYil.Value;
             DateTime dVTarih = Convert.ToDateTime(vTarih);
             DateTime bugun = DateTime.Today;
 
             TimeSpan TSpan = dVTarih - bugun;
-            if (TSpan.TotalDays < 0)
+            if (TSpan.TotalDays < 0)// Eğer vizyon tarihi geçmişte ise kullanıcıya uyarı verir.
             {
                 MessageBox.Show("Geçmiş tarihlere ait film eklenmesi yapılamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 bugununtarihi();
             }
-            else if (TSpan.TotalDays == 0)
+            else if (TSpan.TotalDays == 0)// Eğer vizyon tarihi bugünün tarihi ise film vizyonda olarak kabul edilir.
             {
                 MessageBox.Show(txtfilmAdi.Text + " :Filmi şuan vizyonda.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 durum = "1"; // film vizyonda.
             }
-            else
+            else// Eğer vizyon tarihi gelecekte ise film vizyona girmemiş olarak kabul edilir.
             {
                 MessageBox.Show("Vizyon tarihi: " + vTarih, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 durum = "0"; // film vizyona girmedi.
             }
         }
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)// Timer her saniye çalışır ve lbltarih etiketine bugünün tarihini atar.
         {
             lbltarih.Text = DateTime.Now.ToShortDateString();
         }
         string yonetmen = "";
         string oyuncu = "";
-        void Soyuncu()
+        void Soyuncu()// Oyuncu listesini veritabanından alır ve oyuncu değişkenine atar.
         {
-            oyuncu = "";
-            string sorgu = "select * from Tbl_Secilenler where Tur = 'OYUNCU'";
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand(sorgu, baglanti);
-            SqlDataReader oku = komut.ExecuteReader();
-            while (oku.Read())
+            try
             {
-                oyuncu += " ," + oku["Kisi"].ToString();
+                oyuncu = "";
+                string sorgu = "select * from Tbl_Secilenler where Tur = 'OYUNCU'";
+                if (baglanti.State == ConnectionState.Closed)
+                {
+                    baglanti.Open();
+                }
+                SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                SqlDataReader oku = komut.ExecuteReader();
+                while (oku.Read())
+                {
+                    oyuncu += " ," + oku["Kisi"].ToString();
+                }
             }
-            baglanti.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (baglanti.State == ConnectionState.Open)
+                {
+                    baglanti.Close();
+                }
+            }
         }
-        void Syonetmen() 
+        void Syonetmen()// Yönetmen listesini veritabanından alır ve yonetmen değişkenine atar.
         {
             try
             {
@@ -446,12 +433,11 @@ namespace RozCineWorld
                 {
                     yonetmen += " ," + oku["Kisi"].ToString();
                 }
-               
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
             finally
             {
@@ -460,134 +446,111 @@ namespace RozCineWorld
                     baglanti.Close();
                 }
             }
-            
         }
-        private void BtnKaydet_Click(object sender, EventArgs e)
+        private void BtnKaydet_Click(object sender, EventArgs e)// Film kaydetme butonuna tıklandığında çalışacak kod.
         {
             //insert into deyimini kullanarak veritabanına film bilgilerini ekleyeceğiz.
             //input kontrolleri yapacağız.
             Syonetmen();
             Soyuncu();
-            Tur();
-            bicim();
-            ozellikler();
-            if (txtfilmAdi.Text != "" && txtFilmDetay.Text != "" && yonetmen != "" && oyuncu != "" && resimyolu != "" && vTarih != "" && secilentur != "" && secilenOzellik != "" && secilenBicim != "")
+            TurleriAl();
+            BicimleriAl();
+            OzellikleriAl();
+            if (txtfilmAdi.Text != "" && txtFilmDetay.Text != "" && yonetmen != "" && oyuncu != "" && resimyolu != "" && vTarih != "" && secilenTur != "" && secilenOzellik != "" && secilenBicim != "")
             {
-                string sorgu = "INSERT INTO Tbl_Filmler (Film_Adi,Film_Türü,Film_Ozellikleri,Film_Bicimi,Film_Yonetmeni,Film_Oyuncuları,Film_VizyonTarihi,Film_IMDB_Puanı,Film_Detayi,Film_Afisi,Film_Durumu) VALUES (@adi,@turu,@ozellikleri,@bicimi,@yonetmen,@oyuncu,@vizyontarihi,@puan,@detay,@afis,@durum)";
-                baglanti.Open();
-                SqlCommand komut = new SqlCommand(sorgu, baglanti);
-                komut.Parameters.AddWithValue("@adi", txtfilmAdi.Text.ToUpper());
-                if (secilentur.Length > 2)
+                try
                 {
-                    komut.Parameters.AddWithValue("@turu", secilentur.Substring(2));
+                    string sorgu = "INSERT INTO Tbl_Filmler (Film_Adi,Film_Türü,Film_Ozellikleri,Film_Bicimi,Film_Yonetmeni,Film_Oyuncuları,Film_VizyonTarihi,Film_IMDB_Puanı,Film_Detayi,Film_Afisi,Film_Durumu) VALUES (@adi,@turu,@ozellikleri,@bicimi,@yonetmen,@oyuncu,@vizyontarihi,@puan,@detay,@afis,@durum)";
+                    if (baglanti.State == ConnectionState.Closed)// Bağlantı kapalıysa açıyoruz.
+                    {
+                        baglanti.Open();
+                    }
+                    SqlCommand komut = new SqlCommand(sorgu, baglanti);
+                    komut.Parameters.AddWithValue("@adi", txtfilmAdi.Text.ToUpper());
+                    if (secilenTur.Length > 2)
+                    {
+                        komut.Parameters.AddWithValue("@turu", secilenTur);
+                    }
+                    if (secilenOzellik.Length > 2)
+                    {
+                        komut.Parameters.AddWithValue("@ozellikleri", secilenOzellik);
+                    }
+                    if (secilenBicim.Length > 2)
+                    {
+                        komut.Parameters.AddWithValue("@bicimi", secilenBicim);
+                    }
+                    if (yonetmen.Length > 2)
+                    {
+                        komut.Parameters.AddWithValue("@yonetmen", yonetmen.Substring(2));
+                    }
+                    else
+                    {
+                        komut.Parameters.AddWithValue("@yonetmen", yonetmen);
+                    }
+                    if (oyuncu.Length > 2)
+                    {
+                        komut.Parameters.AddWithValue("@oyuncu", oyuncu.Substring(2));
+                    }
+                    else
+                    {
+                        komut.Parameters.AddWithValue("@oyuncu", oyuncu);
+                    }
+                    komut.Parameters.AddWithValue("@vizyontarihi", vTarih);
+                    komut.Parameters.AddWithValue("@puan", lblReyting.Text);
+                    komut.Parameters.AddWithValue("@detay", txtFilmDetay.Text.ToUpper());
+                    komut.Parameters.AddWithValue("@afis", resimyolu);
+                    komut.Parameters.AddWithValue("@durum", durum);
+                    komut.ExecuteNonQuery();
                 }
-                else
+                catch (Exception ex)
                 {
-                    komut.Parameters.AddWithValue("@turu", secilentur);
-                    secilentur = "";
+                    MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (secilenOzellik.Length > 2)
+                finally
                 {
-                    komut.Parameters.AddWithValue("@ozellikleri", secilenOzellik.Substring(2));
+                    if (baglanti.State == ConnectionState.Open)// Bağlantı açık ise kapatıyoruz.
+                    {
+                        baglanti.Close();
+                    }
+                    MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                {
-                    komut.Parameters.AddWithValue("@ozellikleri", secilenOzellik);
-                    secilenOzellik = "";
-                }
-                if (secilenBicim.Length > 2)
-                {
-                    komut.Parameters.AddWithValue("@bicimi", secilenBicim.Substring(2));
-                }
-                else
-                {
-                    komut.Parameters.AddWithValue("@bicimi", secilenBicim);
-                    secilenBicim = "";
-
-                }
-                if (yonetmen.Length > 2)
-                {
-                    komut.Parameters.AddWithValue("@yonetmen", yonetmen.Substring(2));
-                }
-                else
-                {
-                    komut.Parameters.AddWithValue("@yonetmen", yonetmen);
-                }
-                if (oyuncu.Length > 2)
-                {
-                    komut.Parameters.AddWithValue("@oyuncu", oyuncu.Substring(2));
-                }
-                else
-                {
-                    komut.Parameters.AddWithValue("@oyuncu", oyuncu);
-                }
-                komut.Parameters.AddWithValue("@vizyontarihi", vTarih);
-                komut.Parameters.AddWithValue("@puan", lblReyting.Text);
-                komut.Parameters.AddWithValue("@detay", txtFilmDetay.Text.ToUpper());
-                komut.Parameters.AddWithValue("@afis", resimyolu);
-                komut.Parameters.AddWithValue("@durum", durum);
-                komut.ExecuteNonQuery();
-                baglanti.Close();
-                MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                {
+            {
                 MessageBox.Show("Lütfen ilgili Alanları doldurunuz!");
             }
         }
-        string secilentur = "";
-        void Tur()
+        // Seçilen tür, biçim ve özellikleri tutacak değişkenler
+        public string secilenTur = "";
+        public string secilenBicim = "";
+        public string secilenOzellik = "";
+        string EtiketleriAl(GroupBox grupKutusu)// Ortak işlemi yapan fonksiyon: GroupBox içindeki etiketleri (Label) kontrol eder
         {
-            foreach (Control arac in gBFilm_turleri.Controls)
+            List<string> secilenEtiketler = new List<string>();
+            foreach (Control kontrol in grupKutusu.Controls)// GroupBox içindeki tüm kontrolleri kontrol et
             {
-                if (arac is Label)
+                if (kontrol is Label etiket)// Sadece Label olanlara bak
                 {
-                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
+                    if (etiket.ForeColor != Color.FromArgb(16, 46, 80)) // Eğer rengi özel mavi değilse, seçilenler listesine ekle
                     {
-
-                    }
-                    else
-                    {
-                        secilentur += " ," + arac.Text.ToString();
+                        secilenEtiketler.Add(etiket.Text);
                     }
                 }
             }
+            return string.Join(", ", secilenEtiketler);// Etiketleri virgül ile birleştirip döndür
         }
-        string secilenBicim = "";
-        void bicim() 
+        // Her grup için ayrı ayrı çağırılan fonksiyonlar
+        void TurleriAl()
         {
-            foreach (Control arac in gBFilm_bicimi.Controls)
-            {
-                if (arac is Label)
-                {
-                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
-                    {
-
-                    }
-                    else
-                    {
-                        secilenBicim += " ," + arac.Text.ToString();
-                    }
-                }
-            }
+            secilenTur = EtiketleriAl(gBFilm_turleri);
         }
-        string secilenOzellik = "";
-        void ozellikler() 
+        void BicimleriAl()
         {
-            foreach (Control arac in gBFilm_ozellik.Controls)
-            {
-                if (arac is Label)
-                {
-                    if (arac.ForeColor == Color.FromArgb(16, 46, 80))
-                    {
-
-                    }
-                    else
-                    {
-                        secilenOzellik += " ," + arac.Text.ToString();
-                    }
-                }
-            }
+            secilenBicim = EtiketleriAl(gBFilm_bicimi);
+        }
+        void OzellikleriAl()
+        {
+            secilenOzellik = EtiketleriAl(gBFilm_ozellik);
         }
     }
 }
