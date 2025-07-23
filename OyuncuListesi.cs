@@ -20,41 +20,87 @@ namespace RozCineWorld
         SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
         private void OyuncuListesi_Load(object sender, EventArgs e)
         {
-            connection.Open();
-            string sorgu = "select * from Tbl_Oyuncular where ID = @p1";
-            SqlCommand command = new SqlCommand(sorgu, connection);
-            command.Parameters.AddWithValue("@p1", lblID.Text);
-            SqlDataReader oku = command.ExecuteReader();
-            if (oku.Read())
+            try
             {
-                lblCinsiyet.Text = oku["Cinsiyet"].ToString();
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                string sorgu = "SELECT * FROM Tbl_Oyuncular WHERE ID=@p1";
+                SqlCommand command = new SqlCommand(sorgu, connection);
+                command.Parameters.AddWithValue("@p1", lblID.Text);
+                SqlDataReader oku = command.ExecuteReader();
+                if (oku.Read()) lblCinsiyet.Text = oku["Cinsiyet"].ToString();
+                oku.Close();
             }
-            connection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bilgi getirilirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
-
         private void btndetay_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            string sorgu = "select * from Tbl_Oyuncular where ID = @p1";
-            SqlCommand command = new SqlCommand(sorgu, connection);
-            command.Parameters.AddWithValue("@p1", lblID.Text);
-            SqlDataReader oku = command.ExecuteReader();
-            if (oku.Read())
+            try
             {
-                MessageBox.Show("BİYOGRAFİ: " + oku["Biyografi"].ToString(), oku["AdSoyad"].ToString());
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                string sorgu = "SELECT * FROM Tbl_Oyuncular WHERE ID = @p1";
+                SqlCommand command = new SqlCommand(sorgu, connection);
+                command.Parameters.AddWithValue("@p1", lblID.Text);
+                SqlDataReader oku = command.ExecuteReader();
+                if (oku.Read())
+                {
+                    MessageBox.Show("BİYOGRAFİ: " + oku["Biyografi"].ToString(), oku["AdSoyad"].ToString());
+                }
+                oku.Close();
             }
-            connection.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bilgi getirilirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
 
         private void btnsil_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            SqlCommand sil = new SqlCommand("delete from Tbl_Oyuncular where ID = @p1", connection);
-            sil.Parameters.AddWithValue("@p1", lblID.Text);
-            sil.ExecuteNonQuery();
-            connection.Close();
-            this.Hide();
-            MessageBox.Show(lblAdSoyad.Text + " ADLI OYUNCU KAYDI BAŞARILI BİR ŞEKİLDE SİLİNMİŞTİR.");
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                SqlCommand sil = new SqlCommand("DELETE FROM Tbl_Oyuncular WHERE ID = @p1", connection);
+                sil.Parameters.AddWithValue("@p1", lblID.Text);
+                sil.ExecuteNonQuery();
+                this.Hide();
+                MessageBox.Show(lblAdSoyad.Text + " ADLI OYUNCU KAYDI BAŞARILI BİR ŞEKİLDE SİLİNMİŞTİR.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kayıt silinirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }

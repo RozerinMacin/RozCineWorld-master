@@ -69,6 +69,7 @@ namespace RozCineWorld
                         command.Parameters.AddWithValue("@biyografi", txtBiyografi.Text.ToString());
                         command.Parameters.AddWithValue("@resim", resimyolu);
                         command.ExecuteNonQuery();
+                        MessageBox.Show("YÖNETMEN KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ.");
                     }
                     catch (Exception ex)
                     {
@@ -81,7 +82,6 @@ namespace RozCineWorld
                         {
                             connection.Close();
                         }
-                        MessageBox.Show("YÖNETMEN KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ.");
                         AracTemizleme();
                     }
                 }

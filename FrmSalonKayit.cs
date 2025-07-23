@@ -39,6 +39,7 @@ namespace RozCineWorld
                     kaydet.Parameters.AddWithValue("@koltuksayisi", cBkoltukSayisi.Text);
                     kaydet.ExecuteNonQuery();
                     ListeGetir();
+                    MessageBox.Show("SALON KAYDETME İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ!");
                 }
                 catch (Exception ex)
                 {
@@ -52,7 +53,6 @@ namespace RozCineWorld
                     {
                         connection.Close();
                     }
-                    MessageBox.Show("SALON KAYDETME İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ!");
                     txtSalonAdi.Text = "";
                     cBkoltukSayisi.Text = "";
                     txtSalonAdi.Focus();

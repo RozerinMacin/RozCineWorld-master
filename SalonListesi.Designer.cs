@@ -41,18 +41,16 @@
             panel1.BackColor = Color.FromArgb(16, 46, 80);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(4, 82);
+            panel1.Size = new Size(5, 109);
             panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.koltukikonu;
-            pictureBox1.Location = new Point(3, 2);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(85, 76);
+            pictureBox1.Size = new Size(97, 101);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -63,11 +61,12 @@
             lblsalonadi.Cursor = Cursors.Hand;
             lblsalonadi.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblsalonadi.ForeColor = Color.FromArgb(16, 46, 80);
-            lblsalonadi.Location = new Point(89, 0);
+            lblsalonadi.Location = new Point(102, 0);
             lblsalonadi.Name = "lblsalonadi";
-            lblsalonadi.Size = new Size(59, 25);
+            lblsalonadi.Size = new Size(70, 30);
             lblsalonadi.TabIndex = 2;
             lblsalonadi.Text = "label1";
+            lblsalonadi.Click += lblsalonadi_Click;
             lblsalonadi.MouseLeave += ayrıl;
             lblsalonadi.MouseMove += gel;
             // 
@@ -76,9 +75,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.FromArgb(16, 46, 80);
-            label1.Location = new Point(89, 56);
+            label1.Location = new Point(102, 75);
             label1.Name = "label1";
-            label1.Size = new Size(99, 20);
+            label1.Size = new Size(126, 25);
             label1.TabIndex = 3;
             label1.Text = "Koltuk Sayısı:";
             // 
@@ -87,15 +86,15 @@
             lblkoltuksayisi.AutoSize = true;
             lblkoltuksayisi.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblkoltuksayisi.ForeColor = Color.FromArgb(16, 46, 80);
-            lblkoltuksayisi.Location = new Point(181, 54);
+            lblkoltuksayisi.Location = new Point(207, 72);
             lblkoltuksayisi.Name = "lblkoltuksayisi";
-            lblkoltuksayisi.Size = new Size(19, 25);
+            lblkoltuksayisi.Size = new Size(22, 30);
             lblkoltuksayisi.TabIndex = 4;
             lblkoltuksayisi.Text = "1";
             // 
             // SalonListesi
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             Controls.Add(lblkoltuksayisi);
@@ -103,9 +102,8 @@
             Controls.Add(lblsalonadi);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "SalonListesi";
-            Size = new Size(225, 82);
+            Size = new Size(257, 109);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -18,27 +18,75 @@ namespace RozCineWorld
             InitializeComponent();
         }
         SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
-        private void lbladi_Click(object sender, EventArgs e)
+        private void lbladi_Click(object sender, EventArgs e)//adı label'ına tıklandığında çalışacak kod
         {
             if (lbladi.ForeColor == Color.FromArgb(16, 46, 80))
             {
-                lbladi.ForeColor = Color.White;
-                connection.Open();
-                SqlCommand komut = new SqlCommand("insert into Tbl_Secilenler(Kisi, tur) values(@kisi, @tur)", connection);
-                komut.Parameters.AddWithValue("@kisi", lbladi.Text);
-                komut.Parameters.AddWithValue("@tur", "OYUNCU");
-                komut.ExecuteNonQuery();
-                connection.Close();
+                try
+                {
+                    // Labelin yazı rengini beyaza ayarla
+                    lbladi.ForeColor = Color.White;
+                    // Bağlantı kapalıysa aç
+                    if (connection.State != ConnectionState.Open)
+                    {
+                        connection.Open(); 
+                    }
+                    // SQL komutunu hazırla ve parametreleri ekle
+                    SqlCommand komut = new SqlCommand("INSERT INTO Tbl_Secilenler (Kisi, tur) VALUES (@kisi, @tur)", connection);
+                    komut.Parameters.AddWithValue("@kisi", lbladi.Text);
+                    komut.Parameters.AddWithValue("@tur", "OYUNCU");
+                    // Komutu çalıştır (veritabanına ekleme yap)
+                    komut.ExecuteNonQuery();
+                    // Başarılı işlem mesajı göster
+                    MessageBox.Show("Kayıt başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    // Hata durumunda kullanıcıya mesaj göster
+                    MessageBox.Show("Kayıt eklenirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Bağlantı açıksa kapat
+                    if (connection.State == ConnectionState.Open)
+                    { 
+                        connection.Close(); 
+                    }
+                }
             }
             else
             {
-                lbladi.ForeColor = Color.FromArgb(16, 46, 80);
-                connection.Open();
-                SqlCommand komut = new SqlCommand("delete from Tbl_Secilenler where Kisi = @kisi AND Tur = @tur", connection);
-                komut.Parameters.AddWithValue("@kisi", lbladi.Text);
-                komut.Parameters.AddWithValue("@tur", "OYUNCU");
-                komut.ExecuteNonQuery();
-                connection.Close();
+                try
+                {
+                    // Labelin yazı rengini ayarla
+                    lbladi.ForeColor = Color.FromArgb(16, 46, 80);
+                    // Bağlantı kapalıysa aç
+                    if (connection.State != ConnectionState.Open)
+                    {
+                        connection.Open();
+                    }
+                    // Silme komutunu hazırla ve parametreleri ekle
+                    SqlCommand komut = new SqlCommand("DELETE FROM Tbl_Secilenler WHERE Kisi = @kisi AND Tur = @tur", connection);
+                    komut.Parameters.AddWithValue("@kisi", lbladi.Text);
+                    komut.Parameters.AddWithValue("@tur", "OYUNCU");
+                    // Komutu çalıştır (veritabanından kayıt sil)
+                    komut.ExecuteNonQuery();
+                    // Başarılı işlem mesajı göster
+                    MessageBox.Show("Kayıt başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    // Hata durumunda kullanıcıya mesaj göster
+                    MessageBox.Show("Kayıt silinirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    // Bağlantı açıksa kapat
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
+                }
             }
         }
 
@@ -54,20 +102,37 @@ namespace RozCineWorld
 
         private void OListeAraci_Load(object sender, EventArgs e)
         {
-            connection.Open();
-            SqlCommand komut = new SqlCommand("Select * from Tbl_Secilenler WHERE Kisi =@kisi AND Tur =@tur", connection);
-            komut.Parameters.AddWithValue("@kisi", lbladi.Text);
-            komut.Parameters.AddWithValue("@tur", "OYUNCU");
-            SqlDataReader oku = komut.ExecuteReader();
-            if (oku.Read())
+            try
             {
-                lbladi.ForeColor = Color.White;
+                // Bağlantı kapalıysa aç
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                // Kayıt sorgusu hazırla ve parametreleri ekle
+                SqlCommand komut = new SqlCommand("SELECT * FROM Tbl_Secilenler WHERE Kisi=@kisi AND Tur=@tur", connection);
+                komut.Parameters.AddWithValue("@kisi", lbladi.Text);
+                komut.Parameters.AddWithValue("@tur", "OYUNCU");
+                // Sorguyu çalıştır ve oku
+                SqlDataReader oku = komut.ExecuteReader();
+                // Kayıt varsa label rengini beyaz yap, yoksa farklı renk yap
+                if (oku.Read()) lbladi.ForeColor = Color.White; else lbladi.ForeColor = Color.FromArgb(16, 46, 80);
+                oku.Close();// DataReader'ı kapat
             }
-            else
+            catch (Exception ex)
             {
-                lbladi.ForeColor = Color.FromArgb(16, 46, 80);
+                // Hata durumunda mesaj göster
+                MessageBox.Show("Kayıt kontrolü yapılırken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            connection.Close();
+            finally
+            {
+                // Bağlantı açıksa kapat
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+
         }
     }
 }

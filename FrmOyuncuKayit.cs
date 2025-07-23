@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient;//sql kütüphanesi
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,27 +17,29 @@ namespace RozCineWorld
         {
             InitializeComponent();
         }
+        //sqlconnection nesnesi oluşturuz.
         SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
-        private void btnkapat_Click(object sender, EventArgs e)
+        private void btnkapat_Click(object sender, EventArgs e)// Kapatma butonuna tıklandığında çalışacak kod
         {
             this.Close();
         }
         public string resimyolu = "";
         private void BtnResimYukle_Click(object sender, EventArgs e)
         {
+            // Resim yükleme işlemi için OpenFileDialog kullanıyoruz.
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = "RESİM SEÇME EKRANI";
             ofd.Filter = "PNG | *.png | JPG | *.jpg | JPEG | *.jpeg | ALL Files | *.*";
             ofd.FilterIndex = 4;
 
-            if (ofd.ShowDialog() == DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)// Eğer kullanıcı bir dosya seçerse
             {
                 pBResim.Image = new Bitmap(ofd.FileName);
                 resimyolu = ofd.FileName.ToString();
             }
         }
+        // Cinsiyet değişkeni ve radyo butonları için olaylar
         public string cinsiyet = "E";
-
         private void rBErkek_CheckedChanged(object sender, EventArgs e)
         {
             cinsiyet = "E";
@@ -49,6 +51,7 @@ namespace RozCineWorld
 
         private void txtBiyografi_TextChanged(object sender, EventArgs e)
         {
+            // Biyografi metni değiştiğinde karakter sayısını kontrol eder ve etiketin rengini ayarlar.
             int karaktersayisi = txtBiyografi.Text.Length;
             int geri = 300 - karaktersayisi;
             lblKarakter.Text = geri.ToString();
@@ -68,10 +71,11 @@ namespace RozCineWorld
         public string byas = "0";
         public bool YasHesaplama()
         {
+            // Doğum tarihi bilgilerini alır ve yaş hesaplar.
             string Dogum = nGun.Value.ToString() + "-" + nAy.Value.ToString() + "-" + nYil.Value.ToString();
-            DateTime DogumTarihi = Convert.ToDateTime(Dogum);
-            DateTime Bugun = DateTime.Today;
-            int yas = Bugun.Year - DogumTarihi.Year;
+            DateTime DogumTarihi = Convert.ToDateTime(Dogum);// Doğum tarihini DateTime tipine çevirir.
+            DateTime Bugun = DateTime.Today;// Bugünün tarihini alır.
+            int yas = Bugun.Year - DogumTarihi.Year;// Yaşı hesaplar.
             if (DogumTarihi > Bugun)
             {
                 MessageBox.Show("KAYIT YAPILAMADI! Lütfen geçerli bir tarih giriniz!");
@@ -89,7 +93,7 @@ namespace RozCineWorld
                 return true;
             }
         }
-        void AracTemizleme()
+        void AracTemizleme()// Formdaki tüm alanları temizler.
         {
             txtAd.Text = "";
             txtSoyad.Text = "";
@@ -106,28 +110,46 @@ namespace RozCineWorld
         }
         private void BtnKaydet_Click(object sender, EventArgs e)
         {
-            if (txtAd.Text != "" && txtSoyad.Text != "" && txtBiyografi.Text != "" && resimyolu != "")
+            // Oyuncu kaydı için gerekli bilgileri alır ve veritabanına kaydeder.
+            try
             {
-                if (YasHesaplama())
+                if (txtAd.Text != "" && txtSoyad.Text != "" && txtBiyografi.Text != "" && resimyolu != "")
                 {
-                    String AdSoyad = txtAd.Text.ToString().ToUpper() + " " + txtSoyad.Text.ToString().ToUpper();
-
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("insert into Tbl_Oyuncular(AdSoyad,Yas,Cinsiyet,Biyografi,Resim) VALUES(@adsoyad, @yas, @cinsiyet, @biyografi, @resim)", connection);
-                    command.Parameters.AddWithValue("@adsoyad", AdSoyad);
-                    command.Parameters.AddWithValue("@yas", byas);
-                    command.Parameters.AddWithValue("@cinsiyet", cinsiyet);
-                    command.Parameters.AddWithValue("@biyografi", txtBiyografi.Text.ToString());
-                    command.Parameters.AddWithValue("@resim", resimyolu);
-                    command.ExecuteNonQuery();
-                    connection.Close();
-                    MessageBox.Show("OYUNCU KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ.");
-                    AracTemizleme();
+                    if (YasHesaplama())
+                    {
+                        string AdSoyad = txtAd.Text.ToUpper() + " " + txtSoyad.Text.ToUpper();
+                        // Bağlantı kapalıysa aç
+                        if (connection.State != ConnectionState.Open)
+                        {
+                            connection.Open();
+                        }
+                        SqlCommand command = new SqlCommand("INSERT INTO Tbl_Oyuncular (AdSoyad, Yas, Cinsiyet, Biyografi, Resim) VALUES (@adsoyad, @yas, @cinsiyet, @biyografi, @resim)", connection);
+                        command.Parameters.AddWithValue("@adsoyad", AdSoyad);
+                        command.Parameters.AddWithValue("@yas", byas);
+                        command.Parameters.AddWithValue("@cinsiyet", cinsiyet);
+                        command.Parameters.AddWithValue("@biyografi", txtBiyografi.Text);
+                        command.Parameters.AddWithValue("@resim", resimyolu);
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("OYUNCU KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ.");
+                        AracTemizleme();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Lütfen tüm alanları eksiksiz bir şekilde doldurunuz.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Lütfen tüm alanları eksiksiz bir şekilde doldurunuz.");
+                MessageBox.Show("Bir hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Bağlantı açıksa kapat
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
     }

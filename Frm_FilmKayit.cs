@@ -499,6 +499,9 @@ namespace RozCineWorld
                     komut.Parameters.AddWithValue("@afis", resimyolu);
                     komut.Parameters.AddWithValue("@durum", durum);
                     komut.ExecuteNonQuery();
+                    // Film kaydı başarılı ise kullanıcıya bilgi mesajı gösteriyoruz.
+                    MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
                 catch (Exception ex)// Hata oluşursa kullanıcıya mesaj gösteriyoruz.
                 {
@@ -510,8 +513,6 @@ namespace RozCineWorld
                     {
                         baglanti.Close();
                     }
-                    // Film kaydı başarılı ise kullanıcıya bilgi mesajı gösteriyoruz.
-                    MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else// Eğer gerekli alanlar doldurulmamışsa kullanıcıya uyarı mesajı gösteriyoruz.
