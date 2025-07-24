@@ -80,7 +80,7 @@
             btndetay.FlatStyle = FlatStyle.Flat;
             btndetay.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             btndetay.ForeColor = Color.White;
-            btndetay.Location = new Point(341, 57);
+            btndetay.Location = new Point(346, 57);
             btndetay.Margin = new Padding(3, 4, 3, 4);
             btndetay.Name = "btndetay";
             btndetay.Size = new Size(117, 41);
@@ -105,7 +105,7 @@
             lblID.AutoSize = true;
             lblID.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblID.ForeColor = Color.FromArgb(16, 46, 80);
-            lblID.Location = new Point(457, 3);
+            lblID.Location = new Point(462, 3);
             lblID.Name = "lblID";
             lblID.Size = new Size(76, 32);
             lblID.TabIndex = 9;
@@ -142,7 +142,7 @@
             btnsil.FlatStyle = FlatStyle.Flat;
             btnsil.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             btnsil.ForeColor = Color.White;
-            btnsil.Location = new Point(463, 57);
+            btnsil.Location = new Point(468, 57);
             btnsil.Margin = new Padding(3, 4, 3, 4);
             btnsil.Name = "btnsil";
             btnsil.Size = new Size(69, 41);
@@ -166,7 +166,7 @@
             Controls.Add(lblAdSoyad);
             Controls.Add(panel1);
             Name = "YonetmenlerListesi";
-            Size = new Size(538, 103);
+            Size = new Size(542, 103);
             Load += YonetmenlerListesi_Load;
             ((System.ComponentModel.ISupportInitialize)pBResim).EndInit();
             ResumeLayout(false);

@@ -36,9 +36,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.artı1;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(0, 1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(32, 28);
+            pictureBox1.Size = new Size(26, 26);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -49,7 +49,7 @@
             lbladi.Cursor = Cursors.Hand;
             lbladi.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lbladi.ForeColor = Color.FromArgb(16, 46, 80);
-            lbladi.Location = new Point(34, 1);
+            lbladi.Location = new Point(28, 1);
             lbladi.Name = "lbladi";
             lbladi.Size = new Size(61, 25);
             lbladi.TabIndex = 1;
@@ -67,7 +67,7 @@
             Controls.Add(pictureBox1);
             Font = new Font("Segoe UI", 9F);
             Name = "OListeAraci";
-            Size = new Size(240, 28);
+            Size = new Size(210, 27);
             Load += OListeAraci_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

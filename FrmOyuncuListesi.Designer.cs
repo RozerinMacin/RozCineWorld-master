@@ -48,9 +48,8 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(500, 32);
+            panel1.Size = new Size(571, 43);
             panel1.TabIndex = 3;
             // 
             // btnkapat
@@ -62,10 +61,9 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(467, 0);
-            btnkapat.Margin = new Padding(3, 2, 3, 2);
+            btnkapat.Location = new Point(533, 0);
             btnkapat.Name = "btnkapat";
-            btnkapat.Size = new Size(33, 32);
+            btnkapat.Size = new Size(38, 43);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
@@ -76,9 +74,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(2, 4);
+            label1.Location = new Point(2, 5);
             label1.Name = "label1";
-            label1.Size = new Size(232, 25);
+            label1.Size = new Size(295, 32);
             label1.TabIndex = 1;
             label1.Text = "[OYUNCU LİSTE EKRANI]";
             // 
@@ -89,10 +87,9 @@
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
             panel2.ForeColor = Color.FromArgb(16, 46, 80);
-            panel2.Location = new Point(0, 32);
-            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Location = new Point(0, 43);
             panel2.Name = "panel2";
-            panel2.Size = new Size(500, 32);
+            panel2.Size = new Size(571, 43);
             panel2.TabIndex = 4;
             // 
             // txtarama
@@ -100,10 +97,9 @@
             txtarama.BorderStyle = BorderStyle.None;
             txtarama.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtarama.ForeColor = Color.FromArgb(16, 46, 80);
-            txtarama.Location = new Point(114, 7);
-            txtarama.Margin = new Padding(3, 2, 3, 2);
+            txtarama.Location = new Point(133, 9);
             txtarama.Name = "txtarama";
-            txtarama.Size = new Size(287, 22);
+            txtarama.Size = new Size(328, 27);
             txtarama.TabIndex = 1;
             txtarama.TextChanged += txtarama_TextChanged;
             // 
@@ -112,9 +108,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.FromArgb(16, 46, 80);
-            label2.Location = new Point(3, 5);
+            label2.Location = new Point(3, 7);
             label2.Name = "label2";
-            label2.Size = new Size(109, 21);
+            label2.Size = new Size(136, 28);
             label2.TabIndex = 0;
             label2.Text = "Ad ve Soyad: ";
             // 
@@ -122,10 +118,9 @@
             // 
             panel3.Controls.Add(ListePaneli);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 64);
-            panel3.Margin = new Padding(3, 2, 3, 2);
+            panel3.Location = new Point(0, 86);
             panel3.Name = "panel3";
-            panel3.Size = new Size(500, 478);
+            panel3.Size = new Size(571, 637);
             panel3.TabIndex = 5;
             // 
             // ListePaneli
@@ -133,23 +128,21 @@
             ListePaneli.AutoScroll = true;
             ListePaneli.Dock = DockStyle.Fill;
             ListePaneli.Location = new Point(0, 0);
-            ListePaneli.Margin = new Padding(3, 2, 3, 2);
             ListePaneli.Name = "ListePaneli";
-            ListePaneli.Size = new Size(500, 478);
+            ListePaneli.Size = new Size(571, 637);
             ListePaneli.TabIndex = 1;
             // 
             // FrmOyuncuListesi
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(500, 542);
+            ClientSize = new Size(571, 723);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Location = new Point(550, 100);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmOyuncuListesi";
             StartPosition = FormStartPosition.Manual;
             Text = "FrmOyuncuListesi";

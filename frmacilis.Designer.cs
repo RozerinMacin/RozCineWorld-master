@@ -47,7 +47,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(442, 38);
+            panel1.Size = new Size(391, 38);
             panel1.TabIndex = 0;
             // 
             // btnkapat
@@ -59,7 +59,7 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(404, 0);
+            btnkapat.Location = new Point(353, 0);
             btnkapat.Name = "btnkapat";
             btnkapat.Size = new Size(38, 38);
             btnkapat.TabIndex = 1;
@@ -140,7 +140,7 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(442, 250);
+            ClientSize = new Size(391, 250);
             Controls.Add(btngiris);
             Controls.Add(txtsifre);
             Controls.Add(label3);

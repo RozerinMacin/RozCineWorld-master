@@ -50,7 +50,7 @@
             panel1.ForeColor = Color.FromArgb(16, 46, 80);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(496, 37);
+            panel1.Size = new Size(571, 37);
             panel1.TabIndex = 2;
             // 
             // btnkapat
@@ -62,7 +62,7 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(458, 0);
+            btnkapat.Location = new Point(533, 0);
             btnkapat.Name = "btnkapat";
             btnkapat.Size = new Size(38, 37);
             btnkapat.TabIndex = 1;
@@ -90,7 +90,7 @@
             panel2.ForeColor = Color.FromArgb(16, 46, 80);
             panel2.Location = new Point(0, 37);
             panel2.Name = "panel2";
-            panel2.Size = new Size(496, 37);
+            panel2.Size = new Size(571, 37);
             panel2.TabIndex = 3;
             // 
             // txtarama
@@ -98,9 +98,9 @@
             txtarama.BorderStyle = BorderStyle.None;
             txtarama.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtarama.ForeColor = Color.FromArgb(16, 46, 80);
-            txtarama.Location = new Point(110, 8);
+            txtarama.Location = new Point(135, 4);
             txtarama.Name = "txtarama";
-            txtarama.Size = new Size(257, 27);
+            txtarama.Size = new Size(334, 27);
             txtarama.TabIndex = 1;
             txtarama.TextChanged += txtarama_TextChanged;
             // 
@@ -109,7 +109,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.FromArgb(16, 46, 80);
-            label2.Location = new Point(3, 7);
+            label2.Location = new Point(3, 3);
             label2.Name = "label2";
             label2.Size = new Size(136, 28);
             label2.TabIndex = 0;
@@ -122,7 +122,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 74);
             panel3.Name = "panel3";
-            panel3.Size = new Size(496, 468);
+            panel3.Size = new Size(571, 649);
             panel3.TabIndex = 4;
             // 
             // ListePaneli
@@ -131,7 +131,7 @@
             ListePaneli.Dock = DockStyle.Fill;
             ListePaneli.Location = new Point(0, 0);
             ListePaneli.Name = "ListePaneli";
-            ListePaneli.Size = new Size(496, 468);
+            ListePaneli.Size = new Size(571, 649);
             ListePaneli.TabIndex = 0;
             // 
             // FrmYonetmenListesi
@@ -139,7 +139,7 @@
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(496, 542);
+            ClientSize = new Size(571, 723);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);

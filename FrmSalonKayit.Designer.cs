@@ -52,7 +52,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(500, 36);
+            panel1.Size = new Size(571, 36);
             panel1.TabIndex = 2;
             // 
             // btnkapat
@@ -64,7 +64,7 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(462, 0);
+            btnkapat.Location = new Point(533, 0);
             btnkapat.Name = "btnkapat";
             btnkapat.Size = new Size(38, 36);
             btnkapat.TabIndex = 1;
@@ -77,7 +77,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(2, 5);
+            label1.Location = new Point(2, 2);
             label1.Name = "label1";
             label1.Size = new Size(283, 32);
             label1.TabIndex = 1;
@@ -92,9 +92,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox1.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox1.Location = new Point(3, 36);
+            groupBox1.Location = new Point(1, 36);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(489, 110);
+            groupBox1.Size = new Size(568, 151);
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             // 
@@ -106,9 +106,9 @@
             BtnSalonKaydet.FlatStyle = FlatStyle.Flat;
             BtnSalonKaydet.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnSalonKaydet.ForeColor = Color.White;
-            BtnSalonKaydet.Location = new Point(319, 72);
+            BtnSalonKaydet.Location = new Point(352, 90);
             BtnSalonKaydet.Name = "BtnSalonKaydet";
-            BtnSalonKaydet.Size = new Size(157, 32);
+            BtnSalonKaydet.Size = new Size(191, 32);
             BtnSalonKaydet.TabIndex = 5;
             BtnSalonKaydet.Text = "KAYDET";
             BtnSalonKaydet.UseVisualStyleBackColor = false;
@@ -119,16 +119,16 @@
             cBkoltukSayisi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             cBkoltukSayisi.ForeColor = Color.FromArgb(16, 46, 80);
             cBkoltukSayisi.FormattingEnabled = true;
-            cBkoltukSayisi.Location = new Point(258, 39);
+            cBkoltukSayisi.Location = new Point(291, 46);
             cBkoltukSayisi.Name = "cBkoltukSayisi";
-            cBkoltukSayisi.Size = new Size(220, 31);
+            cBkoltukSayisi.Size = new Size(254, 31);
             cBkoltukSayisi.TabIndex = 3;
             cBkoltukSayisi.TextChanged += cBkoltukSayisi_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(236, 15);
+            label3.Location = new Point(273, 15);
             label3.Name = "label3";
             label3.Size = new Size(152, 28);
             label3.TabIndex = 2;
@@ -138,9 +138,9 @@
             // 
             txtSalonAdi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtSalonAdi.ForeColor = Color.FromArgb(16, 46, 80);
-            txtSalonAdi.Location = new Point(22, 38);
+            txtSalonAdi.Location = new Point(22, 47);
             txtSalonAdi.Name = "txtSalonAdi";
-            txtSalonAdi.Size = new Size(214, 30);
+            txtSalonAdi.Size = new Size(238, 30);
             txtSalonAdi.TabIndex = 1;
             // 
             // label2
@@ -157,9 +157,9 @@
             groupBox2.Controls.Add(Panelsalon);
             groupBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox2.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox2.Location = new Point(4, 145);
+            groupBox2.Location = new Point(1, 193);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(490, 396);
+            groupBox2.Size = new Size(567, 527);
             groupBox2.TabIndex = 4;
             groupBox2.TabStop = false;
             // 
@@ -169,7 +169,7 @@
             Panelsalon.Dock = DockStyle.Fill;
             Panelsalon.Location = new Point(3, 30);
             Panelsalon.Name = "Panelsalon";
-            Panelsalon.Size = new Size(484, 363);
+            Panelsalon.Size = new Size(561, 494);
             Panelsalon.TabIndex = 0;
             // 
             // FrmSalonKayit
@@ -177,7 +177,7 @@
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(500, 542);
+            ClientSize = new Size(571, 723);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(panel1);

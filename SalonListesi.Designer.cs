@@ -48,9 +48,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.koltukikonu;
-            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Location = new Point(9, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(97, 101);
+            pictureBox1.Size = new Size(93, 101);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -61,7 +61,7 @@
             lblsalonadi.Cursor = Cursors.Hand;
             lblsalonadi.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblsalonadi.ForeColor = Color.FromArgb(16, 46, 80);
-            lblsalonadi.Location = new Point(102, 0);
+            lblsalonadi.Location = new Point(102, 2);
             lblsalonadi.Name = "lblsalonadi";
             lblsalonadi.Size = new Size(70, 30);
             lblsalonadi.TabIndex = 2;
@@ -85,7 +85,7 @@
             lblkoltuksayisi.AutoSize = true;
             lblkoltuksayisi.Font = new Font("Segoe UI Semibold", 13F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblkoltuksayisi.ForeColor = Color.FromArgb(16, 46, 80);
-            lblkoltuksayisi.Location = new Point(207, 72);
+            lblkoltuksayisi.Location = new Point(221, 72);
             lblkoltuksayisi.Name = "lblkoltuksayisi";
             lblkoltuksayisi.Size = new Size(22, 30);
             lblkoltuksayisi.TabIndex = 4;
@@ -102,7 +102,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Name = "SalonListesi";
-            Size = new Size(257, 109);
+            Size = new Size(264, 109);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
