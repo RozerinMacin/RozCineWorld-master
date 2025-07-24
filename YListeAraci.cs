@@ -18,7 +18,7 @@ namespace RozCineWorld
             InitializeComponent();
         }
         // Sql bağlantısı için gerekli olan bağlantı dizesi.
-        SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
+        SqlConnection connection = new SqlConnection("Server= localhost;Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True;TrustServerCertificate=true;");
         private void lbladi_MouseMove(object sender, MouseEventArgs e)// Fare imleci label üzerinde hareket ettiğinde yazı tipini altı çizili yapma işlemi için yazılan kod bloğu.
         {
             lbladi.Font = new Font(lbladi.Font.Name, 10, FontStyle.Underline);

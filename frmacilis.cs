@@ -36,7 +36,7 @@ namespace RozCineWorld
                     // Ana formu açar ve kullanýcý adýný gösterir.
                     // FrmAnaForm sýnýfý, ana formun tasarýmýný içerir.
                     FrmAnaForm frmAnaForm = new FrmAnaForm();
-                    frmAnaForm.kisiAdSoyad = Reader["AdSoyad"].ToString();
+                    frmAnaForm.kisiAdSoyad = Reader["AdSoyad"]?.ToString()??"AdSoyad alaný boþ";
                     frmAnaForm.Show();
                     this.Hide();
                 }

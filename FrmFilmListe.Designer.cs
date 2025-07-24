@@ -43,7 +43,7 @@
             panel1.ForeColor = Color.FromArgb(16, 46, 80);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(478, 37);
+            panel1.Size = new Size(571, 37);
             panel1.TabIndex = 3;
             // 
             // btnkapat
@@ -55,12 +55,13 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(440, 0);
+            btnkapat.Location = new Point(533, 0);
             btnkapat.Name = "btnkapat";
             btnkapat.Size = new Size(38, 37);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
+            btnkapat.Click += btnkapat_Click;
             // 
             // label1
             // 
@@ -78,13 +79,13 @@
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(478, 495);
+            ClientSize = new Size(571, 723);
             Controls.Add(panel1);
             Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             ForeColor = Color.FromArgb(16, 46, 80);
             FormBorderStyle = FormBorderStyle.None;
             Location = new Point(550, 100);
-            Margin = new Padding(5, 5, 5, 5);
+            Margin = new Padding(5);
             Name = "FrmFilmListe";
             StartPosition = FormStartPosition.Manual;
             Text = "FrmFilmListe";

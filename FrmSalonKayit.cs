@@ -18,7 +18,7 @@ namespace RozCineWorld
             InitializeComponent();
         }
         // SqlConnection sınıfından bir bağlantı nesnesi oluşturuyoruz.
-        SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
+        SqlConnection connection = new SqlConnection("Server= localhost;Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True;TrustServerCertificate=true;");
         private void btnkapat_Click(object sender, EventArgs e)// Kapatma butonuna tıklandığında formu kapatır.
         {
             this.Close();

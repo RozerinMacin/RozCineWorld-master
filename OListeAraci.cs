@@ -17,7 +17,7 @@ namespace RozCineWorld
         {
             InitializeComponent();
         }
-        SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
+        SqlConnection connection = new SqlConnection("Server= localhost;Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True;TrustServerCertificate=true;");
         private void lbladi_Click(object sender, EventArgs e)//adı label'ına tıklandığında çalışacak kod
         {
             if (lbladi.ForeColor == Color.FromArgb(16, 46, 80))

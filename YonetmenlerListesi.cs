@@ -18,7 +18,7 @@ namespace RozCineWorld
             InitializeComponent();
         }
         // Sql bağlantısı için gerekli olan bağlantı dizesi.
-        SqlConnection connection = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
+        SqlConnection connection = new SqlConnection("Server= localhost;Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True;TrustServerCertificate=true;");
         private void YonetmenlerListesi_Load(object sender, EventArgs e)
         {
             try

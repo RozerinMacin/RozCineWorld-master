@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-//using System.Data.SqlClient;//sql bağlantısı için gerekli olacak kütüphane.
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,7 +19,7 @@ namespace RozCineWorld
             InitializeComponent();
         }
         // SqlConnection sınıfından bir bağlantı nesnesi oluşturuyoruz.
-        SqlConnection baglanti = new SqlConnection("Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True");
+        SqlConnection baglanti = new SqlConnection("Server= localhost;Data Source =.\\SQLEXPRESS;Initial Catalog =RozCineWorldVT;Integrated Security =True;TrustServerCertificate=true;");
         private void btnkapat_Click(object sender, EventArgs e)
         {
             this.Close();//bulunduğumuz formu kapatıyoruz.
