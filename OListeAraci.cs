@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient; // Microsoft.Data.SqlClient kütüphanesini kullanıyoruz.
 
 namespace RozCineWorld
 {
@@ -37,8 +37,6 @@ namespace RozCineWorld
                     komut.Parameters.AddWithValue("@tur", "OYUNCU");
                     // Komutu çalıştır (veritabanına ekleme yap)
                     komut.ExecuteNonQuery();
-                    // Başarılı işlem mesajı göster
-                    MessageBox.Show("Kayıt başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -71,8 +69,6 @@ namespace RozCineWorld
                     komut.Parameters.AddWithValue("@tur", "OYUNCU");
                     // Komutu çalıştır (veritabanından kayıt sil)
                     komut.ExecuteNonQuery();
-                    // Başarılı işlem mesajı göster
-                    MessageBox.Show("Kayıt başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

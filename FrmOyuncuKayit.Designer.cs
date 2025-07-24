@@ -88,7 +88,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(6, 14);
             label6.Name = "label6";
-            label6.Size = new Size(61, 21);
+            label6.Size = new Size(74, 28);
             label6.TabIndex = 2;
             label6.Text = "RESİM:";
             // 
@@ -122,7 +122,7 @@
             label7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label7.Location = new Point(352, 1);
             label7.Name = "label7";
-            label7.Size = new Size(127, 19);
+            label7.Size = new Size(155, 23);
             label7.TabIndex = 2;
             label7.Text = "(max 300 karakter)";
             // 
@@ -131,11 +131,11 @@
             txtBiyografi.Dock = DockStyle.Fill;
             txtBiyografi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtBiyografi.ForeColor = Color.FromArgb(16, 46, 80);
-            txtBiyografi.Location = new Point(3, 25);
+            txtBiyografi.Location = new Point(3, 30);
             txtBiyografi.MaxLength = 300;
             txtBiyografi.Multiline = true;
             txtBiyografi.Name = "txtBiyografi";
-            txtBiyografi.Size = new Size(480, 217);
+            txtBiyografi.Size = new Size(480, 212);
             txtBiyografi.TabIndex = 1;
             txtBiyografi.TextChanged += txtBiyografi_TextChanged;
             // 
@@ -144,7 +144,7 @@
             label10.AutoSize = true;
             label10.Location = new Point(9, -1);
             label10.Name = "label10";
-            label10.Size = new Size(95, 21);
+            label10.Size = new Size(117, 28);
             label10.TabIndex = 0;
             label10.Text = "BİYOGRAFİ:";
             // 
@@ -186,7 +186,7 @@
             rBKadin.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             rBKadin.Location = new Point(132, 192);
             rBKadin.Name = "rBKadin";
-            rBKadin.Size = new Size(72, 24);
+            rBKadin.Size = new Size(92, 29);
             rBKadin.TabIndex = 10;
             rBKadin.Text = "KADIN";
             rBKadin.UseVisualStyleBackColor = true;
@@ -200,7 +200,7 @@
             rBErkek.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             rBErkek.Location = new Point(13, 192);
             rBErkek.Name = "rBErkek";
-            rBErkek.Size = new Size(69, 24);
+            rBErkek.Size = new Size(88, 29);
             rBErkek.TabIndex = 9;
             rBErkek.TabStop = true;
             rBErkek.Text = "ERKEK";
@@ -212,7 +212,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(3, 172);
             label5.Name = "label5";
-            label5.Size = new Size(81, 21);
+            label5.Size = new Size(100, 28);
             label5.TabIndex = 7;
             label5.Text = "CİNSİYET:";
             // 
@@ -224,7 +224,7 @@
             nYil.Maximum = new decimal(new int[] { 2200, 0, 0, 0 });
             nYil.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
             nYil.Name = "nYil";
-            nYil.Size = new Size(75, 25);
+            nYil.Size = new Size(75, 30);
             nYil.TabIndex = 6;
             nYil.Value = new decimal(new int[] { 2025, 0, 0, 0 });
             // 
@@ -236,7 +236,7 @@
             nAy.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
             nAy.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nAy.Name = "nAy";
-            nAy.Size = new Size(66, 25);
+            nAy.Size = new Size(66, 30);
             nAy.TabIndex = 5;
             nAy.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -248,7 +248,7 @@
             nGun.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
             nGun.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nGun.Name = "nGun";
-            nGun.Size = new Size(64, 25);
+            nGun.Size = new Size(64, 30);
             nGun.TabIndex = 4;
             nGun.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -257,7 +257,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(4, 119);
             label4.Name = "label4";
-            label4.Size = new Size(129, 21);
+            label4.Size = new Size(160, 28);
             label4.TabIndex = 4;
             label4.Text = "DOĞUM TARİHİ:";
             // 
@@ -284,7 +284,7 @@
             txtSoyad.ForeColor = Color.FromArgb(16, 46, 80);
             txtSoyad.Location = new Point(16, 91);
             txtSoyad.Name = "txtSoyad";
-            txtSoyad.Size = new Size(220, 25);
+            txtSoyad.Size = new Size(220, 30);
             txtSoyad.TabIndex = 3;
             // 
             // label3
@@ -292,7 +292,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(3, 67);
             label3.Name = "label3";
-            label3.Size = new Size(65, 21);
+            label3.Size = new Size(80, 28);
             label3.TabIndex = 2;
             label3.Text = "SOYAD:";
             // 
@@ -302,7 +302,7 @@
             txtAd.ForeColor = Color.FromArgb(16, 46, 80);
             txtAd.Location = new Point(16, 38);
             txtAd.Name = "txtAd";
-            txtAd.Size = new Size(220, 25);
+            txtAd.Size = new Size(220, 30);
             txtAd.TabIndex = 1;
             // 
             // label2
@@ -310,7 +310,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(3, 14);
             label2.Name = "label2";
-            label2.Size = new Size(36, 21);
+            label2.Size = new Size(44, 28);
             label2.TabIndex = 0;
             label2.Text = "AD:";
             // 
@@ -359,9 +359,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(2, 5);
+            label1.Location = new Point(1, 0);
             label1.Name = "label1";
-            label1.Size = new Size(239, 25);
+            label1.Size = new Size(305, 32);
             label1.TabIndex = 1;
             label1.Text = "[OYUNCU KAYIT EKRANI]";
             // 
@@ -391,7 +391,7 @@
             // 
             // FrmOyuncuKayit
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             ClientSize = new Size(496, 542);

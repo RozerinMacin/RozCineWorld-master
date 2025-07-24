@@ -66,5 +66,11 @@ namespace RozCineWorld
             frm.ShowDialog();
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Film listesi formunu açar.
+            FrmFilmListe frm = new FrmFilmListe();
+            frm.ShowDialog();
+        }
     }
 }

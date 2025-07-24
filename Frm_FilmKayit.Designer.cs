@@ -223,7 +223,7 @@
             gBFilm_turleri.Controls.Add(lblAksiyon);
             gBFilm_turleri.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             gBFilm_turleri.ForeColor = Color.FromArgb(16, 46, 80);
-            gBFilm_turleri.Location = new Point(6, 99);
+            gBFilm_turleri.Location = new Point(6, 98);
             gBFilm_turleri.Name = "gBFilm_turleri";
             gBFilm_turleri.Padding = new Padding(10, 3, 3, 3);
             gBFilm_turleri.Size = new Size(247, 176);
@@ -905,7 +905,7 @@
             btntarihsec.Name = "btntarihsec";
             btntarihsec.Size = new Size(217, 30);
             btntarihsec.TabIndex = 23;
-            btntarihsec.Text = "TARİH SEÇ";
+            btntarihsec.Text = " TARİH SEÇ";
             btntarihsec.UseVisualStyleBackColor = false;
             btntarihsec.Click += btntarihsec_Click;
             // 

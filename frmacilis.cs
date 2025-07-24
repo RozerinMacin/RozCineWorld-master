@@ -1,11 +1,12 @@
 using System.Data;
-using System.Data.SqlClient;
-    
+using Microsoft.Data.SqlClient; // Microsoft.Data.SqlClient kütüphanesini kullanýyoruz.
+
+
 namespace RozCineWorld
 {
-    public partial class frmacilis : Form
+    public partial class Frmacilis : Form
     {
-        public frmacilis()
+        public Frmacilis()
         {
             InitializeComponent();
         }

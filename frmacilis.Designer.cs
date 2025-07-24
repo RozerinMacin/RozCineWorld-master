@@ -1,6 +1,6 @@
 ﻿namespace RozCineWorld
 {
-    partial class frmacilis
+    partial class Frmacilis
     {
         /// <summary>
         ///  Required designer variable.
@@ -135,7 +135,7 @@
             btngiris.UseVisualStyleBackColor = false;
             btngiris.Click += btngiris_Click;
             // 
-            // frmacilis
+            // Frmacilis
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -149,7 +149,7 @@
             Controls.Add(panel1);
             Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "frmacilis";
+            Name = "Frmacilis";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             panel1.ResumeLayout(false);

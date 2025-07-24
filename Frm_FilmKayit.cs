@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;//sql bağlantısı için gerekli olacak kütüphane.
+//using System.Data.SqlClient;//sql bağlantısı için gerekli olacak kütüphane.
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient; // Microsoft.Data.SqlClient kütüphanesini kullanıyoruz.
+
 
 namespace RozCineWorld
 {
@@ -22,11 +24,31 @@ namespace RozCineWorld
         private void btnkapat_Click(object sender, EventArgs e)
         {
             this.Close();//bulunduğumuz formu kapatıyoruz.
+            verilerisil();
+        }
+        void verilerisil()
+        {
             // Seçilen oyuncu ve yönetmenleri temizliyoruz forum kapandıktan sonra.
-            baglanti.Open();
-            SqlCommand komut = new SqlCommand("delete from Tbl_Secilenler", baglanti);
-            komut.ExecuteNonQuery();
-            baglanti.Close();
+            try
+            {
+                if (baglanti.State == ConnectionState.Closed)
+                {
+                    baglanti.Open(); 
+                }
+                SqlCommand komut = new SqlCommand("delete from Tbl_Secilenler", baglanti);
+                komut.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (baglanti.State == ConnectionState.Open)// Bağlantı açık ise kapatıyoruz.
+                {
+                    baglanti.Close();
+                }
+            }
         }
         // Bu metodlar, radyo düğmesi seçildiğinde çağrılır.
         private void rB1_CheckedChanged(object sender, EventArgs e)
@@ -112,6 +134,7 @@ namespace RozCineWorld
             oListeGetir();
             yListeGetir();
             bugununtarihi();
+            txtfilmAdi.Focus();
         }
         void bugununtarihi()// Bugünün tarihini alır ve ilgili numeric up down kontrollerine atar.
         {
@@ -443,6 +466,16 @@ namespace RozCineWorld
                 }
             }
         }
+        void TemizlemeMetodu()
+        {
+            this.Controls.Clear();// Form üzerindeki tüm kontrolleri temizliyoruz.
+            this.InitializeComponent();// Formu yeniden başlatıyoruz.
+            txtfilmAdi.Focus();
+            verilerisil();
+            yListeGetir();
+            oListeGetir();
+            bugununtarihi();
+        }
         private void BtnKaydet_Click(object sender, EventArgs e)// Film kaydetme butonuna tıklandığında çalışacak kod.
         {
             //insert into deyimini kullanarak veritabanına film bilgilerini ekleyeceğiz.
@@ -501,7 +534,7 @@ namespace RozCineWorld
                     komut.ExecuteNonQuery();
                     // Film kaydı başarılı ise kullanıcıya bilgi mesajı gösteriyoruz.
                     MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    TemizlemeMetodu();// Formu temizliyoruz.
                 }
                 catch (Exception ex)// Hata oluşursa kullanıcıya mesaj gösteriyoruz.
                 {

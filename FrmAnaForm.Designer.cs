@@ -46,6 +46,8 @@
             panel4 = new Panel();
             btnyonetmenkayit = new Button();
             panel3 = new Panel();
+            panel10 = new Panel();
+            button5 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel9.SuspendLayout();
@@ -54,6 +56,7 @@
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
+            panel10.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -108,6 +111,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(16, 46, 80);
+            panel2.Controls.Add(panel10);
             panel2.Controls.Add(panel9);
             panel2.Controls.Add(panel8);
             panel2.Controls.Add(panel7);
@@ -291,6 +295,33 @@
             panel3.Size = new Size(627, 40);
             panel3.TabIndex = 3;
             // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(79, 149, 157);
+            panel10.Controls.Add(button5);
+            panel10.Dock = DockStyle.Top;
+            panel10.Location = new Point(0, 360);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(312, 60);
+            panel10.TabIndex = 10;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(190, 61, 42);
+            button5.Cursor = Cursors.Hand;
+            button5.Dock = DockStyle.Top;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(0, 0);
+            button5.Name = "button5";
+            button5.Size = new Size(312, 56);
+            button5.TabIndex = 0;
+            button5.Text = "FİLM LİSTE EKRANI";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
             // FrmAnaForm
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
@@ -316,6 +347,7 @@
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            panel10.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -339,5 +371,7 @@
         private Button button3;
         private Panel panel9;
         private Button button4;
+        private Panel panel10;
+        private Button button5;
     }
 }

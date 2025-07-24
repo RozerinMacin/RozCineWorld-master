@@ -103,6 +103,7 @@
             Controls.Add(panel1);
             Name = "SalonListesi";
             Size = new Size(257, 109);
+            Load += SalonListesi_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
