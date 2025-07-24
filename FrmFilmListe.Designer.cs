@@ -31,7 +31,14 @@
             panel1 = new Panel();
             btnkapat = new Button();
             label1 = new Label();
+            panel2 = new Panel();
+            txtarama = new TextBox();
+            label2 = new Label();
+            panel3 = new Panel();
+            ListePaneli = new FlowLayoutPanel();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -43,7 +50,7 @@
             panel1.ForeColor = Color.FromArgb(16, 46, 80);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(571, 37);
+            panel1.Size = new Size(571, 40);
             panel1.TabIndex = 3;
             // 
             // btnkapat
@@ -57,7 +64,7 @@
             btnkapat.ForeColor = Color.White;
             btnkapat.Location = new Point(533, 0);
             btnkapat.Name = "btnkapat";
-            btnkapat.Size = new Size(38, 37);
+            btnkapat.Size = new Size(38, 40);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
@@ -74,12 +81,66 @@
             label1.TabIndex = 1;
             label1.Text = "[FİLM LİSTE EKRANI]";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(16, 46, 80);
+            panel2.Controls.Add(txtarama);
+            panel2.Controls.Add(label2);
+            panel2.Dock = DockStyle.Top;
+            panel2.ForeColor = Color.FromArgb(16, 46, 80);
+            panel2.Location = new Point(0, 40);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(571, 43);
+            panel2.TabIndex = 5;
+            // 
+            // txtarama
+            // 
+            txtarama.BorderStyle = BorderStyle.None;
+            txtarama.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            txtarama.ForeColor = Color.FromArgb(16, 46, 80);
+            txtarama.Location = new Point(93, 9);
+            txtarama.Name = "txtarama";
+            txtarama.Size = new Size(372, 27);
+            txtarama.TabIndex = 1;
+            txtarama.TextChanged += txtarama_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(3, 7);
+            label2.Name = "label2";
+            label2.Size = new Size(91, 28);
+            label2.TabIndex = 0;
+            label2.Text = "Film Adı:";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(ListePaneli);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 83);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(571, 598);
+            panel3.TabIndex = 6;
+            // 
+            // ListePaneli
+            // 
+            ListePaneli.AutoScroll = true;
+            ListePaneli.Dock = DockStyle.Fill;
+            ListePaneli.Location = new Point(0, 0);
+            ListePaneli.Name = "ListePaneli";
+            ListePaneli.Size = new Size(571, 598);
+            ListePaneli.TabIndex = 1;
+            // 
             // FrmFilmListe
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(571, 723);
+            ClientSize = new Size(571, 681);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             ForeColor = Color.FromArgb(16, 46, 80);
@@ -89,8 +150,12 @@
             Name = "FrmFilmListe";
             StartPosition = FormStartPosition.Manual;
             Text = "FrmFilmListe";
+            Load += FrmFilmListe_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -99,5 +164,10 @@
         private Panel panel1;
         private Button btnkapat;
         private Label label1;
+        private Panel panel2;
+        private TextBox txtarama;
+        private Label label2;
+        private Panel panel3;
+        private FlowLayoutPanel ListePaneli;
     }
 }
