@@ -104,7 +104,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(1, 1);
             label1.Name = "label1";
-            label1.Size = new Size(265, 32);
+            label1.Size = new Size(207, 25);
             label1.TabIndex = 1;
             label1.Text = "[FİLM DETAY EKRANI]";
             // 
@@ -158,10 +158,9 @@
             // 
             // lblFilmAdi
             // 
-            lblFilmAdi.AutoSize = true;
             lblFilmAdi.Location = new Point(4, 22);
             lblFilmAdi.Name = "lblFilmAdi";
-            lblFilmAdi.Size = new Size(55, 23);
+            lblFilmAdi.Size = new Size(180, 55);
             lblFilmAdi.TabIndex = 0;
             lblFilmAdi.Text = "label3";
             // 
@@ -180,10 +179,9 @@
             // 
             // lblyonetmen
             // 
-            lblyonetmen.AutoSize = true;
             lblyonetmen.Location = new Point(7, 22);
             lblyonetmen.Name = "lblyonetmen";
-            lblyonetmen.Size = new Size(56, 23);
+            lblyonetmen.Size = new Size(182, 225);
             lblyonetmen.TabIndex = 0;
             lblyonetmen.Text = "label4";
             // 
@@ -202,10 +200,9 @@
             // 
             // lbloyuncu
             // 
-            lbloyuncu.AutoSize = true;
             lbloyuncu.Location = new Point(6, 23);
             lbloyuncu.Name = "lbloyuncu";
-            lbloyuncu.Size = new Size(55, 23);
+            lbloyuncu.Size = new Size(178, 225);
             lbloyuncu.TabIndex = 0;
             lbloyuncu.Text = "label5";
             // 
@@ -224,10 +221,9 @@
             // 
             // lblbicim
             // 
-            lblbicim.AutoSize = true;
             lblbicim.Location = new Point(7, 21);
             lblbicim.Name = "lblbicim";
-            lblbicim.Size = new Size(55, 23);
+            lblbicim.Size = new Size(177, 57);
             lblbicim.TabIndex = 0;
             lblbicim.Text = "label6";
             // 
@@ -246,10 +242,9 @@
             // 
             // lblozellikler
             // 
-            lblozellikler.AutoSize = true;
             lblozellikler.Location = new Point(5, 21);
             lblozellikler.Name = "lblozellikler";
-            lblozellikler.Size = new Size(55, 23);
+            lblozellikler.Size = new Size(183, 55);
             lblozellikler.TabIndex = 0;
             lblozellikler.Text = "label7";
             // 
@@ -268,10 +263,9 @@
             // 
             // lbltur
             // 
-            lbltur.AutoSize = true;
             lbltur.Location = new Point(5, 21);
             lbltur.Name = "lbltur";
-            lbltur.Size = new Size(55, 23);
+            lbltur.Size = new Size(179, 56);
             lbltur.TabIndex = 0;
             lbltur.Text = "label8";
             // 
@@ -290,10 +284,9 @@
             // 
             // lbldurum
             // 
-            lbldurum.AutoSize = true;
             lbldurum.Location = new Point(5, 21);
             lbldurum.Name = "lbldurum";
-            lbldurum.Size = new Size(55, 23);
+            lbldurum.Size = new Size(180, 56);
             lbldurum.TabIndex = 0;
             lbldurum.Text = "label9";
             // 
@@ -312,10 +305,9 @@
             // 
             // lblvizyontarihi
             // 
-            lblvizyontarihi.AutoSize = true;
             lblvizyontarihi.Location = new Point(5, 21);
             lblvizyontarihi.Name = "lblvizyontarihi";
-            lblvizyontarihi.Size = new Size(62, 23);
+            lblvizyontarihi.Size = new Size(179, 56);
             lblvizyontarihi.TabIndex = 0;
             lblvizyontarihi.Text = "label10";
             // 
@@ -334,10 +326,9 @@
             // 
             // lblIMDB
             // 
-            lblIMDB.AutoSize = true;
             lblIMDB.Location = new Point(5, 20);
             lblIMDB.Name = "lblIMDB";
-            lblIMDB.Size = new Size(60, 23);
+            lblIMDB.Size = new Size(147, 57);
             lblIMDB.TabIndex = 0;
             lblIMDB.Text = "label11";
             // 
@@ -356,16 +347,15 @@
             // 
             // lbldetay
             // 
-            lbldetay.AutoSize = true;
             lbldetay.Location = new Point(8, 25);
             lbldetay.Name = "lbldetay";
-            lbldetay.Size = new Size(62, 23);
+            lbldetay.Size = new Size(734, 176);
             lbldetay.TabIndex = 0;
             lbldetay.Text = "label12";
             // 
             // FrmFilmDetay
             // 
-            AutoScaleDimensions = new SizeF(13F, 31F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             ClientSize = new Size(767, 694);
@@ -394,25 +384,15 @@
             groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pBResim).EndInit();
             groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
             groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
             groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
             groupBox7.ResumeLayout(false);
-            groupBox7.PerformLayout();
             groupBox8.ResumeLayout(false);
-            groupBox8.PerformLayout();
             groupBox10.ResumeLayout(false);
-            groupBox10.PerformLayout();
             groupBox11.ResumeLayout(false);
-            groupBox11.PerformLayout();
             ResumeLayout(false);
         }
 
