@@ -160,7 +160,7 @@
             // 
             lblFilmAdi.Location = new Point(4, 22);
             lblFilmAdi.Name = "lblFilmAdi";
-            lblFilmAdi.Size = new Size(180, 45);
+            lblFilmAdi.Size = new Size(180, 44);
             lblFilmAdi.TabIndex = 0;
             lblFilmAdi.Text = "label3";
             // 
@@ -181,7 +181,7 @@
             // 
             lblyonetmen.Location = new Point(7, 22);
             lblyonetmen.Name = "lblyonetmen";
-            lblyonetmen.Size = new Size(181, 161);
+            lblyonetmen.Size = new Size(182, 161);
             lblyonetmen.TabIndex = 0;
             lblyonetmen.Text = "label4";
             // 
@@ -202,7 +202,7 @@
             // 
             lbloyuncu.Location = new Point(6, 23);
             lbloyuncu.Name = "lbloyuncu";
-            lbloyuncu.Size = new Size(178, 234);
+            lbloyuncu.Size = new Size(178, 225);
             lbloyuncu.TabIndex = 0;
             lbloyuncu.Text = "label5";
             // 
@@ -223,7 +223,7 @@
             // 
             lblbicim.Location = new Point(7, 21);
             lblbicim.Name = "lblbicim";
-            lblbicim.Size = new Size(229, 57);
+            lblbicim.Size = new Size(228, 57);
             lblbicim.TabIndex = 0;
             lblbicim.Text = "label6";
             // 
@@ -244,7 +244,7 @@
             // 
             lblozellikler.Location = new Point(5, 21);
             lblozellikler.Name = "lblozellikler";
-            lblozellikler.Size = new Size(381, 57);
+            lblozellikler.Size = new Size(376, 55);
             lblozellikler.TabIndex = 0;
             lblozellikler.Text = "label7";
             // 
@@ -256,16 +256,16 @@
             groupBox6.Location = new Point(176, 224);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(10, 3, 3, 3);
-            groupBox6.Size = new Size(385, 74);
+            groupBox6.Size = new Size(385, 68);
             groupBox6.TabIndex = 20;
             groupBox6.TabStop = false;
             groupBox6.Text = "Filmin Türü";
             // 
             // lbltur
             // 
-            lbltur.Location = new Point(5, 19);
+            lbltur.Location = new Point(5, 21);
             lbltur.Name = "lbltur";
-            lbltur.Size = new Size(374, 49);
+            lbltur.Size = new Size(374, 44);
             lbltur.TabIndex = 0;
             lbltur.Text = "label8";
             // 
@@ -287,7 +287,7 @@
             lbldurum.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lbldurum.Location = new Point(5, 21);
             lbldurum.Name = "lbldurum";
-            lbldurum.Size = new Size(179, 30);
+            lbldurum.Size = new Size(180, 34);
             lbldurum.TabIndex = 0;
             lbldurum.Text = "label9";
             // 
@@ -306,9 +306,9 @@
             // 
             // lblvizyontarihi
             // 
-            lblvizyontarihi.Location = new Point(5, 24);
+            lblvizyontarihi.Location = new Point(5, 21);
             lblvizyontarihi.Name = "lblvizyontarihi";
-            lblvizyontarihi.Size = new Size(179, 30);
+            lblvizyontarihi.Size = new Size(179, 33);
             lblvizyontarihi.TabIndex = 0;
             lblvizyontarihi.Text = "label10";
             // 
@@ -350,7 +350,7 @@
             // 
             lbldetay.Location = new Point(8, 25);
             lbldetay.Name = "lbldetay";
-            lbldetay.Size = new Size(733, 176);
+            lbldetay.Size = new Size(734, 176);
             lbldetay.TabIndex = 0;
             lbldetay.Text = "label12";
             // 
