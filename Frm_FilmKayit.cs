@@ -384,12 +384,12 @@ namespace RozCineWorld
             DateTime bugun = DateTime.Today;
 
             TimeSpan TSpan = dVTarih - bugun;
-            //if (TSpan.TotalDays < 0)// Eğer vizyon tarihi geçmişte ise kullanıcıya uyarı verir.
-            //{
-            //    MessageBox.Show("Geçmiş tarihlere ait film eklenmesi yapılamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    bugununtarihi();
-            //}
-            if (TSpan.TotalDays == 0)// Eğer vizyon tarihi bugünün tarihi ise film vizyonda olarak kabul edilir.
+            if (TSpan.TotalDays < 0)// Eğer vizyon tarihi geçmişte ise kullanıcıya uyarı verir.
+            {
+                MessageBox.Show("Geçmiş tarihlere ait film eklenmesi yapılamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                bugununtarihi();
+            }
+            else if (TSpan.TotalDays == 0)// Eğer vizyon tarihi bugünün tarihi ise film vizyonda olarak kabul edilir.
             {
                 MessageBox.Show(txtfilmAdi.Text + " :Filmi şuan vizyonda.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 durum = "1"; // film vizyonda.

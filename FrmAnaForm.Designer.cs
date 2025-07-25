@@ -33,6 +33,8 @@
             btnkapat = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            panel10 = new Panel();
+            button5 = new Button();
             panel9 = new Panel();
             button4 = new Button();
             panel8 = new Panel();
@@ -46,17 +48,18 @@
             panel4 = new Panel();
             btnyonetmenkayit = new Button();
             panel3 = new Panel();
-            panel10 = new Panel();
-            button5 = new Button();
+            panel11 = new Panel();
+            button6 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel10.SuspendLayout();
             panel9.SuspendLayout();
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
-            panel10.SuspendLayout();
+            panel11.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -111,6 +114,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(16, 46, 80);
+            panel2.Controls.Add(panel11);
             panel2.Controls.Add(panel10);
             panel2.Controls.Add(panel9);
             panel2.Controls.Add(panel8);
@@ -123,6 +127,33 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(312, 525);
             panel2.TabIndex = 2;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(79, 149, 157);
+            panel10.Controls.Add(button5);
+            panel10.Dock = DockStyle.Top;
+            panel10.Location = new Point(0, 360);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(312, 60);
+            panel10.TabIndex = 10;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(190, 61, 42);
+            button5.Cursor = Cursors.Hand;
+            button5.Dock = DockStyle.Top;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(0, 0);
+            button5.Name = "button5";
+            button5.Size = new Size(312, 56);
+            button5.TabIndex = 0;
+            button5.Text = "FİLM LİSTE EKRANI";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // panel9
             // 
@@ -295,32 +326,32 @@
             panel3.Size = new Size(627, 40);
             panel3.TabIndex = 3;
             // 
-            // panel10
+            // panel11
             // 
-            panel10.BackColor = Color.FromArgb(79, 149, 157);
-            panel10.Controls.Add(button5);
-            panel10.Dock = DockStyle.Top;
-            panel10.Location = new Point(0, 360);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(312, 60);
-            panel10.TabIndex = 10;
+            panel11.BackColor = Color.FromArgb(79, 149, 157);
+            panel11.Controls.Add(button6);
+            panel11.Dock = DockStyle.Top;
+            panel11.Location = new Point(0, 420);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(312, 60);
+            panel11.TabIndex = 11;
             // 
-            // button5
+            // button6
             // 
-            button5.BackColor = Color.FromArgb(190, 61, 42);
-            button5.Cursor = Cursors.Hand;
-            button5.Dock = DockStyle.Top;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(0, 0);
-            button5.Name = "button5";
-            button5.Size = new Size(312, 56);
-            button5.TabIndex = 0;
-            button5.Text = "FİLM LİSTE EKRANI";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            button6.BackColor = Color.FromArgb(190, 61, 42);
+            button6.Cursor = Cursors.Hand;
+            button6.Dock = DockStyle.Top;
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(0, 0);
+            button6.Name = "button6";
+            button6.Size = new Size(312, 56);
+            button6.TabIndex = 0;
+            button6.Text = "BİLET OLUŞTURMA EKRANI";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // FrmAnaForm
             // 
@@ -341,13 +372,14 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel10.ResumeLayout(false);
             panel9.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel10.ResumeLayout(false);
+            panel11.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -373,5 +405,7 @@
         private Button button4;
         private Panel panel10;
         private Button button5;
+        private Panel panel11;
+        private Button button6;
     }
 }

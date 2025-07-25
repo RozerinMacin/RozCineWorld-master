@@ -32,8 +32,6 @@
             panel1 = new Panel();
             btnkapat = new Button();
             label1 = new Label();
-            groupBox1 = new GroupBox();
-            txtfilmAdi = new TextBox();
             gBFilm_turleri = new GroupBox();
             pictureBox7 = new PictureBox();
             lblsuc = new Label();
@@ -109,8 +107,9 @@
             txtFilmDetay = new TextBox();
             BtnKaydet = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
+            txtfilmAdi = new TextBox();
+            groupBox1 = new GroupBox();
             panel1.SuspendLayout();
-            groupBox1.SuspendLayout();
             gBFilm_turleri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -140,6 +139,7 @@
             groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pBResim).BeginInit();
             groupBox10.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -180,30 +180,6 @@
             label1.Size = new Size(258, 32);
             label1.TabIndex = 1;
             label1.Text = "[FİLM KAYIT EKRANI]";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(txtfilmAdi);
-            groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            groupBox1.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox1.Location = new Point(6, 37);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(10, 3, 3, 3);
-            groupBox1.Size = new Size(247, 59);
-            groupBox1.TabIndex = 8;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Film Adı";
-            // 
-            // txtfilmAdi
-            // 
-            txtfilmAdi.BackColor = Color.FromArgb(79, 149, 157);
-            txtfilmAdi.BorderStyle = BorderStyle.None;
-            txtfilmAdi.Dock = DockStyle.Bottom;
-            txtfilmAdi.ForeColor = Color.FromArgb(16, 46, 80);
-            txtfilmAdi.Location = new Point(10, 29);
-            txtfilmAdi.Name = "txtfilmAdi";
-            txtfilmAdi.Size = new Size(234, 27);
-            txtfilmAdi.TabIndex = 0;
             // 
             // gBFilm_turleri
             // 
@@ -1122,6 +1098,30 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // txtfilmAdi
+            // 
+            txtfilmAdi.BackColor = Color.FromArgb(79, 149, 157);
+            txtfilmAdi.BorderStyle = BorderStyle.None;
+            txtfilmAdi.Dock = DockStyle.Bottom;
+            txtfilmAdi.ForeColor = Color.FromArgb(16, 46, 80);
+            txtfilmAdi.Location = new Point(10, 29);
+            txtfilmAdi.Name = "txtfilmAdi";
+            txtfilmAdi.Size = new Size(234, 27);
+            txtfilmAdi.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txtfilmAdi);
+            groupBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            groupBox1.ForeColor = Color.FromArgb(16, 46, 80);
+            groupBox1.Location = new Point(6, 37);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(10, 3, 3, 3);
+            groupBox1.Size = new Size(247, 59);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Film Adı";
+            // 
             // Frm_FilmKayit
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
@@ -1150,8 +1150,6 @@
             Load += Frm_FilmKayit_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             gBFilm_turleri.ResumeLayout(false);
             gBFilm_turleri.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -1189,6 +1187,8 @@
             ((System.ComponentModel.ISupportInitialize)pBResim).EndInit();
             groupBox10.ResumeLayout(false);
             groupBox10.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1197,8 +1197,6 @@
         private Panel panel1;
         private Button btnkapat;
         private Label label1;
-        private GroupBox groupBox1;
-        private TextBox txtfilmAdi;
         private GroupBox gBFilm_turleri;
         private GroupBox gBFilm_ozellik;
         private GroupBox gBFilm_bicimi;
@@ -1274,5 +1272,7 @@
         private Label lbltarih;
         private Label label6;
         private System.Windows.Forms.Timer timer1;
+        private TextBox txtfilmAdi;
+        private GroupBox groupBox1;
     }
 }
