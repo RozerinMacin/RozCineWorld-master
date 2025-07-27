@@ -104,7 +104,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(1, 1);
             label1.Name = "label1";
-            label1.Size = new Size(265, 32);
+            label1.Size = new Size(207, 25);
             label1.TabIndex = 1;
             label1.Text = "[FİLM DETAY EKRANI]";
             // 
@@ -356,10 +356,10 @@
             // 
             // FrmFilmDetay
             // 
-            AutoScaleDimensions = new SizeF(13F, 31F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(767, 694);
+            ClientSize = new Size(767, 607);
             Controls.Add(groupBox11);
             Controls.Add(groupBox5);
             Controls.Add(groupBox8);
@@ -374,7 +374,7 @@
             Controls.Add(panel1);
             Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(425, 100);
+            Location = new Point(475, 85);
             Margin = new Padding(5);
             Name = "FrmFilmDetay";
             StartPosition = FormStartPosition.Manual;

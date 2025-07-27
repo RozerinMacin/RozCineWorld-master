@@ -16,12 +16,12 @@ namespace RozCineWorld
         {
             InitializeComponent();
         }
-
         private void BtnDetay_Click(object sender, EventArgs e)
         {
             FrmFilmDetay frm = new FrmFilmDetay();
             frm.IdNo = lblIdNo.Text;
             frm.ShowDialog();
+
         }
     }
 }

@@ -35,13 +35,13 @@
             // 
             // lbladi
             // 
-            lbladi.AutoSize = true;
             lbladi.Cursor = Cursors.Hand;
-            lbladi.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lbladi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lbladi.ForeColor = Color.FromArgb(16, 46, 80);
-            lbladi.Location = new Point(28, 0);
+            lbladi.Location = new Point(20, -1);
+            lbladi.Margin = new Padding(2, 0, 2, 0);
             lbladi.Name = "lbladi";
-            lbladi.Size = new Size(61, 25);
+            lbladi.Size = new Size(180, 17);
             lbladi.TabIndex = 3;
             lbladi.Text = "label1";
             lbladi.Click += lbladi_Click;
@@ -51,28 +51,28 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.artı1;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(-1, -2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(26, 26);
+            pictureBox1.Size = new Size(20, 20);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
             // YListeAraci
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             Controls.Add(lbladi);
             Controls.Add(pictureBox1);
-            Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            Margin = new Padding(2);
             Name = "YListeAraci";
-            Size = new Size(210, 27);
+            Size = new Size(200, 17);
             Load += YListeAraci_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
