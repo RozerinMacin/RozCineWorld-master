@@ -111,7 +111,16 @@ namespace RozCineWorld
 
         private void BtnOlustur_Click(object sender, EventArgs e)
         {
-
+            KoltukPaneli.Controls.Clear();
+            int sayi = Convert.ToInt32(lblkoltuksayisi.Text);
+            for (int i = 1; i <= sayi; i++)
+            {
+                Button btn = new Button();
+                btn.Text = i.ToString();
+                btn.Width = 50;
+                btn.Height = 50;
+                KoltukPaneli.Controls.Add(btn);
+            }
         }
 
         private void cBTarih_SelectedIndexChanged(object sender, EventArgs e)
