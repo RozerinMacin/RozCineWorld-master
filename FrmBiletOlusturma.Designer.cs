@@ -114,7 +114,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(1, 1);
             label1.Name = "label1";
-            label1.Size = new Size(268, 25);
+            label1.Size = new Size(341, 32);
             label1.TabIndex = 1;
             label1.Text = "[BİLET OLUŞTURMA EKRANI]";
             // 
@@ -216,50 +216,11 @@
             cBFilmAdi.ForeColor = Color.FromArgb(16, 46, 80);
             cBFilmAdi.FormattingEnabled = true;
             cBFilmAdi.IntegralHeight = false;
-            cBFilmAdi.Location = new Point(10, 31);
+            cBFilmAdi.Location = new Point(10, 25);
             cBFilmAdi.Name = "cBFilmAdi";
-            cBFilmAdi.Size = new Size(240, 25);
+            cBFilmAdi.Size = new Size(240, 31);
             cBFilmAdi.TabIndex = 2;
             cBFilmAdi.SelectedIndexChanged += cBFilmAdi_SelectedIndexChanged;
-            // 
-            // nYil
-            // 
-            //nYil.BorderStyle = BorderStyle.None;
-            //nYil.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            //nYil.ForeColor = Color.FromArgb(16, 46, 80);
-            //nYil.Location = new Point(156, 26);
-            //nYil.Maximum = new decimal(new int[] { 2200, 0, 0, 0 });
-            //nYil.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
-            //nYil.Name = "nYil";
-            //nYil.Size = new Size(75, 21);
-            //nYil.TabIndex = 25;
-            //nYil.Value = new decimal(new int[] { 2025, 0, 0, 0 });
-            // 
-            // nGun
-            // 
-            //nGun.BorderStyle = BorderStyle.None;
-            //nGun.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            //nGun.ForeColor = Color.FromArgb(16, 46, 80);
-            //nGun.Location = new Point(14, 26);
-            //nGun.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
-            //nGun.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            //nGun.Name = "nGun";
-            //nGun.Size = new Size(64, 21);
-            //nGun.TabIndex = 23;
-            //nGun.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // nAy
-            // 
-            //nAy.BorderStyle = BorderStyle.None;
-            //nAy.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            //nAy.ForeColor = Color.FromArgb(16, 46, 80);
-            //nAy.Location = new Point(84, 26);
-            //nAy.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
-            //nAy.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            //nAy.Name = "nAy";
-            //nAy.Size = new Size(66, 21);
-            //nAy.TabIndex = 24;
-            //nAy.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // groupBox5
             // 
@@ -298,7 +259,7 @@
             label7.ForeColor = Color.FromArgb(16, 46, 80);
             label7.Location = new Point(166, 3);
             label7.Name = "label7";
-            label7.Size = new Size(59, 13);
+            label7.Size = new Size(75, 19);
             label7.TabIndex = 27;
             label7.Text = "GG/AA/YY";
             // 
@@ -308,7 +269,7 @@
             groupBox6.Controls.Add(PanelSEANS);
             groupBox6.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox6.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox6.Location = new Point(6, 343);
+            groupBox6.Location = new Point(6, 338);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(10, 3, 3, 3);
             groupBox6.Size = new Size(253, 81);
@@ -327,19 +288,6 @@
             lblseanssec.TabIndex = 32;
             lblseanssec.Text = "lblseans";
             lblseanssec.Visible = false;
-            //cBDakika.BackColor = Color.FromArgb(79, 149, 157);
-            //cBDakika.Dock = DockStyle.Left;
-            //cBDakika.DropDownStyle = ComboBoxStyle.DropDownList;
-            //cBDakika.DropDownWidth = 240;
-            //cBDakika.FlatStyle = FlatStyle.Flat;
-            //cBDakika.ForeColor = Color.FromArgb(16, 46, 80);
-            //cBDakika.FormattingEnabled = true;
-            //cBDakika.IntegralHeight = false;
-            //cBDakika.Items.AddRange(new object[] { "00", "25", "45" });
-            //cBDakika.Location = new Point(125, 21);
-            //cBDakika.Name = "cBDakika";
-            //cBDakika.Size = new Size(115, 25);
-            //cBDakika.TabIndex = 1;
             // 
             // PanelSEANS
             // 
@@ -350,19 +298,6 @@
             PanelSEANS.Name = "PanelSEANS";
             PanelSEANS.Size = new Size(240, 52);
             PanelSEANS.TabIndex = 32;
-            //cBSaat.BackColor = Color.FromArgb(79, 149, 157);
-            //cBSaat.Dock = DockStyle.Left;
-            //cBSaat.DropDownStyle = ComboBoxStyle.DropDownList;
-            //cBSaat.DropDownWidth = 240;
-            //cBSaat.FlatStyle = FlatStyle.Flat;
-            //cBSaat.ForeColor = Color.FromArgb(16, 46, 80);
-            //cBSaat.FormattingEnabled = true;
-            //cBSaat.IntegralHeight = false;
-            //cBSaat.Items.AddRange(new object[] { "10", "11", "12", "13" });
-            //cBSaat.Location = new Point(10, 21);
-            //cBSaat.Name = "cBSaat";
-            //cBSaat.Size = new Size(115, 25);
-            //cBSaat.TabIndex = 0;
             // 
             // groupBox7
             // 
@@ -370,11 +305,10 @@
             groupBox7.Controls.Add(cBSalonAdi);
             groupBox7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox7.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox7.Location = new Point(6, 430);
-            groupBox7.Location = new Point(6, 403);
+            groupBox7.Location = new Point(6, 419);
             groupBox7.Name = "groupBox7";
             groupBox7.Padding = new Padding(10, 3, 3, 3);
-            groupBox7.Size = new Size(253, 54);
+            groupBox7.Size = new Size(253, 70);
             groupBox7.TabIndex = 28;
             groupBox7.TabStop = false;
             groupBox7.Text = "Salon Adı";
@@ -384,7 +318,7 @@
             lblkoltuksayisi.AutoSize = true;
             lblkoltuksayisi.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblkoltuksayisi.ForeColor = Color.FromArgb(16, 46, 80);
-            lblkoltuksayisi.Location = new Point(153, 3);
+            lblkoltuksayisi.Location = new Point(141, 3);
             lblkoltuksayisi.Name = "lblkoltuksayisi";
             lblkoltuksayisi.Size = new Size(98, 19);
             lblkoltuksayisi.TabIndex = 33;
@@ -400,9 +334,9 @@
             cBSalonAdi.ForeColor = Color.FromArgb(16, 46, 80);
             cBSalonAdi.FormattingEnabled = true;
             cBSalonAdi.IntegralHeight = false;
-            cBSalonAdi.Location = new Point(10, 26);
+            cBSalonAdi.Location = new Point(10, 36);
             cBSalonAdi.Name = "cBSalonAdi";
-            cBSalonAdi.Size = new Size(240, 25);
+            cBSalonAdi.Size = new Size(240, 31);
             cBSalonAdi.TabIndex = 2;
             cBSalonAdi.SelectedIndexChanged += cBSalonAdi_SelectedIndexChanged;
             // 
@@ -411,7 +345,7 @@
             groupBox8.Controls.Add(cBBiletTuru);
             groupBox8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox8.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox8.Location = new Point(6, 490);
+            groupBox8.Location = new Point(6, 493);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(10, 3, 3, 3);
             groupBox8.Size = new Size(253, 59);
@@ -430,9 +364,9 @@
             cBBiletTuru.FormattingEnabled = true;
             cBBiletTuru.IntegralHeight = false;
             cBBiletTuru.Items.AddRange(new object[] { "YETİŞKİN", "ÖĞRENCİ" });
-            cBBiletTuru.Location = new Point(10, 31);
+            cBBiletTuru.Location = new Point(10, 25);
             cBBiletTuru.Name = "cBBiletTuru";
-            cBBiletTuru.Size = new Size(240, 25);
+            cBBiletTuru.Size = new Size(240, 31);
             cBBiletTuru.TabIndex = 2;
             // 
             // groupBox9
@@ -440,7 +374,7 @@
             groupBox9.Controls.Add(txtKoltuk);
             groupBox9.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox9.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox9.Location = new Point(6, 553);
+            groupBox9.Location = new Point(6, 555);
             groupBox9.Name = "groupBox9";
             groupBox9.Padding = new Padding(10, 3, 3, 3);
             groupBox9.Size = new Size(253, 59);
@@ -571,10 +505,10 @@
             // 
             // FrmBiletOlusturma
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(749, 663);
+            ClientSize = new Size(763, 671);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -584,7 +518,6 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label2);
             Controls.Add(pictureBox1);
-            ClientSize = new Size(763, 671);
             Controls.Add(BtnOlustur);
             Controls.Add(groupBox9);
             Controls.Add(groupBox8);
