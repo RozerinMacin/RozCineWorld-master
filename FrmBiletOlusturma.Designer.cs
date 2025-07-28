@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBiletOlusturma));
             panel1 = new Panel();
             btnkapat = new Button();
             label1 = new Label();
@@ -39,34 +40,43 @@
             txtTelNo = new TextBox();
             groupBox4 = new GroupBox();
             cBFilmAdi = new ComboBox();
-            nYil = new NumericUpDown();
-            nGun = new NumericUpDown();
-            nAy = new NumericUpDown();
             groupBox5 = new GroupBox();
+            cBTarih = new ComboBox();
             label7 = new Label();
             groupBox6 = new GroupBox();
-            cBDakika = new ComboBox();
-            cBSaat = new ComboBox();
+            lblseanssec = new Label();
+            PanelSEANS = new FlowLayoutPanel();
             groupBox7 = new GroupBox();
+            lblkoltuksayisi = new Label();
             cBSalonAdi = new ComboBox();
             groupBox8 = new GroupBox();
             cBBiletTuru = new ComboBox();
             groupBox9 = new GroupBox();
             txtKoltuk = new TextBox();
             BtnOlustur = new Button();
+            pictureBox1 = new PictureBox();
+            label2 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nYil).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nGun).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nAy).BeginInit();
             groupBox5.SuspendLayout();
             groupBox6.SuspendLayout();
             groupBox7.SuspendLayout();
             groupBox8.SuspendLayout();
             groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -210,52 +220,12 @@
             cBFilmAdi.Name = "cBFilmAdi";
             cBFilmAdi.Size = new Size(240, 31);
             cBFilmAdi.TabIndex = 2;
-            // 
-            // nYil
-            // 
-            nYil.BorderStyle = BorderStyle.None;
-            nYil.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            nYil.ForeColor = Color.FromArgb(16, 46, 80);
-            nYil.Location = new Point(156, 26);
-            nYil.Maximum = new decimal(new int[] { 2200, 0, 0, 0 });
-            nYil.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
-            nYil.Name = "nYil";
-            nYil.Size = new Size(75, 26);
-            nYil.TabIndex = 25;
-            nYil.Value = new decimal(new int[] { 2025, 0, 0, 0 });
-            // 
-            // nGun
-            // 
-            nGun.BorderStyle = BorderStyle.None;
-            nGun.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            nGun.ForeColor = Color.FromArgb(16, 46, 80);
-            nGun.Location = new Point(14, 26);
-            nGun.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
-            nGun.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            nGun.Name = "nGun";
-            nGun.Size = new Size(64, 26);
-            nGun.TabIndex = 23;
-            nGun.Value = new decimal(new int[] { 1, 0, 0, 0 });
-            // 
-            // nAy
-            // 
-            nAy.BorderStyle = BorderStyle.None;
-            nAy.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            nAy.ForeColor = Color.FromArgb(16, 46, 80);
-            nAy.Location = new Point(84, 26);
-            nAy.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
-            nAy.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            nAy.Name = "nAy";
-            nAy.Size = new Size(66, 26);
-            nAy.TabIndex = 24;
-            nAy.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            cBFilmAdi.SelectedIndexChanged += cBFilmAdi_SelectedIndexChanged;
             // 
             // groupBox5
             // 
+            groupBox5.Controls.Add(cBTarih);
             groupBox5.Controls.Add(label7);
-            groupBox5.Controls.Add(nGun);
-            groupBox5.Controls.Add(nYil);
-            groupBox5.Controls.Add(nAy);
             groupBox5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox5.ForeColor = Color.FromArgb(16, 46, 80);
             groupBox5.Location = new Point(6, 282);
@@ -265,6 +235,22 @@
             groupBox5.TabIndex = 26;
             groupBox5.TabStop = false;
             groupBox5.Text = "Tarih";
+            // 
+            // cBTarih
+            // 
+            cBTarih.BackColor = Color.FromArgb(79, 149, 157);
+            cBTarih.Dock = DockStyle.Bottom;
+            cBTarih.DropDownStyle = ComboBoxStyle.DropDownList;
+            cBTarih.DropDownWidth = 240;
+            cBTarih.FlatStyle = FlatStyle.Flat;
+            cBTarih.ForeColor = Color.FromArgb(16, 46, 80);
+            cBTarih.FormattingEnabled = true;
+            cBTarih.IntegralHeight = false;
+            cBTarih.Location = new Point(10, 25);
+            cBTarih.Name = "cBTarih";
+            cBTarih.Size = new Size(240, 31);
+            cBTarih.TabIndex = 28;
+            cBTarih.SelectedIndexChanged += cBTarih_SelectedIndexChanged;
             // 
             // label7
             // 
@@ -279,62 +265,64 @@
             // 
             // groupBox6
             // 
-            groupBox6.Controls.Add(cBDakika);
-            groupBox6.Controls.Add(cBSaat);
+            groupBox6.Controls.Add(lblseanssec);
+            groupBox6.Controls.Add(PanelSEANS);
             groupBox6.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox6.ForeColor = Color.FromArgb(16, 46, 80);
             groupBox6.Location = new Point(6, 343);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(10, 3, 3, 3);
-            groupBox6.Size = new Size(253, 59);
+            groupBox6.Size = new Size(253, 81);
             groupBox6.TabIndex = 27;
             groupBox6.TabStop = false;
             groupBox6.Text = "Seans";
             // 
-            // cBDakika
+            // lblseanssec
             // 
-            cBDakika.BackColor = Color.FromArgb(79, 149, 157);
-            cBDakika.Dock = DockStyle.Left;
-            cBDakika.DropDownStyle = ComboBoxStyle.DropDownList;
-            cBDakika.DropDownWidth = 240;
-            cBDakika.FlatStyle = FlatStyle.Flat;
-            cBDakika.ForeColor = Color.FromArgb(16, 46, 80);
-            cBDakika.FormattingEnabled = true;
-            cBDakika.IntegralHeight = false;
-            cBDakika.Items.AddRange(new object[] { "00", "25", "45" });
-            cBDakika.Location = new Point(125, 26);
-            cBDakika.Name = "cBDakika";
-            cBDakika.Size = new Size(115, 31);
-            cBDakika.TabIndex = 1;
+            lblseanssec.AutoSize = true;
+            lblseanssec.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblseanssec.ForeColor = Color.FromArgb(16, 46, 80);
+            lblseanssec.Location = new Point(184, 3);
+            lblseanssec.Name = "lblseanssec";
+            lblseanssec.Size = new Size(59, 19);
+            lblseanssec.TabIndex = 32;
+            lblseanssec.Text = "lblseans";
+            lblseanssec.Visible = false;
             // 
-            // cBSaat
+            // PanelSEANS
             // 
-            cBSaat.BackColor = Color.FromArgb(79, 149, 157);
-            cBSaat.Dock = DockStyle.Left;
-            cBSaat.DropDownStyle = ComboBoxStyle.DropDownList;
-            cBSaat.DropDownWidth = 240;
-            cBSaat.FlatStyle = FlatStyle.Flat;
-            cBSaat.ForeColor = Color.FromArgb(16, 46, 80);
-            cBSaat.FormattingEnabled = true;
-            cBSaat.IntegralHeight = false;
-            cBSaat.Items.AddRange(new object[] { "10", "11", "12", "13" });
-            cBSaat.Location = new Point(10, 26);
-            cBSaat.Name = "cBSaat";
-            cBSaat.Size = new Size(115, 31);
-            cBSaat.TabIndex = 0;
+            PanelSEANS.AutoScroll = true;
+            PanelSEANS.Dock = DockStyle.Fill;
+            PanelSEANS.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            PanelSEANS.Location = new Point(10, 26);
+            PanelSEANS.Name = "PanelSEANS";
+            PanelSEANS.Size = new Size(240, 52);
+            PanelSEANS.TabIndex = 32;
             // 
             // groupBox7
             // 
+            groupBox7.Controls.Add(lblkoltuksayisi);
             groupBox7.Controls.Add(cBSalonAdi);
             groupBox7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox7.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox7.Location = new Point(6, 401);
+            groupBox7.Location = new Point(6, 430);
             groupBox7.Name = "groupBox7";
             groupBox7.Padding = new Padding(10, 3, 3, 3);
             groupBox7.Size = new Size(253, 59);
             groupBox7.TabIndex = 28;
             groupBox7.TabStop = false;
             groupBox7.Text = "Salon Adı";
+            // 
+            // lblkoltuksayisi
+            // 
+            lblkoltuksayisi.AutoSize = true;
+            lblkoltuksayisi.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblkoltuksayisi.ForeColor = Color.FromArgb(16, 46, 80);
+            lblkoltuksayisi.Location = new Point(153, 3);
+            lblkoltuksayisi.Name = "lblkoltuksayisi";
+            lblkoltuksayisi.Size = new Size(98, 19);
+            lblkoltuksayisi.TabIndex = 33;
+            lblkoltuksayisi.Text = "lblkoltuksayisi";
             // 
             // cBSalonAdi
             // 
@@ -350,13 +338,14 @@
             cBSalonAdi.Name = "cBSalonAdi";
             cBSalonAdi.Size = new Size(240, 31);
             cBSalonAdi.TabIndex = 2;
+            cBSalonAdi.SelectedIndexChanged += cBSalonAdi_SelectedIndexChanged;
             // 
             // groupBox8
             // 
             groupBox8.Controls.Add(cBBiletTuru);
             groupBox8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox8.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox8.Location = new Point(6, 461);
+            groupBox8.Location = new Point(6, 490);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(10, 3, 3, 3);
             groupBox8.Size = new Size(253, 59);
@@ -385,7 +374,7 @@
             groupBox9.Controls.Add(txtKoltuk);
             groupBox9.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox9.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox9.Location = new Point(6, 524);
+            groupBox9.Location = new Point(6, 553);
             groupBox9.Name = "groupBox9";
             groupBox9.Padding = new Padding(10, 3, 3, 3);
             groupBox9.Size = new Size(253, 59);
@@ -413,19 +402,122 @@
             BtnOlustur.FlatStyle = FlatStyle.Flat;
             BtnOlustur.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnOlustur.ForeColor = Color.White;
-            BtnOlustur.Location = new Point(6, 587);
+            BtnOlustur.Location = new Point(6, 618);
             BtnOlustur.Name = "BtnOlustur";
-            BtnOlustur.Size = new Size(252, 41);
+            BtnOlustur.Size = new Size(253, 41);
             BtnOlustur.TabIndex = 31;
             BtnOlustur.Text = "OLUŞTUR";
             BtnOlustur.UseVisualStyleBackColor = false;
+            BtnOlustur.Click += BtnOlustur_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(261, 46);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(485, 52);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 32;
+            pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Black;
+            label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(262, 69);
+            label2.Name = "label2";
+            label2.Size = new Size(60, 25);
+            label2.TabIndex = 33;
+            label2.Text = "Perde";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.Location = new Point(265, 106);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(480, 470);
+            flowLayoutPanel1.TabIndex = 34;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.kirmizi;
+            pictureBox2.Location = new Point(481, 584);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(49, 56);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 35;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.Mavi;
+            pictureBox3.Location = new Point(574, 584);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(49, 56);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 36;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.sari;
+            pictureBox4.Location = new Point(665, 582);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(49, 56);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 37;
+            pictureBox4.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label3.ForeColor = Color.Red;
+            label3.Location = new Point(466, 642);
+            label3.Name = "label3";
+            label3.Size = new Size(89, 20);
+            label3.TabIndex = 38;
+            label3.Text = "Dolu koltuk";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label4.ForeColor = Color.Yellow;
+            label4.Location = new Point(650, 641);
+            label4.Name = "label4";
+            label4.Size = new Size(91, 20);
+            label4.TabIndex = 39;
+            label4.Text = "Seçili koltuk";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label5.ForeColor = Color.Blue;
+            label5.Location = new Point(563, 641);
+            label5.Name = "label5";
+            label5.Size = new Size(80, 20);
+            label5.TabIndex = 40;
+            label5.Text = "Boş koltuk";
             // 
             // FrmBiletOlusturma
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(749, 647);
+            ClientSize = new Size(749, 663);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(label2);
+            Controls.Add(pictureBox1);
             Controls.Add(BtnOlustur);
             Controls.Add(groupBox9);
             Controls.Add(groupBox8);
@@ -454,17 +546,21 @@
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)nYil).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nGun).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nAy).EndInit();
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
             groupBox6.ResumeLayout(false);
+            groupBox6.PerformLayout();
             groupBox7.ResumeLayout(false);
+            groupBox7.PerformLayout();
             groupBox8.ResumeLayout(false);
             groupBox9.ResumeLayout(false);
             groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -479,14 +575,9 @@
         private GroupBox groupBox3;
         private TextBox txtTelNo;
         private GroupBox groupBox4;
-        private NumericUpDown nYil;
-        private NumericUpDown nGun;
-        private NumericUpDown nAy;
         private GroupBox groupBox5;
         private Label label7;
         private GroupBox groupBox6;
-        private ComboBox cBDakika;
-        private ComboBox cBSaat;
         private ComboBox cBFilmAdi;
         private GroupBox groupBox7;
         private ComboBox cBSalonAdi;
@@ -495,5 +586,18 @@
         private GroupBox groupBox9;
         private TextBox txtKoltuk;
         private Button BtnOlustur;
+        private ComboBox cBTarih;
+        private FlowLayoutPanel PanelSEANS;
+        private Label lblseanssec;
+        private Label lblkoltuksayisi;
+        private PictureBox pictureBox1;
+        private Label label2;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private Label label3;
+        private Label label4;
+        private Label label5;
     }
 }

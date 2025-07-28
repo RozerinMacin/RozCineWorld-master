@@ -283,6 +283,16 @@ namespace RozCineWorld.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap kirmizi {
+            get {
+                object obj = ResourceManager.GetObject("kirmizi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap koltukikonu {
             get {
                 object obj = ResourceManager.GetObject("koltukikonu", resourceCulture);
@@ -306,6 +316,16 @@ namespace RozCineWorld.Properties {
         internal static System.Drawing.Bitmap koruvesiddet {
             get {
                 object obj = ResourceManager.GetObject("koruvesiddet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap Mavi {
+            get {
+                object obj = ResourceManager.GetObject("Mavi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +366,16 @@ namespace RozCineWorld.Properties {
         internal static System.Drawing.Bitmap Romantik {
             get {
                 object obj = ResourceManager.GetObject("Romantik", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap sari {
+            get {
+                object obj = ResourceManager.GetObject("sari", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

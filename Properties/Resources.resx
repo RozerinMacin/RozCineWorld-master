@@ -166,6 +166,9 @@
   <data name="depositphotos_181131144-stock-illustration-female-gender-symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\depositphotos_181131144-stock-illustration-female-gender-symbol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Suç" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Suç.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="png-clipart-gender-symbol-male-computer-icons-symbol-design-miscellaneous-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\png-clipart-gender-symbol-male-computer-icons-symbol-design-miscellaneous-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,7 +208,13 @@
   <data name="fotografyok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fotografyok1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Suç" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Suç.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kirmizi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kirmizi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mavi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mavi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
