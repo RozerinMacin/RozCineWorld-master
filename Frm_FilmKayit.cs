@@ -32,7 +32,7 @@ namespace RozCineWorld
             {
                 if (baglanti.State == ConnectionState.Closed)
                 {
-                    baglanti.Open(); 
+                    baglanti.Open();
                 }
                 SqlCommand komut = new SqlCommand("delete from Tbl_Secilenler", baglanti);
                 komut.ExecuteNonQuery();
@@ -583,6 +583,11 @@ namespace RozCineWorld
         void OzellikleriAl()
         {
             secilenOzellik = EtiketleriAl(gBFilm_ozellik);
+        }
+
+        private void gBFilm_bicimi_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
