@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;// SqlConnection sınıfını kullanmak için gerekli kütüphane
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Data.SqlClient;// SqlConnection sınıfını kullanmak için gerekli kütüphane
 
 namespace RozCineWorld
 {
@@ -113,16 +113,66 @@ namespace RozCineWorld
         {
             KoltukPaneli.Controls.Clear();
             int sayi = Convert.ToInt32(lblkoltuksayisi.Text);
-            for (int i = 1; i <= sayi; i++)
+            for (int i = 1; i <= sayi; i++)// Koltuk sayısı kadar döngü oluşturur
             {
-                Button btn = new Button();
-                btn.Text = i.ToString();
-                btn.Width = 50;
-                btn.Height = 50;
+                Button btn = new Button();// Yeni bir Button nesnesi oluşturur
+                if (i<= 8)// Koltuk numaralarını A1, A2, ..., H8 şeklinde ayarlar
+                {
+                    btn.Text ="A" + i.ToString();
+                    btn.Name ="A" + i.ToString();
+                }
+                else if (i <= 16)
+                {
+                    btn.Text = "B" + i.ToString();
+                    btn.Name = "B" + i.ToString();
+                }
+                else if (i <= 24)
+                {
+                    btn.Text = "C" + i.ToString();
+                    btn.Name = "C" + i.ToString();
+                }
+                else if (i <= 32)
+                {
+                    btn.Text = "D" + i.ToString();
+                    btn.Name = "D" + i.ToString();
+                }
+                else if (i <= 40)
+                {
+                    btn.Text = "E" + i.ToString();
+                    btn.Name = "E" + i.ToString();
+                }
+                else if (i <= 48)
+                {
+                    btn.Text = "F" + i.ToString();
+                    btn.Name = "F " + i.ToString();
+                }
+                else if (i <= 56)
+                {
+                    btn.Text = "G" + i.ToString();
+                    btn.Name = "G" + i.ToString();
+                }
+                else if (i <= 64)
+                {
+                    btn.Text = "H" + i.ToString();
+                    btn.Name = "H" + i.ToString();
+                }
+                btn.Width = 50;// Butonun genişliğini ayarlar
+                btn.Height = 50;// Butonun yüksekliğini ayarlar
+                btn.FlatStyle = FlatStyle.Flat; // Düğmenin stilini düz yapar
+                btn.FlatAppearance.BorderSize = 0;// Düğmenin kenarlık boyutunu sıfırlar
+                btn.Font = new System.Drawing.Font("Segoe UI Semibold", 10); // butonun fontunu ayarlar
+                btn.BackColor = Color.FromArgb(190, 61, 42); // butonun arka plan rengini sarı yapar
+                btn.ForeColor = Color.White; // butonun metin rengini beyaz yapar
+                btn.Cursor = Cursors.Hand; // butonun imlecini el yapar
+                btn.Click += btn_Click; // Butonun Click olayına btn_Click metodunu bağlar
                 KoltukPaneli.Controls.Add(btn);
             }
         }
-
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender; // Gönderilen nesneyi Button tipine dönüştürür
+            MessageBox.Show(btn.Text);
+        }
         private void cBTarih_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -203,7 +253,6 @@ namespace RozCineWorld
                 }
             }
         }
-
         private void cBSalonAdi_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -231,6 +280,57 @@ namespace RozCineWorld
                 {
                     connection.Close(); // Veritabanı bağlantısını kapatır
                 }
+            }
+            KoltukGetir(); // Koltukları getirir
+        }
+        void KoltukGetir()
+        {
+            try
+            {
+                lblgelenkoltuk.Text = ""; // Gelen koltukları temizler
+                string sorgu = "SELECT * FROM Tbl_Kontrol WHERE FILMADI = @filmadi AND TARIH = @tarih AND SEANS = @seans AND SALONADI = @salonadi";
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open(); // Veritabanı bağlantısını açar
+                }
+                SqlCommand command = new SqlCommand(sorgu, connection);
+                command.Parameters.AddWithValue("@filmadi", cBFilmAdi.Text);// Seçilen film adını parametre olarak ekler
+                command.Parameters.AddWithValue("@tarih", cBTarih.Text);// Seçilen tarihi parametre olarak ekler
+                command.Parameters.AddWithValue("@seans", lblseanssec.Text);// Seçilen seansı parametre olarak ekler
+                command.Parameters.AddWithValue("@salonadi", cBSalonAdi.Text);// Seçilen salon adını parametre olarak ekler
+                SqlDataReader oku = command.ExecuteReader();
+                while (oku.Read())
+                {
+                    lblgelenkoltuk.Text += " \n" + oku["KOLTUKLAR"]?.ToString() ?? "HATALI";
+                    if(lblgelenkoltuk.Text.Length > 2)
+                    {
+                        lblgelenkoltuk.Text = lblgelenkoltuk.Text.Substring(2); // İlk iki karakteri atar
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close(); // Veritabanı bağlantısını kapatır
+                }
+            }
+            Koltukayirma();
+        }
+        void Koltukayirma()
+        {
+            Koltuklistesi.Items.Clear();
+            string no = "";
+            string[] secilen;
+            no = lblgelenkoltuk.Text.ToString();
+            secilen  = no.Split(',');// Seçilen koltukları virgülle ayırır
+            foreach (string bulunan in secilen)
+            {
+                Koltuklistesi.Items.Add(bulunan); // Seçilen koltukları listeye ekler
             }
         }
     }
