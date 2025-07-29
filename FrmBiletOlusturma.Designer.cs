@@ -65,6 +65,7 @@
             label5 = new Label();
             lblgelenkoltuk = new Label();
             Koltuklistesi = new ListBox();
+            lbBelirlenen = new ListBox();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -325,6 +326,7 @@
             lblkoltuksayisi.Size = new Size(98, 19);
             lblkoltuksayisi.TabIndex = 33;
             lblkoltuksayisi.Text = "lblkoltuksayisi";
+            lblkoltuksayisi.Visible = false;
             // 
             // cBSalonAdi
             // 
@@ -428,18 +430,17 @@
             label2.BackColor = Color.Black;
             label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(262, 69);
+            label2.Location = new Point(477, 69);
             label2.Name = "label2";
-            label2.Size = new Size(170, 25);
+            label2.Size = new Size(0, 25);
             label2.TabIndex = 33;
-            label2.Text = "Perde       467; 454";
             // 
             // KoltukPaneli
             // 
             KoltukPaneli.AutoScroll = true;
             KoltukPaneli.Location = new Point(275, 106);
             KoltukPaneli.Name = "KoltukPaneli";
-            KoltukPaneli.Size = new Size(242, 454);
+            KoltukPaneli.Size = new Size(467, 454);
             KoltukPaneli.TabIndex = 34;
             // 
             // pictureBox2
@@ -510,11 +511,12 @@
             lblgelenkoltuk.AutoSize = true;
             lblgelenkoltuk.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblgelenkoltuk.ForeColor = Color.FromArgb(16, 46, 80);
-            lblgelenkoltuk.Location = new Point(523, 106);
+            lblgelenkoltuk.Location = new Point(523, 121);
             lblgelenkoltuk.Name = "lblgelenkoltuk";
             lblgelenkoltuk.Size = new Size(92, 28);
             lblgelenkoltuk.TabIndex = 41;
             lblgelenkoltuk.Text = "lblkoltuk";
+            lblgelenkoltuk.Visible = false;
             // 
             // Koltuklistesi
             // 
@@ -525,14 +527,21 @@
             Koltuklistesi.Size = new Size(185, 159);
             Koltuklistesi.TabIndex = 42;
             // 
+            // lbBelirlenen
+            // 
+            lbBelirlenen.FormattingEnabled = true;
+            lbBelirlenen.ItemHeight = 31;
+            lbBelirlenen.Location = new Point(536, 327);
+            lbBelirlenen.Name = "lbBelirlenen";
+            lbBelirlenen.Size = new Size(185, 159);
+            lbBelirlenen.TabIndex = 43;
+            // 
             // FrmBiletOlusturma
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             ClientSize = new Size(763, 671);
-            Controls.Add(Koltuklistesi);
-            Controls.Add(lblgelenkoltuk);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -553,6 +562,9 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(panel1);
+            Controls.Add(lbBelirlenen);
+            Controls.Add(Koltuklistesi);
+            Controls.Add(lblgelenkoltuk);
             Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.None;
             Location = new Point(425, 40);
@@ -626,5 +638,6 @@
         private object nYil;
         private Label lblgelenkoltuk;
         private ListBox Koltuklistesi;
+        private ListBox lbBelirlenen;
     }
 }

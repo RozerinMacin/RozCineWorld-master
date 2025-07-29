@@ -108,18 +108,261 @@ namespace RozCineWorld
                 }
             }
         }
+        void BiletNoSorgula()
+        {
+            try
+            {
+                string sorgu = "SELECT * FROM Tbl_Biletler WHERE BKOD = @BiletNo";
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                SqlCommand command = new SqlCommand(sorgu, connection);
+                command.Parameters.AddWithValue("@BiletNo",txtBiletno.Text);
+                SqlDataReader oku = command.ExecuteReader();
+                if(!oku.Read())
+                {
+                    oku.Close();
+                    KaydetMetodu();// Bilet numarası veritabanında yoksa KaydetMetodu metodunu çağırır
+                }
+                else
+                {
+                    BiletOlusturma();
+                    connection.Close(); // Veritabanı bağlantısını kapatır
+                    BiletNoSorgula();
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close(); // Veritabanı bağlantısını kapatır
+                }
+            }
+        }
+        void KaydetMetodu()
+        {
+            try
+            {
+                string sorgu = "insert into Tbl_Biletler (BKOD, ADSOYAD, TELNO, KOLTUKNO, FİLMADI, TARİH, SEANS, SALON, TUR, İSLEMSAATİ) values (@bkod, @adsoyad, @telno, @koltuno, @filmadi, @tarih, @seans, @salon, @tur, @islemsaati)";
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                SqlCommand command = new SqlCommand(sorgu, connection);
+                command.Parameters.AddWithValue("@bkod", txtBiletno.Text);
+                command.Parameters.AddWithValue("@adsoyad", txtAdSoyad.Text);
+                command.Parameters.AddWithValue("@telno", txtTelNo.Text);
+                command.Parameters.AddWithValue("@koltuno", txtKoltuk.Text);
+                command.Parameters.AddWithValue("@filmadi", cBFilmAdi.Text);
+                command.Parameters.AddWithValue("@tarih", cBTarih.Text);
+                command.Parameters.AddWithValue("@seans", lblseanssec.Text);
+                command.Parameters.AddWithValue("@salon", cBSalonAdi.Text);
+                command.Parameters.AddWithValue("@tur", cBBiletTuru.Text);
+                command.Parameters.AddWithValue("@islemsaati", DateTime.Now.ToString()); // İşlem saatini alır
+                command.ExecuteNonQuery(); // Sorguyu çalıştırır
+                MessageBox.Show("BİLET BAŞARILI BİR ŞEKİLDE OLUŞTURULDU!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+        }
         private void BtnOlustur_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtAdSoyad.Text != "" && txtBiletno.Text != "" && txtKoltuk.Text != "" && txtTelNo.Text != "" && cBBiletTuru.Text != "" && cBFilmAdi.Text != "" && cBSalonAdi.Text != "" && cBTarih.Text !="")
+                {
+                    BiletNoSorgula();
+                }
+                else
+                {
+                    MessageBox.Show("LÜTFEN TÜM ALANLARI EKSİKSİZ BİR ŞEKİLDE DOLDURUNUZ!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }   
+        void SecilenKoltuklar()
+        {
+            txtKoltuk.Text = "";
+            foreach (string item in lbBelirlenen.Items)
+            {
+                txtKoltuk.Text += " ," + item;
+            }
+            if (txtKoltuk.Text.Length > 2)
+            {
+                txtKoltuk.Text = txtKoltuk.Text.Substring(2); // İlk iki karakteri atar
+            }
+        }
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender; // Gönderilen nesneyi Button tipine dönüştürür
+            if (btn.ForeColor == Color.Black)
+            {
+                MessageBox.Show("BU KOLTUK DAHA ÖNCE SATIN ALINMIŞTIR!");
+            }
+            else
+            {
+                if (btn.ForeColor == Color.White)
+                {
+                    btn.Image = (System.Drawing.Image)(Properties.Resources.sari); // Butonun arka plan resmini kırmızı yapar
+                    btn.ForeColor = Color.FromArgb(225, 68, 52); // Butonun metin rengini siyah yapar
+                    lbBelirlenen.Items.Add(btn.Text); // Seçilen koltukları listeye ekler
+                    SecilenKoltuklar(); // Seçilen koltukları günceller
+                }
+                else
+    {
+                    btn.Image = (System.Drawing.Image)(Properties.Resources.Mavi); // Butonun arka plan resmini mavi yapar
+                    btn.ForeColor = Color.White;
+                    lbBelirlenen.Items.Remove(btn.Text); // Seçilen koltukları listeden kaldırır
+                    SecilenKoltuklar();
+                }
+            }
+        }
+        private void cBTarih_SelectedIndexChanged(object sender, EventArgs e)
+        {// Tarih combobox'ında seçim yapıldığında çalışır
+            try
+            {
+                PanelSEANS.Controls.Clear(); // Seans panelini temizler
+                string seans = "";
+                string sorgu = "SELECT DISTINCT SEANS FROM Tbl_Kontrol WHERE FILMADI = @filmadi AND TARIH = @tarih";// Seçilen film adının tarihlerini almak için sorgu ve aynı zamanda tarihleri tekrarsız olarak getirir
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open(); // Veritabanı bağlantısını açar
+                }
+                SqlCommand command = new SqlCommand(sorgu, connection);
+                command.Parameters.AddWithValue("@filmadi", cBFilmAdi.Text);// Seçilen film adını parametre olarak ekler
+                command.Parameters.AddWithValue("@tarih", cBTarih.Text);// Seçilen tarihi parametre olarak ekler
+                SqlDataReader oku = command.ExecuteReader();
+                while (oku.Read())
+                {
+                    seans = oku["SEANS"]?.ToString() ?? "HATALI";
+                    RadioButton radio = new RadioButton();
+                    radio.Text = seans; // Okunan seansı radio butonun metni olarak ayarlar
+                    radio.FlatStyle = FlatStyle.Flat; // Radio butonun stilini düz yapar
+                    radio.Cursor = Cursors.Hand; // Radio butonun imlecini el yapar
+                    radio.Width = 90; // Radio butonun genişliğini ayarlar
+                    radio.Font = new System.Drawing.Font("Segoe UI Semibold", 10); // Radio butonun fontunu ayarlar
+                    radio.CheckedChanged += new EventHandler(SeansSaatleri); // Radio butonun CheckedChanged olayına SeansSaatleri metodunu bağlar
+                    PanelSEANS.Controls.Add(radio); // Radio butonu panelin içine ekler
+                }
+                oku.Close(); // Okuyucu nesnesini kapatır
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close(); // Veritabanı bağlantısını kapatır
+                }
+            }
+        }
+        private void SeansSaatleri(object sender, EventArgs e)
+        {// Seans saatleri radio butonunun CheckedChanged olayında çalışır
+            foreach (RadioButton item in PanelSEANS.Controls)
+            {
+                if (item.Checked == true)
+                {
+                    lblseanssec.Text = item.Text;
+                    cBSalonAdi.Items.Clear(); // Salon adlarını temizler
+
+                    try
+                    {
+                        string sorgu = "SELECT DISTINCT SALONADI FROM Tbl_Kontrol WHERE FILMADI = @filmadi AND TARIH = @tarih AND SEANS = @seans";
+                        if (connection.State == ConnectionState.Closed)
+                        {
+                            connection.Open(); // Veritabanı bağlantısını açar
+                        }
+                        SqlCommand command = new SqlCommand(sorgu, connection);
+                        command.Parameters.AddWithValue("@filmadi", cBFilmAdi.Text);// Seçilen film adını parametre olarak ekler
+                        command.Parameters.AddWithValue("@tarih", cBTarih.Text);// Seçilen tarihi parametre olarak ekler
+                        command.Parameters.AddWithValue("@seans", lblseanssec.Text);// Seçilen seansı parametre olarak ekler
+                        SqlDataReader oku = command.ExecuteReader();
+                        while (oku.Read())
+                        {
+                            cBSalonAdi.Items.Add(oku["SALONADI"]?.ToString() ?? "HATALI");
+                        }
+                        oku.Close(); // Okuyucu nesnesini kapatır
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    finally
+                    {
+                        if (connection.State == ConnectionState.Open)
+                        {
+                            connection.Close(); // Veritabanı bağlantısını kapatır
+                        }
+                    }
+                }
+            }
+        }
+        private void cBSalonAdi_SelectedIndexChanged(object sender, EventArgs e)
+        {// Salon adları combobox'ında seçim yapıldığında çalışır
+            try
+            {
+                string sorgu = "SELECT *  FROM Tbl_Salonlar WHERE SalonAdı = @salonadi";
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open(); // Veritabanı bağlantısını açar
+                }
+                SqlCommand command = new SqlCommand(sorgu, connection);
+                command.Parameters.AddWithValue("@salonadi", cBSalonAdi.Text);// Seçilen salon adını parametre olarak ekler
+                SqlDataReader oku = command.ExecuteReader();
+                while (oku.Read())
+                {
+                    lblkoltuksayisi.Text = oku["KoltukSayısı"]?.ToString() ?? "HATALI";
+                    label2.Text = oku["SalonAdı"]?.ToString() ?? "HATALI";
+                }
+                oku.Close(); // Okuyucu nesnesini kapatır
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close(); // Veritabanı bağlantısını kapatır
+                }
+            }
+            KoltukGetir(); // Koltukları getirir
+            koltukislemleri();
+        }
+        void koltukislemleri()
         {
             KoltukPaneli.Controls.Clear();
             int sayi = Convert.ToInt32(lblkoltuksayisi.Text);
             for (int i = 1; i <= sayi; i++)// Koltuk sayısı kadar döngü oluşturur
             {
                 Button btn = new Button();// Yeni bir Button nesnesi oluşturur
-                if (i<= 8)// Koltuk numaralarını A1, A2, ..., H8 şeklinde ayarlar
+                if (i <= 8)// Koltuk numaralarını A1, A2, ..., H8 şeklinde ayarlar
                 {
-                    btn.Text ="A" + i.ToString();
-                    btn.Name ="A" + i.ToString();
+                    btn.Text = "A" + i.ToString();
+                    btn.Name = "A" + i.ToString();
                 }
                 else if (i <= 16)
                 {
@@ -161,127 +404,21 @@ namespace RozCineWorld
                 btn.FlatStyle = FlatStyle.Flat; // Düğmenin stilini düz yapar
                 btn.FlatAppearance.BorderSize = 0;// Düğmenin kenarlık boyutunu sıfırlar
                 btn.Font = new System.Drawing.Font("Segoe UI Semibold", 10); // butonun fontunu ayarlar
-                btn.BackColor = Color.FromArgb(190, 61, 42); // butonun arka plan rengini sarı yapar
                 btn.ForeColor = Color.White; // butonun metin rengini beyaz yapar
                 btn.Cursor = Cursors.Hand; // butonun imlecini el yapar
                 btn.Click += btn_Click; // Butonun Click olayına btn_Click metodunu bağlar
+
+                if (Koltuklistesi.Items.Contains(btn.Text))
+                {
+                    btn.Image = (System.Drawing.Image)(Properties.Resources.kirmizi);
+                    btn.ForeColor = Color.Black; // Düğmenin metin rengini siyah yapar
+                }
+                else
+                {
+                    btn.Image = (System.Drawing.Image)(Properties.Resources.Mavi);
+                }
                 KoltukPaneli.Controls.Add(btn);
             }
-        }
-        private void btn_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender; // Gönderilen nesneyi Button tipine dönüştürür
-            MessageBox.Show(btn.Text);
-        }
-        private void cBTarih_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                PanelSEANS.Controls.Clear(); // Seans panelini temizler
-                string seans = "";
-                string sorgu = "SELECT DISTINCT SEANS FROM Tbl_Kontrol WHERE FILMADI = @filmadi AND TARIH = @tarih";// Seçilen film adının tarihlerini almak için sorgu ve aynı zamanda tarihleri tekrarsız olarak getirir
-                if (connection.State == ConnectionState.Closed)
-                {
-                    connection.Open(); // Veritabanı bağlantısını açar
-                }
-                SqlCommand command = new SqlCommand(sorgu, connection);
-                command.Parameters.AddWithValue("@filmadi", cBFilmAdi.Text);// Seçilen film adını parametre olarak ekler
-                command.Parameters.AddWithValue("@tarih", cBTarih.Text);// Seçilen tarihi parametre olarak ekler
-                SqlDataReader oku = command.ExecuteReader();
-                while (oku.Read())
-                {
-                    seans = oku["SEANS"]?.ToString() ?? "HATALI";
-                    RadioButton radio = new RadioButton();
-                    radio.Text = seans; // Okunan seansı radio butonun metni olarak ayarlar
-                    radio.FlatStyle = FlatStyle.Flat; // Radio butonun stilini düz yapar
-                    radio.Cursor = Cursors.Hand; // Radio butonun imlecini el yapar
-                    radio.Width = 90; // Radio butonun genişliğini ayarlar
-                    radio.Font = new System.Drawing.Font("Segoe UI Semibold", 10); // Radio butonun fontunu ayarlar
-                    radio.CheckedChanged += new EventHandler(SeansSaatleri); // Radio butonun CheckedChanged olayına SeansSaatleri metodunu bağlar
-                    PanelSEANS.Controls.Add(radio); // Radio butonu panelin içine ekler
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close(); // Veritabanı bağlantısını kapatır
-                }
-            }
-        }
-        private void SeansSaatleri(object sender, EventArgs e)
-        {
-            foreach (RadioButton item in PanelSEANS.Controls)
-            {
-                if (item.Checked == true)
-                {
-                    lblseanssec.Text = item.Text;
-                    cBSalonAdi.Items.Clear(); // Salon adlarını temizler
-
-                    try
-                    {
-                        string sorgu = "SELECT DISTINCT SALONADI FROM Tbl_Kontrol WHERE FILMADI = @filmadi AND TARIH = @tarih AND SEANS = @seans";
-                        if (connection.State == ConnectionState.Closed)
-                        {
-                            connection.Open(); // Veritabanı bağlantısını açar
-                        }
-                        SqlCommand command = new SqlCommand(sorgu, connection);
-                        command.Parameters.AddWithValue("@filmadi", cBFilmAdi.Text);// Seçilen film adını parametre olarak ekler
-                        command.Parameters.AddWithValue("@tarih", cBTarih.Text);// Seçilen tarihi parametre olarak ekler
-                        command.Parameters.AddWithValue("@seans", lblseanssec.Text);// Seçilen seansı parametre olarak ekler
-                        SqlDataReader oku = command.ExecuteReader();
-                        while (oku.Read())
-                        {
-                            cBSalonAdi.Items.Add(oku["SALONADI"]?.ToString() ?? "HATALI");
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    finally
-                    {
-                        if (connection.State == ConnectionState.Open)
-                        {
-                            connection.Close(); // Veritabanı bağlantısını kapatır
-                        }
-                    }
-                }
-            }
-        }
-        private void cBSalonAdi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                string sorgu = "SELECT *  FROM Tbl_Salonlar WHERE SalonAdı = @salonadi";
-                if (connection.State == ConnectionState.Closed)
-                {
-                    connection.Open(); // Veritabanı bağlantısını açar
-                }
-                SqlCommand command = new SqlCommand(sorgu, connection);
-                command.Parameters.AddWithValue("@salonadi", cBSalonAdi.Text);// Seçilen salon adını parametre olarak ekler
-                SqlDataReader oku = command.ExecuteReader();
-                while (oku.Read())
-                {
-                    lblkoltuksayisi.Text = oku["KoltukSayısı"]?.ToString() ?? "HATALI";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close(); // Veritabanı bağlantısını kapatır
-                }
-            }
-            KoltukGetir(); // Koltukları getirir
         }
         void KoltukGetir()
         {
@@ -307,6 +444,7 @@ namespace RozCineWorld
                         lblgelenkoltuk.Text = lblgelenkoltuk.Text.Substring(2); // İlk iki karakteri atar
                     }
                 }
+                oku.Close(); // Okuyucu nesnesini kapatır
             }
             catch (Exception ex)
             {
