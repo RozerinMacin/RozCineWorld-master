@@ -33,6 +33,8 @@
             btnkapat = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            panel12 = new Panel();
+            button7 = new Button();
             panel11 = new Panel();
             button6 = new Button();
             panel10 = new Panel();
@@ -50,10 +52,11 @@
             panel4 = new Panel();
             btnyonetmenkayit = new Button();
             panel3 = new Panel();
-            panel12 = new Panel();
-            button7 = new Button();
+            panel13 = new Panel();
+            button8 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel12.SuspendLayout();
             panel11.SuspendLayout();
             panel10.SuspendLayout();
             panel9.SuspendLayout();
@@ -62,7 +65,7 @@
             panel6.SuspendLayout();
             panel5.SuspendLayout();
             panel4.SuspendLayout();
-            panel12.SuspendLayout();
+            panel13.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -117,6 +120,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(16, 46, 80);
+            panel2.Controls.Add(panel13);
             panel2.Controls.Add(panel12);
             panel2.Controls.Add(panel11);
             panel2.Controls.Add(panel10);
@@ -129,8 +133,35 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 45);
             panel2.Name = "panel2";
-            panel2.Size = new Size(312, 627);
+            panel2.Size = new Size(312, 602);
             panel2.TabIndex = 2;
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.FromArgb(79, 149, 157);
+            panel12.Controls.Add(button7);
+            panel12.Dock = DockStyle.Top;
+            panel12.Location = new Point(0, 480);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(312, 60);
+            panel12.TabIndex = 12;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(190, 61, 42);
+            button7.Cursor = Cursors.Hand;
+            button7.Dock = DockStyle.Top;
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(0, 0);
+            button7.Name = "button7";
+            button7.Size = new Size(312, 56);
+            button7.TabIndex = 0;
+            button7.Text = "BİLET SORGULAMA EKRANI";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // panel11
             // 
@@ -352,44 +383,44 @@
             // 
             panel3.BackColor = Color.FromArgb(16, 46, 80);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(312, 632);
+            panel3.Location = new Point(312, 607);
             panel3.Name = "panel3";
             panel3.Size = new Size(627, 40);
             panel3.TabIndex = 3;
             // 
-            // panel12
+            // panel13
             // 
-            panel12.BackColor = Color.FromArgb(79, 149, 157);
-            panel12.Controls.Add(button7);
-            panel12.Dock = DockStyle.Top;
-            panel12.Location = new Point(0, 480);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(312, 60);
-            panel12.TabIndex = 12;
+            panel13.BackColor = Color.FromArgb(79, 149, 157);
+            panel13.Controls.Add(button8);
+            panel13.Dock = DockStyle.Top;
+            panel13.Location = new Point(0, 540);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(312, 60);
+            panel13.TabIndex = 13;
             // 
-            // button7
+            // button8
             // 
-            button7.BackColor = Color.FromArgb(190, 61, 42);
-            button7.Cursor = Cursors.Hand;
-            button7.Dock = DockStyle.Top;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(0, 0);
-            button7.Name = "button7";
-            button7.Size = new Size(312, 56);
-            button7.TabIndex = 0;
-            button7.Text = "BİLET SORGULAMA EKRANI";
-            button7.UseVisualStyleBackColor = false;
-            button7.Click += button7_Click;
+            button8.BackColor = Color.FromArgb(190, 61, 42);
+            button8.Cursor = Cursors.Hand;
+            button8.Dock = DockStyle.Top;
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(0, 0);
+            button8.Name = "button8";
+            button8.Size = new Size(312, 56);
+            button8.TabIndex = 0;
+            button8.Text = "SALON ATAMA EKRANI";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // FrmAnaForm
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(939, 672);
+            ClientSize = new Size(939, 647);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -403,6 +434,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel12.ResumeLayout(false);
             panel11.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel9.ResumeLayout(false);
@@ -411,7 +443,7 @@
             panel6.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel12.ResumeLayout(false);
+            panel13.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -441,5 +473,7 @@
         private Button button6;
         private Panel panel12;
         private Button button7;
+        private Panel panel13;
+        private Button button8;
     }
 }

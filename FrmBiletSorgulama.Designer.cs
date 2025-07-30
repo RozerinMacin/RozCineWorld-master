@@ -92,6 +92,7 @@
             txtBiletNo.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtBiletNo.ForeColor = Color.FromArgb(16, 46, 80);
             txtBiletNo.Location = new Point(169, 68);
+            txtBiletNo.MaxLength = 10;
             txtBiletNo.Name = "txtBiletNo";
             txtBiletNo.Size = new Size(303, 30);
             txtBiletNo.TabIndex = 12;

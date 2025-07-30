@@ -30,12 +30,12 @@
         {
             panel1 = new Panel();
             btnkapat = new Button();
-            label1 = new Label();
             label2 = new Label();
             txtkullaniciadi = new TextBox();
             txtsifre = new TextBox();
             label3 = new Label();
             btngiris = new Button();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,17 +66,6 @@
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
             btnkapat.Click += btnkapat_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(4, 8);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 32);
-            label1.TabIndex = 1;
-            label1.Text = "RozCineWorld";
             // 
             // label2
             // 
@@ -135,6 +124,17 @@
             btngiris.UseVisualStyleBackColor = false;
             btngiris.Click += btngiris_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(4, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(174, 32);
+            label1.TabIndex = 1;
+            label1.Text = "RozCineWorld";
+            // 
             // Frmacilis
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
@@ -161,12 +161,12 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
         private Button btnkapat;
         private Label label2;
         private TextBox txtkullaniciadi;
         private TextBox txtsifre;
         private Label label3;
         private Button btngiris;
+        private Label label1;
     }
 }

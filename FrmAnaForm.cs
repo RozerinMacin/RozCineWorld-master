@@ -86,5 +86,11 @@ namespace RozCineWorld
             FrmBiletSorgulama frm = new FrmBiletSorgulama();
             frm.ShowDialog();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmSalonAtama frm = new frmSalonAtama();
+            frm.ShowDialog();
+        }
     }
 }

@@ -183,6 +183,16 @@ namespace RozCineWorld.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap bilet {
+            get {
+                object obj = ResourceManager.GetObject("bilet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap Bilim_Kurgu1 {
             get {
                 object obj = ResourceManager.GetObject("Bilim_Kurgu1", resourceCulture);
@@ -353,6 +363,26 @@ namespace RozCineWorld.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap qr_code {
+            get {
+                object obj = ResourceManager.GetObject("qr-code", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap qr_code_1_ {
+            get {
+                object obj = ResourceManager.GetObject("qr-code(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap reyting {
             get {
                 object obj = ResourceManager.GetObject("reyting", resourceCulture);
@@ -386,6 +416,36 @@ namespace RozCineWorld.Properties {
         internal static System.Drawing.Bitmap Suç {
             get {
                 object obj = ResourceManager.GetObject("Suç", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap ticket {
+            get {
+                object obj = ResourceManager.GetObject("ticket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_camera {
+            get {
+                object obj = ResourceManager.GetObject("video-camera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap videography {
+            get {
+                object obj = ResourceManager.GetObject("videography", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
