@@ -79,5 +79,12 @@ namespace RozCineWorld
             FrmBiletOlusturma frm = new FrmBiletOlusturma();
             frm.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // Bilet sorgulama formunu açar.
+            FrmBiletSorgulama frm = new FrmBiletSorgulama();
+            frm.ShowDialog();
+        }
     }
 }

@@ -23,7 +23,6 @@ namespace RozCineWorld
         {
             this.Close(); // Bilet oluşturma formunu kapatır
         }
-
         private void FrmBiletOlusturma_Load(object sender, EventArgs e)
         {
             FilmAdiGetir();
@@ -77,7 +76,6 @@ namespace RozCineWorld
                 }
             }
         }
-
         private void cBFilmAdi_SelectedIndexChanged(object sender, EventArgs e)
         {// Film adları combobox'ında seçim yapıldığında çalışır
             try
@@ -118,9 +116,9 @@ namespace RozCineWorld
                     connection.Open();
                 }
                 SqlCommand command = new SqlCommand(sorgu, connection);
-                command.Parameters.AddWithValue("@BiletNo",txtBiletno.Text);
+                command.Parameters.AddWithValue("@BiletNo", txtBiletno.Text);
                 SqlDataReader oku = command.ExecuteReader();
-                if(!oku.Read())
+                if (!oku.Read())
                 {
                     oku.Close();
                     KaydetMetodu();// Bilet numarası veritabanında yoksa KaydetMetodu metodunu çağırır
@@ -149,6 +147,7 @@ namespace RozCineWorld
         {
             try
             {
+                string Gsorgu = "UPDATE Tbl_Kontrol SET KOLTUKLAR = @koltuklar WHERE FILMADI = @Filmadi AND SEANS = @Seans AND TARIH = @Tarih AND SALONADI = @Salonadi";
                 string sorgu = "insert into Tbl_Biletler (BKOD, ADSOYAD, TELNO, KOLTUKNO, FİLMADI, TARİH, SEANS, SALON, TUR, İSLEMSAATİ) values (@bkod, @adsoyad, @telno, @koltuno, @filmadi, @tarih, @seans, @salon, @tur, @islemsaati)";
                 if (connection.State == ConnectionState.Closed)
                 {
@@ -166,8 +165,27 @@ namespace RozCineWorld
                 command.Parameters.AddWithValue("@tur", cBBiletTuru.Text);
                 command.Parameters.AddWithValue("@islemsaati", DateTime.Now.ToString()); // İşlem saatini alır
                 command.ExecuteNonQuery(); // Sorguyu çalıştırır
+                //eklenen koltukları güncelleme sorgusu
+                SqlCommand Guncelleme = new SqlCommand(Gsorgu, connection);
+                if (lblgelenkoltuk.Text.ToString() == "")
+                {
+                    Guncelleme.Parameters.AddWithValue("@koltuklar", txtKoltuk.Text.ToString());
+                }
+                else
+                {
+                    Guncelleme.Parameters.AddWithValue("@koltuklar", lblgelenkoltuk.Text.ToString() + "," + txtKoltuk.Text.ToString());
+                }
+                Guncelleme.Parameters.AddWithValue("@Filmadi", cBFilmAdi.Text);
+                Guncelleme.Parameters.AddWithValue("@Seans", lblseanssec.Text);
+                Guncelleme.Parameters.AddWithValue("@Tarih", cBTarih.Text);
+                Guncelleme.Parameters.AddWithValue("@Salonadi", cBSalonAdi.Text);
+                Guncelleme.ExecuteNonQuery(); // Güncelleme sorgusunu çalıştırır
+                SalonDurumGeldi(); // Salon durumunu günceller
                 MessageBox.Show("BİLET BAŞARILI BİR ŞEKİLDE OLUŞTURULDU!");
-
+                lblgelenkoltuk.Text = ""; // Gelen koltukları temizler
+                Koltuklistesi.Items.Clear(); // Koltuk listesini temizler
+                lbBelirlenen.Items.Clear(); // Belirlenen koltukları temizler
+                txtKoltuk.Text = ""; // Koltuk textbox'ını temizler
             }
             catch (Exception ex)
             {
@@ -185,7 +203,7 @@ namespace RozCineWorld
         {
             try
             {
-                if (txtAdSoyad.Text != "" && txtBiletno.Text != "" && txtKoltuk.Text != "" && txtTelNo.Text != "" && cBBiletTuru.Text != "" && cBFilmAdi.Text != "" && cBSalonAdi.Text != "" && cBTarih.Text !="")
+                if (txtAdSoyad.Text != "" && txtBiletno.Text != "" && txtKoltuk.Text != "" && txtTelNo.Text != "" && cBBiletTuru.Text != "" && cBFilmAdi.Text != "" && cBSalonAdi.Text != "" && cBTarih.Text != "")
                 {
                     BiletNoSorgula();
                 }
@@ -198,18 +216,17 @@ namespace RozCineWorld
             {
                 MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-        }   
+        }
         void SecilenKoltuklar()
         {
             txtKoltuk.Text = "";
             foreach (string item in lbBelirlenen.Items)
             {
-                txtKoltuk.Text += " ," + item;
+                txtKoltuk.Text += "," + item;
             }
-            if (txtKoltuk.Text.Length > 2)
+            if (txtKoltuk.Text.Length > 1)
             {
-                txtKoltuk.Text = txtKoltuk.Text.Substring(2); // İlk iki karakteri atar
+                txtKoltuk.Text = txtKoltuk.Text.Substring(1); // İlk iki karakteri atar
             }
         }
         private void btn_Click(object sender, EventArgs e)
@@ -229,7 +246,7 @@ namespace RozCineWorld
                     SecilenKoltuklar(); // Seçilen koltukları günceller
                 }
                 else
-    {
+                {
                     btn.Image = (System.Drawing.Image)(Properties.Resources.Mavi); // Butonun arka plan resmini mavi yapar
                     btn.ForeColor = Color.White;
                     lbBelirlenen.Items.Remove(btn.Text); // Seçilen koltukları listeden kaldırır
@@ -320,7 +337,12 @@ namespace RozCineWorld
             }
         }
         private void cBSalonAdi_SelectedIndexChanged(object sender, EventArgs e)
-        {// Salon adları combobox'ında seçim yapıldığında çalışır
+        {
+            SalonDurumGeldi(); // Salon adları combobox'ında seçim yapıldığında SalonDurumGeldi metodunu çağırır
+        }
+        void SalonDurumGeldi()
+        {
+            // Salon adları combobox'ında seçim yapıldığında çalışır
             try
             {
                 string sorgu = "SELECT *  FROM Tbl_Salonlar WHERE SalonAdı = @salonadi";
@@ -366,38 +388,38 @@ namespace RozCineWorld
                 }
                 else if (i <= 16)
                 {
-                    btn.Text = "B" + i.ToString();
-                    btn.Name = "B" + i.ToString();
+                    btn.Text = "B" + (i - 8).ToString();
+                    btn.Name = "B" + (i - 8).ToString();
                 }
                 else if (i <= 24)
                 {
-                    btn.Text = "C" + i.ToString();
-                    btn.Name = "C" + i.ToString();
+                    btn.Text = "C" + (i - 16).ToString();
+                    btn.Name = "C" + (i - 16).ToString();
                 }
                 else if (i <= 32)
                 {
-                    btn.Text = "D" + i.ToString();
-                    btn.Name = "D" + i.ToString();
+                    btn.Text = "D" + (i - 24).ToString();
+                    btn.Name = "D" + (i - 24).ToString();
                 }
                 else if (i <= 40)
                 {
-                    btn.Text = "E" + i.ToString();
-                    btn.Name = "E" + i.ToString();
+                    btn.Text = "E" + (i - 32).ToString();
+                    btn.Name = "E" + (i - 32).ToString();
                 }
                 else if (i <= 48)
                 {
-                    btn.Text = "F" + i.ToString();
-                    btn.Name = "F " + i.ToString();
+                    btn.Text = "F" + (i - 40).ToString();
+                    btn.Name = "F" + (i - 40).ToString();
                 }
                 else if (i <= 56)
                 {
-                    btn.Text = "G" + i.ToString();
-                    btn.Name = "G" + i.ToString();
+                    btn.Text = "G" + (i - 48).ToString();
+                    btn.Name = "G" + (i - 48).ToString();
                 }
                 else if (i <= 64)
                 {
-                    btn.Text = "H" + i.ToString();
-                    btn.Name = "H" + i.ToString();
+                    btn.Text = "H" + (i - 56).ToString();
+                    btn.Name = "H" + (i - 56).ToString();
                 }
                 btn.Width = 50;// Butonun genişliğini ayarlar
                 btn.Height = 50;// Butonun yüksekliğini ayarlar
@@ -407,7 +429,6 @@ namespace RozCineWorld
                 btn.ForeColor = Color.White; // butonun metin rengini beyaz yapar
                 btn.Cursor = Cursors.Hand; // butonun imlecini el yapar
                 btn.Click += btn_Click; // Butonun Click olayına btn_Click metodunu bağlar
-
                 if (Koltuklistesi.Items.Contains(btn.Text))
                 {
                     btn.Image = (System.Drawing.Image)(Properties.Resources.kirmizi);
@@ -420,7 +441,7 @@ namespace RozCineWorld
                 KoltukPaneli.Controls.Add(btn);
             }
         }
-        void KoltukGetir()
+        void KoltukGetir()// Seçilen film, tarih, seans ve salon bilgilerine göre veritabanından koltukları getirir
         {
             try
             {
@@ -438,10 +459,14 @@ namespace RozCineWorld
                 SqlDataReader oku = command.ExecuteReader();
                 while (oku.Read())
                 {
-                    lblgelenkoltuk.Text += " \n" + oku["KOLTUKLAR"]?.ToString() ?? "HATALI";
-                    if(lblgelenkoltuk.Text.Length > 2)
+                    lblgelenkoltuk.Text += " ," + oku["KOLTUKLAR"]?.ToString() ?? "HATALI";
+                    if (lblgelenkoltuk.Text.Length > 2)
                     {
                         lblgelenkoltuk.Text = lblgelenkoltuk.Text.Substring(2); // İlk iki karakteri atar
+                    }
+                    else
+                    {
+                        lblgelenkoltuk.Text = "";
                     }
                 }
                 oku.Close(); // Okuyucu nesnesini kapatır
@@ -460,16 +485,42 @@ namespace RozCineWorld
             Koltukayirma();
         }
         void Koltukayirma()
-        {
-            Koltuklistesi.Items.Clear();
-            string no = "";
-            string[] secilen;
+        {// Seçilen koltukları listeye ekler
+            Koltuklistesi.Items.Clear();// Koltuk listesini temizler
+            string no = "";// Seçilen koltuk numaralarını tutacak değişken
+            string[] secilen;// Seçilen koltuk numaralarını tutacak dizi
             no = lblgelenkoltuk.Text.ToString();
-            secilen  = no.Split(',');// Seçilen koltukları virgülle ayırır
-            foreach (string bulunan in secilen)
+            secilen = no.Split(',');// Seçilen koltukları virgülle ayırır
+            foreach (string bulunan in secilen)// Her bir seçilen koltuk için döngü başlatır
             {
                 Koltuklistesi.Items.Add(bulunan); // Seçilen koltukları listeye ekler
             }
+        }
+        private void btntemizle_Click(object sender, EventArgs e)
+        {
+            txtAdSoyad.Text = ""; // Ad Soyad textbox'ını temizler
+            txtTelNo.Text = ""; // Telefon Numarası textbox'ını temizler
+            txtKoltuk.Text = ""; // Koltuk textbox'ını temizler
+            cBBiletTuru.Text = ""; // Bilet Türü combobox'ını temizler
+            cBSalonAdi.Text = ""; // Salon Adı combobox'ını temizler
+            cBTarih.Text = ""; // Tarih combobox'ını temizler
+            txtBiletno.Text = ""; // Bilet Numarası textbox'ını temizler 
+            cBTarih.Items.Clear(); 
+            cBSalonAdi.Items.Clear();
+            cBBiletTuru.Items.Clear();
+            cBBiletTuru.Items.Add("YETİŞKİN");
+            cBBiletTuru.Items.Add("ÖĞRENCİ");
+            KoltukPaneli.Controls.Clear(); // Koltuk panelini temizler
+            PanelSEANS.Controls.Clear(); // Seans panelini temizler
+            lblgelenkoltuk.Text = ""; // Gelen koltukları temizler
+            lbBelirlenen.Items.Clear(); // Belirlenen koltukları temizler
+            Koltuklistesi.Items.Clear(); // Koltuk listesini temizler
+            lblkoltuksayisi.Text = ""; // Koltuk sayısını temizler
+            lblseanssec.Text = ""; // Seçilen seansı temizler
+            BiletOlusturma(); // Yeni bir bilet numarası oluşturur
+            cBFilmAdi.Items.Clear(); // Film adlarını temizler
+            FilmAdiGetir(); // Film adlarını tekrar getirir
+            txtAdSoyad.Focus(); // Ad Soyad textbox'ına odaklanır
         }
     }
 }

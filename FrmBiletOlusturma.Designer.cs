@@ -42,7 +42,7 @@
             cBFilmAdi = new ComboBox();
             groupBox5 = new GroupBox();
             cBTarih = new ComboBox();
-            label7 = new Label();
+            lblgun = new Label();
             groupBox6 = new GroupBox();
             lblseanssec = new Label();
             PanelSEANS = new FlowLayoutPanel();
@@ -66,6 +66,7 @@
             lblgelenkoltuk = new Label();
             Koltuklistesi = new ListBox();
             lbBelirlenen = new ListBox();
+            btntemizle = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -228,7 +229,7 @@
             // groupBox5
             // 
             groupBox5.Controls.Add(cBTarih);
-            groupBox5.Controls.Add(label7);
+            groupBox5.Controls.Add(lblgun);
             groupBox5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox5.ForeColor = Color.FromArgb(16, 46, 80);
             groupBox5.Location = new Point(6, 282);
@@ -255,16 +256,16 @@
             cBTarih.TabIndex = 28;
             cBTarih.SelectedIndexChanged += cBTarih_SelectedIndexChanged;
             // 
-            // label7
+            // lblgun
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label7.ForeColor = Color.FromArgb(16, 46, 80);
-            label7.Location = new Point(166, 3);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 19);
-            label7.TabIndex = 27;
-            label7.Text = "GG/AA/YY";
+            lblgun.AutoSize = true;
+            lblgun.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblgun.ForeColor = Color.FromArgb(16, 46, 80);
+            lblgun.Location = new Point(166, 3);
+            lblgun.Name = "lblgun";
+            lblgun.Size = new Size(75, 19);
+            lblgun.TabIndex = 27;
+            lblgun.Text = "GG/AA/YY";
             // 
             // groupBox6
             // 
@@ -408,7 +409,7 @@
             BtnOlustur.ForeColor = Color.White;
             BtnOlustur.Location = new Point(6, 627);
             BtnOlustur.Name = "BtnOlustur";
-            BtnOlustur.Size = new Size(740, 41);
+            BtnOlustur.Size = new Size(253, 41);
             BtnOlustur.TabIndex = 31;
             BtnOlustur.Text = "OLUŞTUR";
             BtnOlustur.UseVisualStyleBackColor = false;
@@ -446,7 +447,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.kirmizi;
-            pictureBox2.Location = new Point(379, 564);
+            pictureBox2.Location = new Point(404, 564);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(45, 45);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -456,7 +457,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Mavi;
-            pictureBox3.Location = new Point(472, 566);
+            pictureBox3.Location = new Point(497, 566);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(45, 45);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -466,7 +467,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.sari;
-            pictureBox4.Location = new Point(563, 566);
+            pictureBox4.Location = new Point(588, 566);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(45, 45);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -478,7 +479,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(367, 609);
+            label3.Location = new Point(392, 609);
             label3.Name = "label3";
             label3.Size = new Size(69, 15);
             label3.TabIndex = 38;
@@ -489,7 +490,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold);
             label4.ForeColor = Color.Yellow;
-            label4.Location = new Point(554, 609);
+            label4.Location = new Point(579, 609);
             label4.Name = "label4";
             label4.Size = new Size(71, 15);
             label4.TabIndex = 39;
@@ -500,7 +501,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold);
             label5.ForeColor = Color.Blue;
-            label5.Location = new Point(464, 610);
+            label5.Location = new Point(489, 610);
             label5.Name = "label5";
             label5.Size = new Size(62, 15);
             label5.TabIndex = 40;
@@ -536,12 +537,29 @@
             lbBelirlenen.Size = new Size(185, 159);
             lbBelirlenen.TabIndex = 43;
             // 
+            // btntemizle
+            // 
+            btntemizle.BackColor = Color.FromArgb(190, 61, 42);
+            btntemizle.Cursor = Cursors.Hand;
+            btntemizle.FlatAppearance.BorderSize = 0;
+            btntemizle.FlatStyle = FlatStyle.Flat;
+            btntemizle.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btntemizle.ForeColor = Color.White;
+            btntemizle.Location = new Point(275, 628);
+            btntemizle.Name = "btntemizle";
+            btntemizle.Size = new Size(467, 41);
+            btntemizle.TabIndex = 44;
+            btntemizle.Text = "TEMİZLE";
+            btntemizle.UseVisualStyleBackColor = false;
+            btntemizle.Click += btntemizle_Click;
+            // 
             // FrmBiletOlusturma
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             ClientSize = new Size(763, 671);
+            Controls.Add(btntemizle);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -612,7 +630,7 @@
         private TextBox txtTelNo;
         private GroupBox groupBox4;
         private GroupBox groupBox5;
-        private Label label7;
+        private Label lblgun;
         private GroupBox groupBox6;
         private ComboBox cBFilmAdi;
         private GroupBox groupBox7;
@@ -639,5 +657,6 @@
         private Label lblgelenkoltuk;
         private ListBox Koltuklistesi;
         private ListBox lbBelirlenen;
+        private Button btntemizle;
     }
 }
