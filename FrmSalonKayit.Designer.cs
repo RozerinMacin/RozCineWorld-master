@@ -186,7 +186,7 @@
             Location = new Point(550, 100);
             Margin = new Padding(5);
             Name = "FrmSalonKayit";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmSalonKayit";
             Load += FrmSalonKayit_Load;
             panel1.ResumeLayout(false);

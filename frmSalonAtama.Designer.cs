@@ -35,8 +35,8 @@
             btntemizle = new Button();
             BtnOlustur = new Button();
             groupBox7 = new GroupBox();
-            lblkoltuksayisi = new Label();
             cBSalonAdi = new ComboBox();
+            lblsecilen = new Label();
             groupBox6 = new GroupBox();
             PanelSEANS = new FlowLayoutPanel();
             groupBox5 = new GroupBox();
@@ -126,6 +126,7 @@
             btntemizle.TabIndex = 50;
             btntemizle.Text = "TEMİZLE";
             btntemizle.UseVisualStyleBackColor = false;
+            btntemizle.Click += btntemizle_Click;
             // 
             // BtnOlustur
             // 
@@ -145,7 +146,6 @@
             // 
             // groupBox7
             // 
-            groupBox7.Controls.Add(lblkoltuksayisi);
             groupBox7.Controls.Add(cBSalonAdi);
             groupBox7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox7.ForeColor = Color.FromArgb(16, 46, 80);
@@ -156,18 +156,6 @@
             groupBox7.TabIndex = 48;
             groupBox7.TabStop = false;
             groupBox7.Text = "Salon Adı";
-            // 
-            // lblkoltuksayisi
-            // 
-            lblkoltuksayisi.AutoSize = true;
-            lblkoltuksayisi.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblkoltuksayisi.ForeColor = Color.FromArgb(16, 46, 80);
-            lblkoltuksayisi.Location = new Point(149, 3);
-            lblkoltuksayisi.Name = "lblkoltuksayisi";
-            lblkoltuksayisi.Size = new Size(98, 19);
-            lblkoltuksayisi.TabIndex = 33;
-            lblkoltuksayisi.Text = "lblkoltuksayisi";
-            lblkoltuksayisi.Visible = false;
             // 
             // cBSalonAdi
             // 
@@ -183,6 +171,18 @@
             cBSalonAdi.Name = "cBSalonAdi";
             cBSalonAdi.Size = new Size(240, 31);
             cBSalonAdi.TabIndex = 2;
+            // 
+            // lblsecilen
+            // 
+            lblsecilen.AutoSize = true;
+            lblsecilen.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblsecilen.ForeColor = Color.FromArgb(16, 46, 80);
+            lblsecilen.Location = new Point(443, 356);
+            lblsecilen.Name = "lblsecilen";
+            lblsecilen.Size = new Size(116, 23);
+            lblsecilen.TabIndex = 33;
+            lblsecilen.Text = "lblkoltuksayisi";
+            lblsecilen.Visible = false;
             // 
             // groupBox6
             // 
@@ -313,6 +313,7 @@
             groupBox1.TabIndex = 51;
             groupBox1.TabStop = false;
             groupBox1.Text = "dolu saatler";
+            groupBox1.Visible = false;
             // 
             // cBDoluSaatler
             // 
@@ -334,7 +335,8 @@
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(747, 402);
+            ClientSize = new Size(747, 323);
+            Controls.Add(lblsecilen);
             Controls.Add(groupBox1);
             Controls.Add(btntemizle);
             Controls.Add(BtnOlustur);
@@ -354,7 +356,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox7.ResumeLayout(false);
-            groupBox7.PerformLayout();
             groupBox6.ResumeLayout(false);
             groupBox5.ResumeLayout(false);
             groupBox5.PerformLayout();
@@ -364,6 +365,7 @@
             groupBox4.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -375,7 +377,7 @@
         private Button btntemizle;
         private Button BtnOlustur;
         private GroupBox groupBox7;
-        private Label lblkoltuksayisi;
+        private Label lblsecilen;
         private ComboBox cBSalonAdi;
         private GroupBox groupBox6;
         private FlowLayoutPanel PanelSEANS;

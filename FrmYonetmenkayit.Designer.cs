@@ -405,7 +405,7 @@
             Location = new Point(550, 100);
             Margin = new Padding(5, 6, 5, 6);
             Name = "FrmYonetmenkayit";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmYonetmenkayit";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

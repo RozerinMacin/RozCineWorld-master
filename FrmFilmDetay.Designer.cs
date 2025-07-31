@@ -104,7 +104,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(1, 1);
             label1.Name = "label1";
-            label1.Size = new Size(207, 25);
+            label1.Size = new Size(265, 32);
             label1.TabIndex = 1;
             label1.Text = "[FİLM DETAY EKRANI]";
             // 
@@ -356,7 +356,7 @@
             // 
             // FrmFilmDetay
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             ClientSize = new Size(767, 607);
@@ -377,7 +377,7 @@
             Location = new Point(475, 85);
             Margin = new Padding(5);
             Name = "FrmFilmDetay";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmFilmDetay";
             Load += FrmFilmDetay_Load;
             panel1.ResumeLayout(false);

@@ -104,27 +104,120 @@ namespace RozCineWorld
         {
             if (BtnOlustur.Text == "TAMAMLA")
             {
-                string tarih = nGun.Value + "." + nAy.Value + "." + nYil.Value; // Tarih bilgisini alır
+                string tarih = nGun.Value.ToString("00") + "." + nAy.Value.ToString("00") + "." + nYil.Value; // Tarih bilgisini alır
                 string sorgu = "select DISTINCT SEANS from Tbl_Kontrol where TARIH = @tarih AND SALONADI = @salonadi ";
                 connection.Open(); // Veritabanı bağlantısını açar
                 SqlCommand command = new SqlCommand(sorgu, connection); // Sorgu komutunu oluşturur
-                command.Parameters.AddWithValue("@tarih",tarih); // Tarih parametresini ekler
+                command.Parameters.AddWithValue("@tarih", tarih); // Tarih parametresini ekler
                 command.Parameters.AddWithValue("@salonadi", cBSalonAdi.Text); // Salon adı parametresini ekler
                 SqlDataReader oku = command.ExecuteReader(); // Sorguyu çalıştırır ve verileri okur
-                while(oku.Read())
+                while (oku.Read())
                 {
-                    cBDoluSaatler.Items.Add(oku["SEANS"]?.ToString() ?? "Seans bilgisi hatalı."); // Dolu saatleri combobox'a ekler
+                    cBDoluSaatler.Items.Add(oku["SEANS"]?.ToString() ?? ""); // Dolu saatleri combobox'a ekler
 
                 }
-                connection.Close(); // Veritabanı bağlantısını kapatır
                 BtnOlustur.Text = "OLUŞTUR";
                 BtnOlustur.BackColor = Color.FromArgb(16, 46, 80); // Butonun arka plan rengini yeşil yapar
+                connection.Close(); // Veritabanı bağlantısını kapatır
+                SeansKontrol();
             }
             else
             {
-                cBDoluSaatler.Items.Clear(); // Dolu saatler combobox'ını temizler
                 BtnOlustur.Text = "TAMAMLA";
                 BtnOlustur.BackColor = Color.FromArgb(190, 61, 42); // Butonun arka plan rengini yeşil yapar
+                Kaydet(); // Salon atama işlemini kaydeder
+                temizle(); // Temizleme işlemini yapar
+            }
+
+        }
+        void Kaydet()
+        {
+            try
+            {
+                string tarih = nGun.Value.ToString("00") + "." + nAy.Value.ToString("00") + "." + nYil.Value; // Tarih bilgisini alır
+                string sorgu = "insert into Tbl_Kontrol(FILMADI,TARIH,SEANS,SALONADI) VALUES(@filmadi, @tarih, @seans, @salonadi)";
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                SqlCommand ekle = new SqlCommand(sorgu, connection);
+                ekle.Parameters.AddWithValue("@filmadi", cBFilmAdi.Text);
+                ekle.Parameters.AddWithValue("@tarih",tarih);
+                ekle.Parameters.AddWithValue("@seans", lblsecilen.Text);
+                ekle.Parameters.AddWithValue("@salonadi", cBSalonAdi.Text);
+                ekle.ExecuteNonQuery(); // Sorguyu çalıştırır
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+            MessageBox.Show("SALON ATAMA İŞLEMİMİZ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİ.");
+        }
+        void SeansSaatleri(object sender , EventArgs e)
+        {
+            foreach (RadioButton item in PanelSEANS.Controls)
+            {
+                if (item.Checked)
+                {
+                    lblsecilen.Text = item.Text.ToString();
+                }
+            }
+        }
+        private void btntemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
+        }
+        void temizle()
+        {
+            cBFilmAdi.Items.Clear(); // Film adları combobox'ını temizler
+            cBSalonAdi.Items.Clear(); // Salon adları combobox'ını temizler
+            cBDoluSaatler.Items.Clear(); // Dolu saatler combobox'ını temizler
+            lblsecilen.Text = "";
+            bugununtarihi(); // Bugünün tarihini günceller
+            FilmAdiGetir(); // Film adlarını tekrar getirir
+            SalonAdiGetir(); // Salon adlarını tekrar getirir
+            PanelSEANS.Controls.Clear(); // Seans panelini temizler
+            BtnOlustur.Text = "TAMAMLA"; // Butonun metnini "TAMAMLA" olarak ayarlar
+        }
+        void SeansKontrol()
+        {
+            PanelSEANS.Controls.Clear();
+            for (int i = 10; i <= 22; i++)
+            {
+                for (int j = 0; j <= 30; j += 30)
+                {
+                    string saat = i.ToString("00") + "." + j.ToString("00");
+                    RadioButton radio = new RadioButton
+                    {
+                        Text = saat,
+                        FlatStyle = FlatStyle.Flat,
+                        Cursor = Cursors.Hand,
+                        Font = new Font("Segoe UI Semibold", 10)
+                    };
+                    // Dolu saatleri kontrol et
+                    bool saatDoluMu = false;
+                    foreach (var item in cBDoluSaatler.Items)
+                    {
+                        if (item.ToString().Trim() == saat)
+                        {
+                            saatDoluMu = true;
+                            break;
+                        }
+                    }
+                    if (saatDoluMu)
+                    {
+                        radio.Enabled = false;
+                    }
+                    radio.CheckedChanged += new EventHandler(SeansSaatleri);
+                    PanelSEANS.Controls.Add(radio);
+                }
             }
         }
     }

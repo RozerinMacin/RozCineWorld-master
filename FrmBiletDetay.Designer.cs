@@ -187,9 +187,9 @@
             lblBarKod2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblBarKod2.Location = new Point(562, 58);
             lblBarKod2.Name = "lblBarKod2";
-            lblBarKod2.Size = new Size(126, 28);
+            lblBarKod2.Size = new Size(46, 28);
             lblBarKod2.TabIndex = 20;
-            lblBarKod2.Text = "9D67E2Y21H";
+            lblBarKod2.Text = "null";
             // 
             // label7
             // 
@@ -218,7 +218,7 @@
             lblKoltuklar2.Name = "lblKoltuklar2";
             lblKoltuklar2.Size = new Size(551, 71);
             lblKoltuklar2.TabIndex = 18;
-            lblKoltuklar2.Text = "A1,A2,A7,B4,B6,D5";
+            lblKoltuklar2.Text = "null";
             // 
             // lblFilmADI2
             // 
@@ -228,7 +228,7 @@
             lblFilmADI2.Name = "lblFilmADI2";
             lblFilmADI2.Size = new Size(418, 54);
             lblFilmADI2.TabIndex = 35;
-            lblFilmADI2.Text = "HIZLI VE ÖFKELİ 10";
+            lblFilmADI2.Text = "null";
             // 
             // pictureBox6
             // 
@@ -341,9 +341,9 @@
             lblislemTarih.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblislemTarih.Location = new Point(770, 3);
             lblislemTarih.Name = "lblislemTarih";
-            lblislemTarih.Size = new Size(163, 28);
+            lblislemTarih.Size = new Size(46, 28);
             lblislemTarih.TabIndex = 21;
-            lblislemTarih.Text = "30.07.2025 14.00";
+            lblislemTarih.Text = "null";
             // 
             // panel9
             // 
@@ -388,9 +388,9 @@
             lblBarKod1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblBarKod1.Location = new Point(64, 222);
             lblBarKod1.Name = "lblBarKod1";
-            lblBarKod1.Size = new Size(126, 28);
+            lblBarKod1.Size = new Size(46, 28);
             lblBarKod1.TabIndex = 18;
-            lblBarKod1.Text = "9D67E2Y21H";
+            lblBarKod1.Text = "null";
             // 
             // pictureBox4
             // 
@@ -429,7 +429,7 @@
             lblKoltuklar1.Name = "lblKoltuklar1";
             lblKoltuklar1.Size = new Size(270, 71);
             lblKoltuklar1.TabIndex = 18;
-            lblKoltuklar1.Text = "A1,A2,A7,B4,B6,D5";
+            lblKoltuklar1.Text = "null";
             // 
             // lblSalonADI1
             // 
@@ -437,9 +437,9 @@
             lblSalonADI1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblSalonADI1.Location = new Point(5, 178);
             lblSalonADI1.Name = "lblSalonADI1";
-            lblSalonADI1.Size = new Size(89, 28);
+            lblSalonADI1.Size = new Size(46, 28);
             lblSalonADI1.TabIndex = 22;
-            lblSalonADI1.Text = "SALON 1";
+            lblSalonADI1.Text = "null";
             // 
             // lblTarihSaat1
             // 
@@ -447,9 +447,9 @@
             lblTarihSaat1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblTarihSaat1.Location = new Point(5, 151);
             lblTarihSaat1.Name = "lblTarihSaat1";
-            lblTarihSaat1.Size = new Size(162, 28);
+            lblTarihSaat1.Size = new Size(46, 28);
             lblTarihSaat1.TabIndex = 17;
-            lblTarihSaat1.Text = "30.07.2025 13.30";
+            lblTarihSaat1.Text = "null";
             // 
             // lblFilmADI1
             // 
@@ -459,7 +459,7 @@
             lblFilmADI1.Name = "lblFilmADI1";
             lblFilmADI1.Size = new Size(263, 68);
             lblFilmADI1.TabIndex = 21;
-            lblFilmADI1.Text = "HIZLI VE ÖFKELİ 10";
+            lblFilmADI1.Text = "null";
             lblFilmADI1.TextAlign = ContentAlignment.TopCenter;
             // 
             // pictureBox3
@@ -574,7 +574,7 @@
             Margin = new Padding(5);
             Name = "FrmBiletDetay";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmBiletDetay";
+            Text = "null";
             Load += FrmBiletDetay_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

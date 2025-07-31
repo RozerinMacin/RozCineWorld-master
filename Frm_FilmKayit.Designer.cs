@@ -177,7 +177,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(1, 3);
             label1.Name = "label1";
-            label1.Size = new Size(201, 25);
+            label1.Size = new Size(258, 32);
             label1.TabIndex = 1;
             label1.Text = "[FİLM KAYIT EKRANI]";
             // 
@@ -224,7 +224,7 @@
             lblsuc.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblsuc.Location = new Point(160, 77);
             lblsuc.Name = "lblsuc";
-            lblsuc.Size = new Size(32, 19);
+            lblsuc.Size = new Size(37, 23);
             lblsuc.TabIndex = 12;
             lblsuc.Text = "Suç";
             lblsuc.Click += lblsuc_Click;
@@ -246,7 +246,7 @@
             lblkomedi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblkomedi.Location = new Point(160, 50);
             lblkomedi.Name = "lblkomedi";
-            lblkomedi.Size = new Size(57, 19);
+            lblkomedi.Size = new Size(68, 23);
             lblkomedi.TabIndex = 10;
             lblkomedi.Text = "Komedi";
             lblkomedi.Click += lblkomedi_Click;
@@ -268,7 +268,7 @@
             lblDrama.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblDrama.Location = new Point(160, 23);
             lblDrama.Name = "lblDrama";
-            lblDrama.Size = new Size(50, 19);
+            lblDrama.Size = new Size(61, 23);
             lblDrama.TabIndex = 8;
             lblDrama.Text = "Drama";
             lblDrama.Click += lblDrama_Click;
@@ -290,7 +290,7 @@
             lblromantik.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblromantik.Location = new Point(35, 48);
             lblromantik.Name = "lblromantik";
-            lblromantik.Size = new Size(69, 19);
+            lblromantik.Size = new Size(84, 23);
             lblromantik.TabIndex = 6;
             lblromantik.Text = "Romantik";
             lblromantik.Click += lblromantik_Click;
@@ -312,7 +312,7 @@
             lblFantastik.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblFantastik.Location = new Point(34, 77);
             lblFantastik.Name = "lblFantastik";
-            lblFantastik.Size = new Size(65, 19);
+            lblFantastik.Size = new Size(78, 23);
             lblFantastik.TabIndex = 4;
             lblFantastik.Text = "Fantastik";
             lblFantastik.Click += lblFantastik_Click;
@@ -334,7 +334,7 @@
             lblBilimKurgu.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblBilimKurgu.Location = new Point(36, 111);
             lblBilimKurgu.Name = "lblBilimKurgu";
-            lblBilimKurgu.Size = new Size(83, 19);
+            lblBilimKurgu.Size = new Size(98, 23);
             lblBilimKurgu.TabIndex = 2;
             lblBilimKurgu.Text = "Bilim Kurgu";
             lblBilimKurgu.Click += lblBilimKurgu_Click;
@@ -356,7 +356,7 @@
             lblAksiyon.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblAksiyon.Location = new Point(35, 21);
             lblAksiyon.Name = "lblAksiyon";
-            lblAksiyon.Size = new Size(58, 19);
+            lblAksiyon.Size = new Size(70, 23);
             lblAksiyon.TabIndex = 0;
             lblAksiyon.Text = "Aksiyon";
             lblAksiyon.Click += lblAksiyon_Click;
@@ -367,7 +367,7 @@
             rB9.FlatStyle = FlatStyle.Flat;
             rB9.Location = new Point(133, 44);
             rB9.Name = "rB9";
-            rB9.Size = new Size(36, 25);
+            rB9.Size = new Size(43, 32);
             rB9.TabIndex = 1;
             rB9.Text = "9";
             rB9.UseVisualStyleBackColor = true;
@@ -379,7 +379,7 @@
             rb6.FlatStyle = FlatStyle.Flat;
             rb6.Location = new Point(7, 43);
             rb6.Name = "rb6";
-            rb6.Size = new Size(36, 25);
+            rb6.Size = new Size(43, 32);
             rb6.TabIndex = 0;
             rb6.Text = "6";
             rb6.UseVisualStyleBackColor = true;
@@ -426,7 +426,7 @@
             lbl_18.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lbl_18.Location = new Point(191, 85);
             lbl_18.Name = "lbl_18";
-            lbl_18.Size = new Size(33, 19);
+            lbl_18.Size = new Size(38, 23);
             lbl_18.TabIndex = 24;
             lbl_18.Text = "18+";
             lbl_18.Click += lbl_18_Click;
@@ -448,7 +448,7 @@
             lbl_13.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lbl_13.Location = new Point(192, 56);
             lbl_13.Name = "lbl_13";
-            lbl_13.Size = new Size(33, 19);
+            lbl_13.Size = new Size(38, 23);
             lbl_13.TabIndex = 22;
             lbl_13.Text = "13+";
             lbl_13.Click += lbl_13_Click;
@@ -470,7 +470,7 @@
             lbl_7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lbl_7.Location = new Point(195, 29);
             lbl_7.Name = "lbl_7";
-            lbl_7.Size = new Size(27, 19);
+            lbl_7.Size = new Size(31, 23);
             lbl_7.TabIndex = 20;
             lbl_7.Text = "7+";
             lbl_7.Click += lbl_7_Click;
@@ -492,7 +492,7 @@
             lblkorkusiddet.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblkorkusiddet.Location = new Point(39, 29);
             lblkorkusiddet.Name = "lblkorkusiddet";
-            lblkorkusiddet.Size = new Size(88, 19);
+            lblkorkusiddet.Size = new Size(107, 23);
             lblkorkusiddet.TabIndex = 18;
             lblkorkusiddet.Text = "korku/şiddet";
             lblkorkusiddet.Click += lblkorkusiddet_Click;
@@ -514,7 +514,7 @@
             lblolumsuzicerik.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblolumsuzicerik.Location = new Point(38, 55);
             lblolumsuzicerik.Name = "lblolumsuzicerik";
-            lblolumsuzicerik.Size = new Size(100, 19);
+            lblolumsuzicerik.Size = new Size(119, 23);
             lblolumsuzicerik.TabIndex = 16;
             lblolumsuzicerik.Text = "olumsuz içerik";
             lblolumsuzicerik.Click += lblolumsuzicerik_Click;
@@ -536,7 +536,7 @@
             lblgenelizleyici.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblgenelizleyici.Location = new Point(40, 81);
             lblgenelizleyici.Name = "lblgenelizleyici";
-            lblgenelizleyici.Size = new Size(93, 19);
+            lblgenelizleyici.Size = new Size(110, 23);
             lblgenelizleyici.TabIndex = 14;
             lblgenelizleyici.Text = "Genel İzleyici";
             lblgenelizleyici.Click += lblgenelizleyici_Click;
@@ -547,7 +547,7 @@
             rB10.FlatStyle = FlatStyle.Flat;
             rB10.Location = new Point(176, 43);
             rB10.Name = "rB10";
-            rB10.Size = new Size(42, 25);
+            rB10.Size = new Size(51, 32);
             rB10.TabIndex = 1;
             rB10.Text = "10";
             rB10.UseVisualStyleBackColor = true;
@@ -559,7 +559,7 @@
             rB5.FlatStyle = FlatStyle.Flat;
             rB5.Location = new Point(177, 21);
             rB5.Name = "rB5";
-            rB5.Size = new Size(36, 25);
+            rB5.Size = new Size(43, 32);
             rB5.TabIndex = 0;
             rB5.Text = "5";
             rB5.UseVisualStyleBackColor = true;
@@ -601,7 +601,7 @@
             lblaltyazi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblaltyazi.Location = new Point(39, 52);
             lblaltyazi.Name = "lblaltyazi";
-            lblaltyazi.Size = new Size(102, 19);
+            lblaltyazi.Size = new Size(120, 23);
             lblaltyazi.TabIndex = 18;
             lblaltyazi.Text = "Tükçe-Altyazılı";
             lblaltyazi.Click += lblaltyazi_Click;
@@ -623,7 +623,7 @@
             lblturkce.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblturkce.Location = new Point(40, 25);
             lblturkce.Name = "lblturkce";
-            lblturkce.Size = new Size(97, 19);
+            lblturkce.Size = new Size(116, 23);
             lblturkce.TabIndex = 16;
             lblturkce.Text = "Türkçe-Dublaj";
             lblturkce.Click += lblturkce_Click;
@@ -645,7 +645,7 @@
             lblingilizce.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblingilizce.Location = new Point(39, 79);
             lblingilizce.Name = "lblingilizce";
-            lblingilizce.Size = new Size(62, 19);
+            lblingilizce.Size = new Size(72, 23);
             lblingilizce.TabIndex = 14;
             lblingilizce.Text = "İngilizce";
             lblingilizce.Click += lblingilizce_Click;
@@ -656,7 +656,7 @@
             rB4.FlatStyle = FlatStyle.Flat;
             rB4.Location = new Point(133, 20);
             rB4.Name = "rB4";
-            rB4.Size = new Size(36, 25);
+            rB4.Size = new Size(44, 32);
             rB4.TabIndex = 0;
             rB4.Text = "4";
             rB4.UseVisualStyleBackColor = true;
@@ -684,7 +684,7 @@
             lblyonetmenara.ForeColor = Color.FromArgb(190, 61, 42);
             lblyonetmenara.Location = new Point(165, 176);
             lblyonetmenara.Name = "lblyonetmenara";
-            lblyonetmenara.Size = new Size(80, 15);
+            lblyonetmenara.Size = new Size(104, 20);
             lblyonetmenara.TabIndex = 6;
             lblyonetmenara.Text = "Yönetmen ara";
             lblyonetmenara.Visible = false;
@@ -695,7 +695,7 @@
             txtYonetmenara.BorderStyle = BorderStyle.None;
             txtYonetmenara.Location = new Point(10, 173);
             txtYonetmenara.Name = "txtYonetmenara";
-            txtYonetmenara.Size = new Size(238, 22);
+            txtYonetmenara.Size = new Size(238, 27);
             txtYonetmenara.TabIndex = 5;
             txtYonetmenara.TextChanged += txtYonetmenara_TextChanged;
             txtYonetmenara.MouseLeave += txtYonetmenara_MouseLeave;
@@ -715,7 +715,7 @@
             rB8.FlatStyle = FlatStyle.Flat;
             rB8.Location = new Point(87, 43);
             rB8.Name = "rB8";
-            rB8.Size = new Size(36, 25);
+            rB8.Size = new Size(43, 32);
             rB8.TabIndex = 1;
             rB8.Text = "8";
             rB8.UseVisualStyleBackColor = true;
@@ -727,7 +727,7 @@
             rB7.FlatStyle = FlatStyle.Flat;
             rB7.Location = new Point(47, 44);
             rB7.Name = "rB7";
-            rB7.Size = new Size(36, 25);
+            rB7.Size = new Size(43, 32);
             rB7.TabIndex = 0;
             rB7.Text = "7";
             rB7.UseVisualStyleBackColor = true;
@@ -763,7 +763,7 @@
             lblOyuncuAra.ForeColor = Color.FromArgb(190, 61, 42);
             lblOyuncuAra.Location = new Point(173, 201);
             lblOyuncuAra.Name = "lblOyuncuAra";
-            lblOyuncuAra.Size = new Size(68, 15);
+            lblOyuncuAra.Size = new Size(88, 20);
             lblOyuncuAra.TabIndex = 2;
             lblOyuncuAra.Text = "Oyuncu ara";
             lblOyuncuAra.Visible = false;
@@ -774,7 +774,7 @@
             txtOyuncuara.BorderStyle = BorderStyle.None;
             txtOyuncuara.Location = new Point(10, 198);
             txtOyuncuara.Name = "txtOyuncuara";
-            txtOyuncuara.Size = new Size(238, 22);
+            txtOyuncuara.Size = new Size(238, 27);
             txtOyuncuara.TabIndex = 1;
             txtOyuncuara.TextChanged += txtOyuncuara_TextChanged;
             txtOyuncuara.MouseLeave += txtOyuncuara_MouseLeave;
@@ -786,7 +786,7 @@
             lblReyting.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblReyting.Location = new Point(209, 15);
             lblReyting.Name = "lblReyting";
-            lblReyting.Size = new Size(11, 13);
+            lblReyting.Size = new Size(15, 19);
             lblReyting.TabIndex = 0;
             lblReyting.Text = "1";
             lblReyting.Visible = false;
@@ -797,7 +797,7 @@
             rB3.FlatStyle = FlatStyle.Flat;
             rB3.Location = new Point(87, 21);
             rB3.Name = "rB3";
-            rB3.Size = new Size(36, 25);
+            rB3.Size = new Size(43, 32);
             rB3.TabIndex = 2;
             rB3.Text = "3";
             rB3.UseVisualStyleBackColor = true;
@@ -809,7 +809,7 @@
             rB2.FlatStyle = FlatStyle.Flat;
             rB2.Location = new Point(47, 20);
             rB2.Name = "rB2";
-            rB2.Size = new Size(36, 25);
+            rB2.Size = new Size(43, 32);
             rB2.TabIndex = 1;
             rB2.Text = "2";
             rB2.UseVisualStyleBackColor = true;
@@ -822,7 +822,7 @@
             rB1.FlatStyle = FlatStyle.Flat;
             rB1.Location = new Point(7, 20);
             rB1.Name = "rB1";
-            rB1.Size = new Size(33, 25);
+            rB1.Size = new Size(40, 32);
             rB1.TabIndex = 0;
             rB1.TabStop = true;
             rB1.Text = "1";
@@ -857,7 +857,7 @@
             lbltarih.ForeColor = Color.FromArgb(16, 46, 80);
             lbltarih.Location = new Point(117, 105);
             lbltarih.Name = "lbltarih";
-            lbltarih.Size = new Size(44, 15);
+            lbltarih.Size = new Size(58, 20);
             lbltarih.TabIndex = 25;
             lbltarih.Text = "lbltarih";
             // 
@@ -868,7 +868,7 @@
             label6.ForeColor = Color.FromArgb(16, 46, 80);
             label6.Location = new Point(66, 105);
             label6.Name = "label6";
-            label6.Size = new Size(44, 15);
+            label6.Size = new Size(54, 20);
             label6.TabIndex = 24;
             label6.Text = "TARİH:";
             // 
@@ -894,7 +894,7 @@
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label5.Location = new Point(145, 22);
             label5.Name = "label5";
-            label5.Size = new Size(23, 15);
+            label5.Size = new Size(30, 20);
             label5.TabIndex = 22;
             label5.Text = "Yıl:";
             // 
@@ -904,7 +904,7 @@
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label3.Location = new Point(72, 22);
             label3.Name = "label3";
-            label3.Size = new Size(24, 15);
+            label3.Size = new Size(31, 20);
             label3.TabIndex = 21;
             label3.Text = "Ay:";
             // 
@@ -916,7 +916,7 @@
             nYil.Maximum = new decimal(new int[] { 2200, 0, 0, 0 });
             nYil.Minimum = new decimal(new int[] { 1900, 0, 0, 0 });
             nYil.Name = "nYil";
-            nYil.Size = new Size(75, 23);
+            nYil.Size = new Size(75, 27);
             nYil.TabIndex = 22;
             nYil.Value = new decimal(new int[] { 2025, 0, 0, 0 });
             // 
@@ -928,7 +928,7 @@
             nGun.Maximum = new decimal(new int[] { 31, 0, 0, 0 });
             nGun.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nGun.Name = "nGun";
-            nGun.Size = new Size(64, 23);
+            nGun.Size = new Size(64, 27);
             nGun.TabIndex = 19;
             nGun.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -939,7 +939,7 @@
             label4.ForeColor = Color.FromArgb(16, 46, 80);
             label4.Location = new Point(4, 22);
             label4.Name = "label4";
-            label4.Size = new Size(32, 15);
+            label4.Size = new Size(41, 20);
             label4.TabIndex = 20;
             label4.Text = "Gün:";
             // 
@@ -951,7 +951,7 @@
             nAy.Maximum = new decimal(new int[] { 12, 0, 0, 0 });
             nAy.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nAy.Name = "nAy";
-            nAy.Size = new Size(66, 23);
+            nAy.Size = new Size(66, 27);
             nAy.TabIndex = 21;
             nAy.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -1061,7 +1061,7 @@
             label7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label7.Location = new Point(600, 2);
             label7.Name = "label7";
-            label7.Size = new Size(127, 19);
+            label7.Size = new Size(155, 23);
             label7.TabIndex = 3;
             label7.Text = "(max 300 karakter)";
             // 
@@ -1071,11 +1071,11 @@
             txtFilmDetay.BorderStyle = BorderStyle.None;
             txtFilmDetay.Dock = DockStyle.Fill;
             txtFilmDetay.ForeColor = Color.FromArgb(16, 46, 80);
-            txtFilmDetay.Location = new Point(10, 25);
+            txtFilmDetay.Location = new Point(10, 30);
             txtFilmDetay.MaxLength = 300;
             txtFilmDetay.Multiline = true;
             txtFilmDetay.Name = "txtFilmDetay";
-            txtFilmDetay.Size = new Size(741, 130);
+            txtFilmDetay.Size = new Size(741, 125);
             txtFilmDetay.TabIndex = 1;
             txtFilmDetay.TextChanged += txtFilmDetay_TextChanged;
             // 
@@ -1107,9 +1107,9 @@
             txtfilmAdi.BorderStyle = BorderStyle.None;
             txtfilmAdi.Dock = DockStyle.Bottom;
             txtfilmAdi.ForeColor = Color.FromArgb(16, 46, 80);
-            txtfilmAdi.Location = new Point(10, 34);
+            txtfilmAdi.Location = new Point(10, 29);
             txtfilmAdi.Name = "txtfilmAdi";
-            txtfilmAdi.Size = new Size(234, 22);
+            txtfilmAdi.Size = new Size(234, 27);
             txtfilmAdi.TabIndex = 0;
             // 
             // groupBox1
@@ -1127,7 +1127,7 @@
             // 
             // Frm_FilmKayit
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             ClientSize = new Size(763, 671);
@@ -1148,7 +1148,7 @@
             Location = new Point(425, 40);
             Margin = new Padding(5);
             Name = "Frm_FilmKayit";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Frm_FilmKayit";
             Load += Frm_FilmKayit_Load;
             panel1.ResumeLayout(false);

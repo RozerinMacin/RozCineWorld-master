@@ -77,7 +77,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(2, 5);
             label1.Name = "label1";
-            label1.Size = new Size(255, 25);
+            label1.Size = new Size(326, 32);
             label1.TabIndex = 1;
             label1.Text = "[YÖNETMEN LİSTE EKRANI]";
             // 
@@ -100,7 +100,7 @@
             txtarama.ForeColor = Color.FromArgb(16, 46, 80);
             txtarama.Location = new Point(135, 4);
             txtarama.Name = "txtarama";
-            txtarama.Size = new Size(334, 22);
+            txtarama.Size = new Size(334, 27);
             txtarama.TabIndex = 1;
             txtarama.TextChanged += txtarama_TextChanged;
             // 
@@ -111,7 +111,7 @@
             label2.ForeColor = Color.FromArgb(16, 46, 80);
             label2.Location = new Point(3, 3);
             label2.Name = "label2";
-            label2.Size = new Size(109, 21);
+            label2.Size = new Size(136, 28);
             label2.TabIndex = 0;
             label2.Text = "Ad ve Soyad: ";
             // 
@@ -136,7 +136,7 @@
             // 
             // FrmYonetmenListesi
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
             ClientSize = new Size(500, 542);
@@ -148,7 +148,7 @@
             Location = new Point(550, 100);
             Margin = new Padding(5);
             Name = "FrmYonetmenListesi";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmYonetmenListesi";
             Load += FrmYonetmenListesi_Load;
             panel1.ResumeLayout(false);

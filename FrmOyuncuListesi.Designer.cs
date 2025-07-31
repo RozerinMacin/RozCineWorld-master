@@ -144,7 +144,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Location = new Point(550, 100);
             Name = "FrmOyuncuListesi";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmOyuncuListesi";
             Load += FrmOyuncuListesi_Load;
             panel1.ResumeLayout(false);

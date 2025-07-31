@@ -406,7 +406,7 @@
             Location = new Point(550, 100);
             Margin = new Padding(5);
             Name = "FrmOyuncuKayit";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmOyuncuKayit";
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();

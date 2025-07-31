@@ -148,7 +148,7 @@
             Location = new Point(550, 100);
             Margin = new Padding(5);
             Name = "FrmFilmListe";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmFilmListe";
             Load += FrmFilmListe_Load;
             panel1.ResumeLayout(false);
