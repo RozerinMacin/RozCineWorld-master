@@ -75,18 +75,19 @@ namespace RozCineWorld
 
         private void button8_Click(object sender, EventArgs e)
         {
+            //Salon atama ekranını açar.
             frmSalonAtama frm = new frmSalonAtama();
             frm.ShowDialog();
         }
 
-        private void button6_Click_1(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
             // Bilet oluşturma formunu açar.
             FrmBiletOlusturma frm = new FrmBiletOlusturma();
             frm.ShowDialog();
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             // Bilet sorgulama formunu açar.
             FrmBiletSorgulama frm = new FrmBiletSorgulama();

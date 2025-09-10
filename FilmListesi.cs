@@ -21,7 +21,6 @@ namespace RozCineWorld
             FrmFilmDetay frm = new FrmFilmDetay();
             frm.IdNo = lblIdNo.Text;
             frm.ShowDialog();
-
         }
     }
 }
