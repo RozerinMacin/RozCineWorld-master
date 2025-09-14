@@ -60,7 +60,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
