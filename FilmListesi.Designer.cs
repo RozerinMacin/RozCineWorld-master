@@ -59,7 +59,7 @@
             // 
             lblIdNo.AutoSize = true;
             lblIdNo.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblIdNo.Location = new Point(104, 4);
+            lblIdNo.Location = new Point(110, 4);
             lblIdNo.Name = "lblIdNo";
             lblIdNo.Size = new Size(31, 12);
             lblIdNo.TabIndex = 9;
@@ -69,10 +69,10 @@
             // lblFilmAdi
             // 
             lblFilmAdi.AutoSize = true;
-            lblFilmAdi.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblFilmAdi.Location = new Point(4, 0);
+            lblFilmAdi.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblFilmAdi.Location = new Point(3, 6);
             lblFilmAdi.Name = "lblFilmAdi";
-            lblFilmAdi.Size = new Size(45, 19);
+            lblFilmAdi.Size = new Size(31, 12);
             lblFilmAdi.TabIndex = 8;
             lblFilmAdi.Text = "label1";
             // 
@@ -84,10 +84,10 @@
             BtnDetay.FlatStyle = FlatStyle.Flat;
             BtnDetay.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnDetay.ForeColor = Color.White;
-            BtnDetay.Location = new Point(5, 147);
+            BtnDetay.Location = new Point(5, 153);
             BtnDetay.Margin = new Padding(3, 2, 3, 2);
             BtnDetay.Name = "BtnDetay";
-            BtnDetay.Size = new Size(131, 31);
+            BtnDetay.Size = new Size(131, 28);
             BtnDetay.TabIndex = 7;
             BtnDetay.Text = "DETAY";
             BtnDetay.UseVisualStyleBackColor = false;
@@ -97,10 +97,10 @@
             // 
             pBResim.BackColor = Color.FromArgb(79, 149, 157);
             pBResim.Image = Properties.Resources._10234;
-            pBResim.Location = new Point(6, 22);
+            pBResim.Location = new Point(6, 25);
             pBResim.Margin = new Padding(3, 2, 3, 2);
             pBResim.Name = "pBResim";
-            pBResim.Size = new Size(130, 121);
+            pBResim.Size = new Size(130, 124);
             pBResim.SizeMode = PictureBoxSizeMode.StretchImage;
             pBResim.TabIndex = 5;
             pBResim.TabStop = false;

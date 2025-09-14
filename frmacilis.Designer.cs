@@ -30,12 +30,12 @@
         {
             panel1 = new Panel();
             btnkapat = new Button();
+            label1 = new Label();
             label2 = new Label();
             txtkullaniciadi = new TextBox();
             txtsifre = new TextBox();
             label3 = new Label();
             btngiris = new Button();
-            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(391, 38);
+            panel1.Size = new Size(356, 31);
             panel1.TabIndex = 0;
             // 
             // btnkapat
@@ -59,22 +59,33 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(353, 0);
+            btnkapat.Location = new Point(318, 0);
             btnkapat.Name = "btnkapat";
-            btnkapat.Size = new Size(38, 38);
+            btnkapat.Size = new Size(38, 31);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
             btnkapat.Click += btnkapat_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(4, 3);
+            label1.Name = "label1";
+            label1.Size = new Size(138, 25);
+            label1.TabIndex = 1;
+            label1.Text = "RozCineWorld";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.FromArgb(16, 46, 80);
-            label2.Location = new Point(66, 87);
+            label2.Location = new Point(36, 66);
             label2.Name = "label2";
-            label2.Size = new Size(124, 25);
+            label2.Size = new Size(99, 20);
             label2.TabIndex = 1;
             label2.Text = "YETKİLİ KİŞİ:";
             // 
@@ -82,18 +93,18 @@
             // 
             txtkullaniciadi.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtkullaniciadi.ForeColor = Color.FromArgb(16, 46, 80);
-            txtkullaniciadi.Location = new Point(191, 87);
+            txtkullaniciadi.Location = new Point(137, 66);
             txtkullaniciadi.Name = "txtkullaniciadi";
-            txtkullaniciadi.Size = new Size(170, 27);
+            txtkullaniciadi.Size = new Size(170, 23);
             txtkullaniciadi.TabIndex = 3;
             // 
             // txtsifre
             // 
             txtsifre.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtsifre.ForeColor = Color.FromArgb(16, 46, 80);
-            txtsifre.Location = new Point(191, 121);
+            txtsifre.Location = new Point(137, 100);
             txtsifre.Name = "txtsifre";
-            txtsifre.Size = new Size(170, 27);
+            txtsifre.Size = new Size(171, 23);
             txtsifre.TabIndex = 5;
             txtsifre.UseSystemPasswordChar = true;
             // 
@@ -102,9 +113,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label3.ForeColor = Color.FromArgb(16, 46, 80);
-            label3.Location = new Point(124, 122);
+            label3.Location = new Point(83, 101);
             label3.Name = "label3";
-            label3.Size = new Size(66, 25);
+            label3.Size = new Size(52, 20);
             label3.TabIndex = 4;
             label3.Text = "ŞİFRE:";
             // 
@@ -116,31 +127,20 @@
             btngiris.FlatStyle = FlatStyle.Flat;
             btngiris.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btngiris.ForeColor = Color.White;
-            btngiris.Location = new Point(226, 160);
+            btngiris.Location = new Point(171, 133);
             btngiris.Name = "btngiris";
-            btngiris.Size = new Size(136, 36);
+            btngiris.Size = new Size(136, 31);
             btngiris.TabIndex = 6;
             btngiris.Text = "GİRİŞ YAP";
             btngiris.UseVisualStyleBackColor = false;
             btngiris.Click += btngiris_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(4, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(174, 32);
-            label1.TabIndex = 1;
-            label1.Text = "RozCineWorld";
-            // 
             // Frmacilis
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(391, 250);
+            ClientSize = new Size(356, 208);
             Controls.Add(btngiris);
             Controls.Add(txtsifre);
             Controls.Add(label3);

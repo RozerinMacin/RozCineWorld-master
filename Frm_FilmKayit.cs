@@ -584,10 +584,5 @@ namespace RozCineWorld
         {
             secilenOzellik = EtiketleriAl(gBFilm_ozellik);
         }
-
-        private void gBFilm_bicimi_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

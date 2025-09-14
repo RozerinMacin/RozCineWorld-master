@@ -54,6 +54,9 @@
             lblIMDB = new Label();
             groupBox11 = new GroupBox();
             lbldetay = new Label();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
             panel1.SuspendLayout();
             groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pBResim).BeginInit();
@@ -77,7 +80,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(767, 37);
+            panel1.Size = new Size(763, 32);
             panel1.TabIndex = 8;
             // 
             // btnkapat
@@ -89,9 +92,9 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(729, 0);
+            btnkapat.Location = new Point(725, 0);
             btnkapat.Name = "btnkapat";
-            btnkapat.Size = new Size(38, 37);
+            btnkapat.Size = new Size(38, 32);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
@@ -104,7 +107,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(1, 1);
             label1.Name = "label1";
-            label1.Size = new Size(265, 32);
+            label1.Size = new Size(207, 25);
             label1.TabIndex = 1;
             label1.Text = "[FİLM DETAY EKRANI]";
             // 
@@ -114,7 +117,7 @@
             groupBox9.Controls.Add(label2);
             groupBox9.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox9.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox9.Location = new Point(8, 39);
+            groupBox9.Location = new Point(8, 35);
             groupBox9.Name = "groupBox9";
             groupBox9.Padding = new Padding(10, 3, 3, 3);
             groupBox9.Size = new Size(159, 259);
@@ -148,7 +151,7 @@
             groupBox1.Controls.Add(lblFilmAdi);
             groupBox1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox1.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox1.Location = new Point(174, 39);
+            groupBox1.Location = new Point(174, 35);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(10, 3, 3, 3);
             groupBox1.Size = new Size(190, 70);
@@ -169,7 +172,7 @@
             groupBox2.Controls.Add(lblyonetmen);
             groupBox2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox2.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox2.Location = new Point(371, 38);
+            groupBox2.Location = new Point(371, 34);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(10, 3, 3, 3);
             groupBox2.Size = new Size(190, 187);
@@ -190,7 +193,7 @@
             groupBox3.Controls.Add(lbloyuncu);
             groupBox3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox3.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox3.Location = new Point(566, 37);
+            groupBox3.Location = new Point(566, 33);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(10, 3, 3, 3);
             groupBox3.Size = new Size(190, 261);
@@ -211,7 +214,7 @@
             groupBox4.Controls.Add(lblbicim);
             groupBox4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox4.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox4.Location = new Point(122, 298);
+            groupBox4.Location = new Point(122, 294);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(10, 3, 3, 3);
             groupBox4.Size = new Size(241, 81);
@@ -232,7 +235,7 @@
             groupBox5.Controls.Add(lblozellikler);
             groupBox5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox5.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox5.Location = new Point(369, 297);
+            groupBox5.Location = new Point(369, 293);
             groupBox5.Name = "groupBox5";
             groupBox5.Padding = new Padding(10, 3, 3, 3);
             groupBox5.Size = new Size(387, 82);
@@ -253,10 +256,10 @@
             groupBox6.Controls.Add(lbltur);
             groupBox6.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox6.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox6.Location = new Point(176, 224);
+            groupBox6.Location = new Point(176, 220);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(10, 3, 3, 3);
-            groupBox6.Size = new Size(385, 68);
+            groupBox6.Size = new Size(385, 74);
             groupBox6.TabIndex = 20;
             groupBox6.TabStop = false;
             groupBox6.Text = "Filmin Türü";
@@ -274,7 +277,7 @@
             groupBox7.Controls.Add(lbldurum);
             groupBox7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox7.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox7.Location = new Point(176, 108);
+            groupBox7.Location = new Point(176, 104);
             groupBox7.Name = "groupBox7";
             groupBox7.Padding = new Padding(10, 3, 3, 3);
             groupBox7.Size = new Size(190, 58);
@@ -296,7 +299,7 @@
             groupBox8.Controls.Add(lblvizyontarihi);
             groupBox8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox8.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox8.Location = new Point(174, 167);
+            groupBox8.Location = new Point(174, 163);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(10, 3, 3, 3);
             groupBox8.Size = new Size(190, 58);
@@ -317,7 +320,7 @@
             groupBox10.Controls.Add(lblIMDB);
             groupBox10.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox10.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox10.Location = new Point(9, 299);
+            groupBox10.Location = new Point(9, 295);
             groupBox10.Name = "groupBox10";
             groupBox10.Padding = new Padding(10, 3, 3, 3);
             groupBox10.Size = new Size(107, 80);
@@ -338,7 +341,7 @@
             groupBox11.Controls.Add(lbldetay);
             groupBox11.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox11.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox11.Location = new Point(8, 379);
+            groupBox11.Location = new Point(8, 375);
             groupBox11.Name = "groupBox11";
             groupBox11.Padding = new Padding(10, 3, 3, 3);
             groupBox11.Size = new Size(747, 204);
@@ -354,12 +357,42 @@
             lbldetay.TabIndex = 0;
             lbldetay.Text = "label12";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(16, 46, 80);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 32);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(4, 554);
+            panel2.TabIndex = 27;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(16, 46, 80);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(4, 582);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(759, 4);
+            panel3.TabIndex = 28;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(16, 46, 80);
+            panel4.Dock = DockStyle.Right;
+            panel4.Location = new Point(759, 32);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(4, 550);
+            panel4.TabIndex = 29;
+            // 
             // FrmFilmDetay
             // 
-            AutoScaleDimensions = new SizeF(13F, 31F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(767, 607);
+            ClientSize = new Size(763, 586);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(groupBox11);
             Controls.Add(groupBox5);
             Controls.Add(groupBox8);
@@ -374,10 +407,10 @@
             Controls.Add(panel1);
             Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             FormBorderStyle = FormBorderStyle.None;
-            Location = new Point(475, 85);
+            Location = new Point(450, 80);
             Margin = new Padding(5);
             Name = "FrmFilmDetay";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.Manual;
             Text = "FrmFilmDetay";
             Load += FrmFilmDetay_Load;
             panel1.ResumeLayout(false);
@@ -425,5 +458,8 @@
         private Label lblIMDB;
         private GroupBox groupBox11;
         private Label lbldetay;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
     }
 }

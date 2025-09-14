@@ -521,6 +521,7 @@ namespace RozCineWorld
             cBFilmAdi.Items.Clear(); // Film adlarını temizler
             FilmAdiGetir(); // Film adlarını tekrar getirir
             txtAdSoyad.Focus(); // Ad Soyad textbox'ına odaklanır
+            label2.Text = ""; 
         }
     }
 }

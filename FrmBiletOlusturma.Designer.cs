@@ -91,7 +91,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(763, 37);
+            panel1.Size = new Size(756, 33);
             panel1.TabIndex = 9;
             // 
             // btnkapat
@@ -103,9 +103,9 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(725, 0);
+            btnkapat.Location = new Point(718, 0);
             btnkapat.Name = "btnkapat";
-            btnkapat.Size = new Size(38, 37);
+            btnkapat.Size = new Size(38, 33);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
@@ -118,7 +118,7 @@
             label1.ForeColor = Color.White;
             label1.Location = new Point(1, 1);
             label1.Name = "label1";
-            label1.Size = new Size(341, 32);
+            label1.Size = new Size(268, 25);
             label1.TabIndex = 1;
             label1.Text = "[BİLET OLUŞTURMA EKRANI]";
             // 
@@ -127,10 +127,10 @@
             groupBox1.Controls.Add(txtBiletno);
             groupBox1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox1.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox1.Location = new Point(5, 39);
+            groupBox1.Location = new Point(5, 35);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(10, 3, 3, 3);
-            groupBox1.Size = new Size(253, 59);
+            groupBox1.Size = new Size(253, 50);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Bilet Numarası";
@@ -141,10 +141,10 @@
             txtBiletno.BorderStyle = BorderStyle.None;
             txtBiletno.Dock = DockStyle.Bottom;
             txtBiletno.ForeColor = Color.FromArgb(16, 46, 80);
-            txtBiletno.Location = new Point(10, 24);
+            txtBiletno.Location = new Point(10, 21);
             txtBiletno.Multiline = true;
             txtBiletno.Name = "txtBiletno";
-            txtBiletno.Size = new Size(240, 32);
+            txtBiletno.Size = new Size(240, 26);
             txtBiletno.TabIndex = 0;
             // 
             // groupBox2
@@ -152,10 +152,10 @@
             groupBox2.Controls.Add(txtAdSoyad);
             groupBox2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox2.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox2.Location = new Point(5, 100);
+            groupBox2.Location = new Point(5, 85);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new Padding(10, 3, 3, 3);
-            groupBox2.Size = new Size(253, 59);
+            groupBox2.Size = new Size(253, 50);
             groupBox2.TabIndex = 11;
             groupBox2.TabStop = false;
             groupBox2.Text = "Ad Soyad";
@@ -166,10 +166,10 @@
             txtAdSoyad.BorderStyle = BorderStyle.None;
             txtAdSoyad.Dock = DockStyle.Bottom;
             txtAdSoyad.ForeColor = Color.FromArgb(16, 46, 80);
-            txtAdSoyad.Location = new Point(10, 24);
+            txtAdSoyad.Location = new Point(10, 22);
             txtAdSoyad.Multiline = true;
             txtAdSoyad.Name = "txtAdSoyad";
-            txtAdSoyad.Size = new Size(240, 32);
+            txtAdSoyad.Size = new Size(240, 25);
             txtAdSoyad.TabIndex = 0;
             // 
             // groupBox3
@@ -177,10 +177,10 @@
             groupBox3.Controls.Add(txtTelNo);
             groupBox3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox3.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox3.Location = new Point(5, 161);
+            groupBox3.Location = new Point(5, 136);
             groupBox3.Name = "groupBox3";
             groupBox3.Padding = new Padding(10, 3, 3, 3);
-            groupBox3.Size = new Size(253, 59);
+            groupBox3.Size = new Size(253, 50);
             groupBox3.TabIndex = 12;
             groupBox3.TabStop = false;
             groupBox3.Text = "Telefon Numarası";
@@ -191,10 +191,10 @@
             txtTelNo.BorderStyle = BorderStyle.None;
             txtTelNo.Dock = DockStyle.Bottom;
             txtTelNo.ForeColor = Color.FromArgb(16, 46, 80);
-            txtTelNo.Location = new Point(10, 24);
+            txtTelNo.Location = new Point(10, 22);
             txtTelNo.Multiline = true;
             txtTelNo.Name = "txtTelNo";
-            txtTelNo.Size = new Size(240, 32);
+            txtTelNo.Size = new Size(240, 25);
             txtTelNo.TabIndex = 0;
             // 
             // groupBox4
@@ -202,10 +202,10 @@
             groupBox4.Controls.Add(cBFilmAdi);
             groupBox4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox4.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox4.Location = new Point(5, 221);
+            groupBox4.Location = new Point(5, 188);
             groupBox4.Name = "groupBox4";
             groupBox4.Padding = new Padding(10, 3, 3, 3);
-            groupBox4.Size = new Size(253, 59);
+            groupBox4.Size = new Size(253, 50);
             groupBox4.TabIndex = 13;
             groupBox4.TabStop = false;
             groupBox4.Text = "Film Adı";
@@ -220,9 +220,9 @@
             cBFilmAdi.ForeColor = Color.FromArgb(16, 46, 80);
             cBFilmAdi.FormattingEnabled = true;
             cBFilmAdi.IntegralHeight = false;
-            cBFilmAdi.Location = new Point(10, 25);
+            cBFilmAdi.Location = new Point(10, 22);
             cBFilmAdi.Name = "cBFilmAdi";
-            cBFilmAdi.Size = new Size(240, 31);
+            cBFilmAdi.Size = new Size(240, 25);
             cBFilmAdi.TabIndex = 2;
             cBFilmAdi.SelectedIndexChanged += cBFilmAdi_SelectedIndexChanged;
             // 
@@ -232,10 +232,10 @@
             groupBox5.Controls.Add(lblgun);
             groupBox5.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox5.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox5.Location = new Point(6, 282);
+            groupBox5.Location = new Point(6, 242);
             groupBox5.Name = "groupBox5";
             groupBox5.Padding = new Padding(10, 3, 3, 3);
-            groupBox5.Size = new Size(253, 59);
+            groupBox5.Size = new Size(253, 50);
             groupBox5.TabIndex = 26;
             groupBox5.TabStop = false;
             groupBox5.Text = "Tarih";
@@ -250,9 +250,9 @@
             cBTarih.ForeColor = Color.FromArgb(16, 46, 80);
             cBTarih.FormattingEnabled = true;
             cBTarih.IntegralHeight = false;
-            cBTarih.Location = new Point(10, 25);
+            cBTarih.Location = new Point(10, 22);
             cBTarih.Name = "cBTarih";
-            cBTarih.Size = new Size(240, 31);
+            cBTarih.Size = new Size(240, 25);
             cBTarih.TabIndex = 28;
             cBTarih.SelectedIndexChanged += cBTarih_SelectedIndexChanged;
             // 
@@ -263,7 +263,7 @@
             lblgun.ForeColor = Color.FromArgb(16, 46, 80);
             lblgun.Location = new Point(166, 3);
             lblgun.Name = "lblgun";
-            lblgun.Size = new Size(75, 19);
+            lblgun.Size = new Size(59, 13);
             lblgun.TabIndex = 27;
             lblgun.Text = "GG/AA/YY";
             // 
@@ -273,7 +273,7 @@
             groupBox6.Controls.Add(PanelSEANS);
             groupBox6.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox6.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox6.Location = new Point(6, 343);
+            groupBox6.Location = new Point(6, 295);
             groupBox6.Name = "groupBox6";
             groupBox6.Padding = new Padding(10, 3, 3, 3);
             groupBox6.Size = new Size(253, 81);
@@ -288,7 +288,7 @@
             lblseanssec.ForeColor = Color.FromArgb(16, 46, 80);
             lblseanssec.Location = new Point(184, 3);
             lblseanssec.Name = "lblseanssec";
-            lblseanssec.Size = new Size(59, 19);
+            lblseanssec.Size = new Size(48, 13);
             lblseanssec.TabIndex = 32;
             lblseanssec.Text = "lblseans";
             lblseanssec.Visible = false;
@@ -298,9 +298,9 @@
             PanelSEANS.AutoScroll = true;
             PanelSEANS.Dock = DockStyle.Fill;
             PanelSEANS.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            PanelSEANS.Location = new Point(10, 26);
+            PanelSEANS.Location = new Point(10, 21);
             PanelSEANS.Name = "PanelSEANS";
-            PanelSEANS.Size = new Size(240, 52);
+            PanelSEANS.Size = new Size(240, 57);
             PanelSEANS.TabIndex = 32;
             // 
             // groupBox7
@@ -309,10 +309,10 @@
             groupBox7.Controls.Add(cBSalonAdi);
             groupBox7.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox7.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox7.Location = new Point(6, 427);
+            groupBox7.Location = new Point(6, 377);
             groupBox7.Name = "groupBox7";
             groupBox7.Padding = new Padding(10, 3, 3, 3);
-            groupBox7.Size = new Size(253, 62);
+            groupBox7.Size = new Size(253, 50);
             groupBox7.TabIndex = 28;
             groupBox7.TabStop = false;
             groupBox7.Text = "Salon Adı";
@@ -324,7 +324,7 @@
             lblkoltuksayisi.ForeColor = Color.FromArgb(16, 46, 80);
             lblkoltuksayisi.Location = new Point(142, 3);
             lblkoltuksayisi.Name = "lblkoltuksayisi";
-            lblkoltuksayisi.Size = new Size(98, 19);
+            lblkoltuksayisi.Size = new Size(80, 13);
             lblkoltuksayisi.TabIndex = 33;
             lblkoltuksayisi.Text = "lblkoltuksayisi";
             lblkoltuksayisi.Visible = false;
@@ -339,9 +339,9 @@
             cBSalonAdi.ForeColor = Color.FromArgb(16, 46, 80);
             cBSalonAdi.FormattingEnabled = true;
             cBSalonAdi.IntegralHeight = false;
-            cBSalonAdi.Location = new Point(10, 28);
+            cBSalonAdi.Location = new Point(10, 22);
             cBSalonAdi.Name = "cBSalonAdi";
-            cBSalonAdi.Size = new Size(240, 31);
+            cBSalonAdi.Size = new Size(240, 25);
             cBSalonAdi.TabIndex = 2;
             cBSalonAdi.SelectedIndexChanged += cBSalonAdi_SelectedIndexChanged;
             // 
@@ -350,10 +350,10 @@
             groupBox8.Controls.Add(cBBiletTuru);
             groupBox8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox8.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox8.Location = new Point(6, 493);
+            groupBox8.Location = new Point(6, 427);
             groupBox8.Name = "groupBox8";
             groupBox8.Padding = new Padding(10, 3, 3, 3);
-            groupBox8.Size = new Size(253, 59);
+            groupBox8.Size = new Size(253, 50);
             groupBox8.TabIndex = 29;
             groupBox8.TabStop = false;
             groupBox8.Text = "Bilet Türü";
@@ -369,9 +369,9 @@
             cBBiletTuru.FormattingEnabled = true;
             cBBiletTuru.IntegralHeight = false;
             cBBiletTuru.Items.AddRange(new object[] { "YETİŞKİN", "ÖĞRENCİ" });
-            cBBiletTuru.Location = new Point(10, 25);
+            cBBiletTuru.Location = new Point(10, 22);
             cBBiletTuru.Name = "cBBiletTuru";
-            cBBiletTuru.Size = new Size(240, 31);
+            cBBiletTuru.Size = new Size(240, 25);
             cBBiletTuru.TabIndex = 2;
             // 
             // groupBox9
@@ -379,10 +379,10 @@
             groupBox9.Controls.Add(txtKoltuk);
             groupBox9.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 162);
             groupBox9.ForeColor = Color.FromArgb(16, 46, 80);
-            groupBox9.Location = new Point(6, 555);
+            groupBox9.Location = new Point(6, 480);
             groupBox9.Name = "groupBox9";
             groupBox9.Padding = new Padding(10, 3, 3, 3);
-            groupBox9.Size = new Size(253, 66);
+            groupBox9.Size = new Size(253, 60);
             groupBox9.TabIndex = 30;
             groupBox9.TabStop = false;
             groupBox9.Text = "Seçilen Koltuk(lar)";
@@ -393,7 +393,7 @@
             txtKoltuk.BorderStyle = BorderStyle.None;
             txtKoltuk.Dock = DockStyle.Bottom;
             txtKoltuk.ForeColor = Color.FromArgb(16, 46, 80);
-            txtKoltuk.Location = new Point(10, 31);
+            txtKoltuk.Location = new Point(10, 25);
             txtKoltuk.Multiline = true;
             txtKoltuk.Name = "txtKoltuk";
             txtKoltuk.Size = new Size(240, 32);
@@ -407,9 +407,9 @@
             BtnOlustur.FlatStyle = FlatStyle.Flat;
             BtnOlustur.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnOlustur.ForeColor = Color.White;
-            BtnOlustur.Location = new Point(6, 627);
+            BtnOlustur.Location = new Point(6, 544);
             BtnOlustur.Name = "BtnOlustur";
-            BtnOlustur.Size = new Size(253, 41);
+            BtnOlustur.Size = new Size(253, 30);
             BtnOlustur.TabIndex = 31;
             BtnOlustur.Text = "OLUŞTUR";
             BtnOlustur.UseVisualStyleBackColor = false;
@@ -418,9 +418,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(261, 49);
+            pictureBox1.Location = new Point(264, 41);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(485, 52);
+            pictureBox1.Size = new Size(485, 44);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 32;
             pictureBox1.TabStop = false;
@@ -431,25 +431,25 @@
             label2.BackColor = Color.Black;
             label2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(477, 69);
+            label2.Location = new Point(271, 58);
             label2.Name = "label2";
-            label2.Size = new Size(0, 25);
+            label2.Size = new Size(0, 20);
             label2.TabIndex = 33;
             // 
             // KoltukPaneli
             // 
             KoltukPaneli.AutoScroll = true;
-            KoltukPaneli.Location = new Point(275, 106);
+            KoltukPaneli.Location = new Point(277, 90);
             KoltukPaneli.Name = "KoltukPaneli";
-            KoltukPaneli.Size = new Size(467, 454);
+            KoltukPaneli.Size = new Size(467, 450);
             KoltukPaneli.TabIndex = 34;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.kirmizi;
-            pictureBox2.Location = new Point(404, 564);
+            pictureBox2.Location = new Point(405, 549);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(45, 45);
+            pictureBox2.Size = new Size(40, 40);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 35;
             pictureBox2.TabStop = false;
@@ -457,9 +457,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Mavi;
-            pictureBox3.Location = new Point(497, 566);
+            pictureBox3.Location = new Point(492, 549);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(45, 45);
+            pictureBox3.Size = new Size(40, 40);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 36;
             pictureBox3.TabStop = false;
@@ -467,9 +467,9 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.sari;
-            pictureBox4.Location = new Point(588, 566);
+            pictureBox4.Location = new Point(577, 550);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(45, 45);
+            pictureBox4.Size = new Size(40, 40);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 37;
             pictureBox4.TabStop = false;
@@ -477,9 +477,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(392, 609);
+            label3.Location = new Point(393, 593);
             label3.Name = "label3";
             label3.Size = new Size(69, 15);
             label3.TabIndex = 38;
@@ -488,9 +488,9 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label4.ForeColor = Color.Yellow;
-            label4.Location = new Point(579, 609);
+            label4.Location = new Point(563, 593);
             label4.Name = "label4";
             label4.Size = new Size(71, 15);
             label4.TabIndex = 39;
@@ -499,9 +499,9 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 7F, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             label5.ForeColor = Color.Blue;
-            label5.Location = new Point(489, 610);
+            label5.Location = new Point(483, 593);
             label5.Name = "label5";
             label5.Size = new Size(62, 15);
             label5.TabIndex = 40;
@@ -514,7 +514,7 @@
             lblgelenkoltuk.ForeColor = Color.FromArgb(16, 46, 80);
             lblgelenkoltuk.Location = new Point(523, 121);
             lblgelenkoltuk.Name = "lblgelenkoltuk";
-            lblgelenkoltuk.Size = new Size(92, 28);
+            lblgelenkoltuk.Size = new Size(73, 21);
             lblgelenkoltuk.TabIndex = 41;
             lblgelenkoltuk.Text = "lblkoltuk";
             lblgelenkoltuk.Visible = false;
@@ -522,19 +522,19 @@
             // Koltuklistesi
             // 
             Koltuklistesi.FormattingEnabled = true;
-            Koltuklistesi.ItemHeight = 31;
+            Koltuklistesi.ItemHeight = 25;
             Koltuklistesi.Location = new Point(536, 151);
             Koltuklistesi.Name = "Koltuklistesi";
-            Koltuklistesi.Size = new Size(185, 159);
+            Koltuklistesi.Size = new Size(185, 154);
             Koltuklistesi.TabIndex = 42;
             // 
             // lbBelirlenen
             // 
             lbBelirlenen.FormattingEnabled = true;
-            lbBelirlenen.ItemHeight = 31;
+            lbBelirlenen.ItemHeight = 25;
             lbBelirlenen.Location = new Point(536, 327);
             lbBelirlenen.Name = "lbBelirlenen";
-            lbBelirlenen.Size = new Size(185, 159);
+            lbBelirlenen.Size = new Size(185, 154);
             lbBelirlenen.TabIndex = 43;
             // 
             // btntemizle
@@ -545,9 +545,9 @@
             btntemizle.FlatStyle = FlatStyle.Flat;
             btntemizle.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btntemizle.ForeColor = Color.White;
-            btntemizle.Location = new Point(275, 628);
+            btntemizle.Location = new Point(6, 578);
             btntemizle.Name = "btntemizle";
-            btntemizle.Size = new Size(467, 41);
+            btntemizle.Size = new Size(253, 30);
             btntemizle.TabIndex = 44;
             btntemizle.Text = "TEMİZLE";
             btntemizle.UseVisualStyleBackColor = false;
@@ -555,10 +555,10 @@
             // 
             // FrmBiletOlusturma
             // 
-            AutoScaleDimensions = new SizeF(13F, 31F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(763, 671);
+            ClientSize = new Size(756, 612);
             Controls.Add(btntemizle);
             Controls.Add(label5);
             Controls.Add(label4);
