@@ -43,7 +43,7 @@ namespace RozCineWorld
                 else// Eðer kullanýcý adý ve þifre yanlýþsa hatta mesajý gösterir.
                 {
                     Frmhata frm = new Frmhata();
-                    frm.lblhatamesaji.Text ="KULLANICI KAYDI BULUNAMADI! KULLANICI ADI YA DA ÞÝFRE HATALI!";
+                    frm.lblhatamesaji.Text ="KULLANICI KAYDI BULUNAMADI! KULLANICI ADI VEYA ÞÝFRE HATALI!";
                     frm.ShowDialog();
                 }
             }
