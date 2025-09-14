@@ -39,7 +39,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;              
+                frm.ShowDialog();
             }
             finally
             {
@@ -162,7 +164,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)// Hata oluşursa kullanıcıya mesaj gösteriyoruz.
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally// Bağlantı açık ise kapatıyoruz.
             {
@@ -205,7 +209,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)// Hata oluşursa kullanıcıya mesaj gösteriyoruz.
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally// Bağlantı açık ise kapatıyoruz.
             {
@@ -236,7 +242,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -279,7 +287,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -386,17 +396,27 @@ namespace RozCineWorld
             TimeSpan TSpan = dVTarih - bugun;
             if (TSpan.TotalDays < 0)// Eğer vizyon tarihi geçmişte ise kullanıcıya uyarı verir.
             {
-                MessageBox.Show("Geçmiş tarihlere ait film eklenmesi yapılamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Geçmiş tarihlere ait film eklenmesi yapılamaz.";
+                frm.ShowDialog();
                 bugununtarihi();
             }
             else if (TSpan.TotalDays == 0)// Eğer vizyon tarihi bugünün tarihi ise film vizyonda olarak kabul edilir.
             {
-                MessageBox.Show(txtfilmAdi.Text + " :Filmi şuan vizyonda.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = txtfilmAdi.Text + " :Filmi şuan vizyonda.";
+                frm.lblhata.Text = "BAŞARILI";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                frm.ShowDialog();
                 durum = "1"; // film vizyonda.
             }
             else// Eğer vizyon tarihi gelecekte ise film vizyona girmemiş olarak kabul edilir.
             {
-                MessageBox.Show("Vizyon tarihi: " + vTarih, "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = "Vizyon tarihi: " + vTarih;
+                frm.lblhata.Text = "BAŞARILI";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                frm.ShowDialog();
                 durum = "0"; // film vizyona girmedi.
             }
         }
@@ -425,7 +445,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -455,7 +477,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -532,12 +556,18 @@ namespace RozCineWorld
                     komut.Parameters.AddWithValue("@durum", durum);
                     komut.ExecuteNonQuery();
                     // Film kaydı başarılı ise kullanıcıya bilgi mesajı gösteriyoruz.
-                    MessageBox.Show(txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text =txtfilmAdi.Text + ":Film kaydı başarılı bir şekilde gerçekleştirildi.";
+                    frm.lblhata.Text = "BAŞARILI";
+                    frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                    frm.ShowDialog();
                     TemizlemeMetodu();// Formu temizliyoruz.
                 }
                 catch (Exception ex)// Hata oluşursa kullanıcıya mesaj gösteriyoruz.
                 {
-                    MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text = ex.Message;
+                    frm.ShowDialog();
                 }
                 finally
                 {
@@ -549,7 +579,9 @@ namespace RozCineWorld
             }
             else// Eğer gerekli alanlar doldurulmamışsa kullanıcıya uyarı mesajı gösteriyoruz.
             {
-                MessageBox.Show("Lütfen ilgili Alanları doldurunuz!");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Lütfen ilgili Alanları doldurunuz!";
+                frm.ShowDialog();
             }
         }
         // Seçilen tür, biçim ve özellikleri tutacak değişkenler

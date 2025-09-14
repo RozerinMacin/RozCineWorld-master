@@ -154,17 +154,23 @@
   <data name="reyting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reyting.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="qr-code(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\qr-code(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="artı1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\artı1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="videography" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\videography.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bayrak_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bayrak_T.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="7+" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7+.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="video-camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\video-camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="carpi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\carpi.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +199,8 @@
   <data name="koltukikonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\koltukikonu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bayrak_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bayrak_T.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="video-camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\video-camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Aksiyon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Aksiyon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,7 +238,7 @@
   <data name="fotografyok1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fotografyok1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="qr-code(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\qr-code(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tik" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tik.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

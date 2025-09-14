@@ -203,6 +203,16 @@ namespace RozCineWorld.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap carpi {
+            get {
+                object obj = ResourceManager.GetObject("carpi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap depositphotos_181131144_stock_illustration_female_gender_symbol {
             get {
                 object obj = ResourceManager.GetObject("depositphotos_181131144-stock-illustration-female-gender-symbol", resourceCulture);
@@ -426,6 +436,16 @@ namespace RozCineWorld.Properties {
         internal static System.Drawing.Bitmap ticket {
             get {
                 object obj = ResourceManager.GetObject("ticket", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap tik {
+            get {
+                object obj = ResourceManager.GetObject("tik", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
