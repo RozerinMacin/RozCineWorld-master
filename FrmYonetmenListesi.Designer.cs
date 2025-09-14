@@ -50,7 +50,7 @@
             panel1.ForeColor = Color.FromArgb(16, 46, 80);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(500, 37);
+            panel1.Size = new Size(498, 29);
             panel1.TabIndex = 2;
             // 
             // btnkapat
@@ -62,9 +62,9 @@
             btnkapat.FlatStyle = FlatStyle.Flat;
             btnkapat.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnkapat.ForeColor = Color.White;
-            btnkapat.Location = new Point(462, 0);
+            btnkapat.Location = new Point(460, 0);
             btnkapat.Name = "btnkapat";
-            btnkapat.Size = new Size(38, 37);
+            btnkapat.Size = new Size(38, 29);
             btnkapat.TabIndex = 1;
             btnkapat.Text = "X";
             btnkapat.UseVisualStyleBackColor = false;
@@ -75,9 +75,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(2, 5);
+            label1.Location = new Point(2, 2);
             label1.Name = "label1";
-            label1.Size = new Size(326, 32);
+            label1.Size = new Size(255, 25);
             label1.TabIndex = 1;
             label1.Text = "[YÖNETMEN LİSTE EKRANI]";
             // 
@@ -88,9 +88,9 @@
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
             panel2.ForeColor = Color.FromArgb(16, 46, 80);
-            panel2.Location = new Point(0, 37);
+            panel2.Location = new Point(0, 29);
             panel2.Name = "panel2";
-            panel2.Size = new Size(500, 37);
+            panel2.Size = new Size(498, 32);
             panel2.TabIndex = 3;
             // 
             // txtarama
@@ -98,9 +98,9 @@
             txtarama.BorderStyle = BorderStyle.None;
             txtarama.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             txtarama.ForeColor = Color.FromArgb(16, 46, 80);
-            txtarama.Location = new Point(135, 4);
+            txtarama.Location = new Point(107, 4);
             txtarama.Name = "txtarama";
-            txtarama.Size = new Size(334, 27);
+            txtarama.Size = new Size(378, 22);
             txtarama.TabIndex = 1;
             txtarama.TextChanged += txtarama_TextChanged;
             // 
@@ -111,7 +111,7 @@
             label2.ForeColor = Color.FromArgb(16, 46, 80);
             label2.Location = new Point(3, 3);
             label2.Name = "label2";
-            label2.Size = new Size(136, 28);
+            label2.Size = new Size(109, 21);
             label2.TabIndex = 0;
             label2.Text = "Ad ve Soyad: ";
             // 
@@ -120,9 +120,9 @@
             panel3.BackColor = Color.FromArgb(79, 149, 157);
             panel3.Controls.Add(ListePaneli);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 74);
+            panel3.Location = new Point(0, 61);
             panel3.Name = "panel3";
-            panel3.Size = new Size(500, 468);
+            panel3.Size = new Size(498, 481);
             panel3.TabIndex = 4;
             // 
             // ListePaneli
@@ -131,15 +131,15 @@
             ListePaneli.Dock = DockStyle.Fill;
             ListePaneli.Location = new Point(0, 0);
             ListePaneli.Name = "ListePaneli";
-            ListePaneli.Size = new Size(500, 468);
+            ListePaneli.Size = new Size(498, 481);
             ListePaneli.TabIndex = 0;
             // 
             // FrmYonetmenListesi
             // 
-            AutoScaleDimensions = new SizeF(13F, 31F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(500, 542);
+            ClientSize = new Size(498, 542);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -148,7 +148,7 @@
             Location = new Point(550, 100);
             Margin = new Padding(5);
             Name = "FrmYonetmenListesi";
-            StartPosition = FormStartPosition.CenterScreen;
+            StartPosition = FormStartPosition.Manual;
             Text = "FrmYonetmenListesi";
             Load += FrmYonetmenListesi_Load;
             panel1.ResumeLayout(false);
