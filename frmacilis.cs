@@ -42,12 +42,16 @@ namespace RozCineWorld
                 }
                 else// Eðer kullanýcý adý ve þifre yanlýþsa hatta mesajý gösterir.
                 {
-                    MessageBox.Show("KULLANICI KAYDI BULUNAMADI! KULLANICI ADI YA DA ÞÝFRE HATALI!");
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text ="KULLANICI KAYDI BULUNAMADI! KULLANICI ADI YA DA ÞÝFRE HATALI!";
+                    frm.ShowDialog();
                 }
             }
             catch (Exception ex)// Eðer bir hata oluþursa mesaj kutusunda gösterir.
             {
-                MessageBox.Show(ex.Message, "Uyarý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally// Baðlantý kapatýlýr ve kullanýcý adý ve þifre alanlarý temizlenir.
             {

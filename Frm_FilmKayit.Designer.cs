@@ -1087,9 +1087,9 @@
             BtnKaydet.FlatStyle = FlatStyle.Flat;
             BtnKaydet.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
             BtnKaydet.ForeColor = Color.White;
-            BtnKaydet.Location = new Point(0, 600);
+            BtnKaydet.Location = new Point(0, 601);
             BtnKaydet.Name = "BtnKaydet";
-            BtnKaydet.Size = new Size(763, 37);
+            BtnKaydet.Size = new Size(763, 30);
             BtnKaydet.TabIndex = 18;
             BtnKaydet.Text = "KAYIT TAMAMLA";
             BtnKaydet.UseVisualStyleBackColor = false;
@@ -1129,7 +1129,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(79, 149, 157);
-            ClientSize = new Size(763, 637);
+            ClientSize = new Size(763, 631);
             Controls.Add(BtnKaydet);
             Controls.Add(groupBox10);
             Controls.Add(groupBox9);
