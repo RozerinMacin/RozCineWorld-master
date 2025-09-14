@@ -66,7 +66,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -96,7 +98,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -133,7 +137,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -181,7 +187,11 @@ namespace RozCineWorld
                 Guncelleme.Parameters.AddWithValue("@Salonadi", cBSalonAdi.Text);
                 Guncelleme.ExecuteNonQuery(); // Güncelleme sorgusunu çalıştırır
                 SalonDurumGeldi(); // Salon durumunu günceller
-                MessageBox.Show("BİLET BAŞARILI BİR ŞEKİLDE OLUŞTURULDU!");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="BİLET BAŞARILI BİR ŞEKİLDE OLUŞTURULDU!";
+                frm.lblhata.Text = "BAŞARILI";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                frm.ShowDialog();
                 lblgelenkoltuk.Text = ""; // Gelen koltukları temizler
                 Koltuklistesi.Items.Clear(); // Koltuk listesini temizler
                 lbBelirlenen.Items.Clear(); // Belirlenen koltukları temizler
@@ -189,7 +199,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -209,12 +221,16 @@ namespace RozCineWorld
                 }
                 else
                 {
-                    MessageBox.Show("LÜTFEN TÜM ALANLARI EKSİKSİZ BİR ŞEKİLDE DOLDURUNUZ!");
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text ="LÜTFEN TÜM ALANLARI EKSİKSİZ BİR ŞEKİLDE DOLDURUNUZ!";
+                    frm.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
         }
         void SecilenKoltuklar()
@@ -234,7 +250,9 @@ namespace RozCineWorld
             Button btn = (Button)sender; // Gönderilen nesneyi Button tipine dönüştürür
             if (btn.ForeColor == Color.Black)
             {
-                MessageBox.Show("BU KOLTUK DAHA ÖNCE SATIN ALINMIŞTIR!");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="BU KOLTUK DAHA ÖNCE SATIN ALINMIŞTIR!";
+                frm.ShowDialog();
             }
             else
             {
@@ -285,7 +303,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -324,7 +344,9 @@ namespace RozCineWorld
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Frmhata frm = new Frmhata();
+                        frm.lblhatamesaji.Text = ex.Message;
+                        frm.ShowDialog();
                     }
                     finally
                     {
@@ -362,7 +384,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -473,7 +497,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {

@@ -44,12 +44,16 @@ namespace RozCineWorld
                     }
                     else
                     {
-                        MessageBox.Show("KAYITLI BİLET BULUNAMADI!");
+                        Frmhata frm = new Frmhata();
+                        frm.lblhatamesaji.Text ="KAYITLI BİLET BULUNAMADI!";
+                        frm.ShowDialog();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text =ex.Message;
+                    frm.ShowDialog();
                 }
                 finally
                 {
@@ -61,7 +65,9 @@ namespace RozCineWorld
             }
             else
             {
-                MessageBox.Show("LÜTFEN BİLET NUMARASI GİRİNİZ!");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="LÜTFEN BİLET NUMARASI GİRİNİZ!";
+                frm.ShowDialog();
             }
         }
     }
