@@ -398,6 +398,8 @@ namespace RozCineWorld
             {
                 Frmhata frm = new Frmhata();
                 frm.lblhatamesaji.Text ="Geçmiş tarihlere ait film eklenmesi yapılamaz.";
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
                 frm.ShowDialog();
                 bugununtarihi();
             }
@@ -581,6 +583,8 @@ namespace RozCineWorld
             {
                 Frmhata frm = new Frmhata();
                 frm.lblhatamesaji.Text ="Lütfen ilgili Alanları doldurunuz!";
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
                 frm.ShowDialog();
             }
         }

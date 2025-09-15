@@ -36,7 +36,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Bilgi getirilirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Bilgi getirilirken hata oluştu:\n" +  ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -60,13 +62,25 @@ namespace RozCineWorld
                 SqlDataReader oku = command.ExecuteReader();
                 if (oku.Read())
                 {
-                    MessageBox.Show("BİYOGRAFİ: " + oku["Biyografi"].ToString(), oku["AdSoyad"].ToString());
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text = "BİYOGRAFİ: " + oku["Biyografi"].ToString();
+                    frm.lblhatamesaji.MaximumSize = new Size(0, 0);
+                    frm.lblhatamesaji.TextAlign = ContentAlignment.MiddleCenter;  // Ortala
+                    frm.lblhatamesaji.Dock = DockStyle.Fill;                      // Tüm formu kaplasın
+                    frm.AutoSize = false;
+                    frm.lblhata.Text =  oku["AdSoyad"].ToString();
+                    frm.pbMESAJ.Image =null;
+                    frm.btntamam.Visible = false;
+                    frm.Size = new Size(450, 220);
+                    frm.ShowDialog();
                 }
                 oku.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Bilgi getirilirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Bilgi getirilirken hata oluştu:\n" +  ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -89,11 +103,17 @@ namespace RozCineWorld
                 sil.Parameters.AddWithValue("@p1", lblID.Text);
                 sil.ExecuteNonQuery();
                 this.Hide();
-                MessageBox.Show(lblAdSoyad.Text + " ADLI OYUNCU KAYDI BAŞARILI BİR ŞEKİLDE SİLİNMİŞTİR.");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = lblAdSoyad.Text + " ADLI OYUNCU KAYDI BAŞARILI BİR ŞEKİLDE SİLİNMİŞTİR.";
+                frm.lblhata.Text = "BAŞARILI";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                frm.ShowDialog();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Kayıt silinirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Kayıt silinirken hata oluştu:\n" +  ex.Message;
+                frm.ShowDialog();
             }
             finally
             {

@@ -453,6 +453,16 @@ namespace RozCineWorld.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap uyari {
+            get {
+                object obj = ResourceManager.GetObject("uyari", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap video_camera {
             get {
                 object obj = ResourceManager.GetObject("video-camera", resourceCulture);

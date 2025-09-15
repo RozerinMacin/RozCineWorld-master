@@ -52,7 +52,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Oyuncu listesi yüklenirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Oyuncu listesi yüklenirken hata oluştu:\n" +  ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -90,7 +92,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Arama yapılırken bir hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Arama yapılırken bir hata oluştu:\n" +  ex.Message;
+                frm.ShowDialog();
             }
             finally
             {

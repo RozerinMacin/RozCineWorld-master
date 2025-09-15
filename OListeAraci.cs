@@ -41,7 +41,9 @@ namespace RozCineWorld
                 catch (Exception ex)
                 {
                     // Hata durumunda kullanıcıya mesaj göster
-                    MessageBox.Show("Kayıt eklenirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text ="Kayıt eklenirken hata oluştu:\n" +  ex.Message;
+                    frm.ShowDialog();
                 }
                 finally
                 {
@@ -73,7 +75,9 @@ namespace RozCineWorld
                 catch (Exception ex)
                 {
                     // Hata durumunda kullanıcıya mesaj göster
-                    MessageBox.Show("Kayıt silinirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text ="Kayıt silinirken bir hata oluştu:\n" +  ex.Message;
+                    frm.ShowDialog();
                 }
                 finally
                 {
@@ -118,7 +122,9 @@ namespace RozCineWorld
             catch (Exception ex)
             {
                 // Hata durumunda mesaj göster
-                MessageBox.Show("Kayıt kontrolü yapılırken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Kayıt kontrolü yapılırken hata oluştu:\n" +  ex.Message;
+                frm.ShowDialog();
             }
             finally
             {

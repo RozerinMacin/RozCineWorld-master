@@ -223,6 +223,8 @@ namespace RozCineWorld
                 {
                     Frmhata frm = new Frmhata();
                     frm.lblhatamesaji.Text ="LÜTFEN TÜM ALANLARI EKSİKSİZ BİR ŞEKİLDE DOLDURUNUZ!";
+                    frm.lblhata.Text = "UYARI!";
+                    frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
                     frm.ShowDialog();
                 }
             }
@@ -252,6 +254,8 @@ namespace RozCineWorld
             {
                 Frmhata frm = new Frmhata();
                 frm.lblhatamesaji.Text ="BU KOLTUK DAHA ÖNCE SATIN ALINMIŞTIR!";
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
                 frm.ShowDialog();
             }
             else

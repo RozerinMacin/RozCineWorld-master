@@ -61,7 +61,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -89,7 +91,10 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
+
             }
             finally
             {
@@ -149,7 +154,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Frmhata frm1 = new Frmhata();
+                frm1.lblhatamesaji.Text = ex.Message;
+                frm1.ShowDialog();
             }
             finally
             {
@@ -158,7 +165,12 @@ namespace RozCineWorld
                     connection.Close();
                 }
             }
-            MessageBox.Show("SALON ATAMA İŞLEMİMİZ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİ.");
+
+            Frmhata frm = new Frmhata();
+            frm.lblhatamesaji.Text = "SALON ATAMA İŞLEMİMİZ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİ.";
+            frm.lblhata.Text = "BAŞARILI";
+            frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+            frm.ShowDialog();
         }
         void SeansSaatleri(object sender , EventArgs e)
         {

@@ -70,11 +70,17 @@ namespace RozCineWorld
                         command.Parameters.AddWithValue("@biyografi", txtBiyografi.Text.ToString());
                         command.Parameters.AddWithValue("@resim", resimyolu);
                         command.ExecuteNonQuery();
-                        MessageBox.Show("YÖNETMEN KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ.");
+                        Frmhata frm = new Frmhata();
+                        frm.lblhatamesaji.Text ="YÖNETMEN KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ.";
+                        frm.lblhata.Text = "BAŞARILI";
+                        frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                        frm.ShowDialog();
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Frmhata frm = new Frmhata();
+                        frm.lblhatamesaji.Text = ex.Message;
+                        frm.ShowDialog();
                     }
                     finally
                     {
@@ -89,7 +95,11 @@ namespace RozCineWorld
             }
             else
             {
-                MessageBox.Show("Lütfen tüm alanları eksiksiz bir şekilde doldurunuz.");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Lütfen tüm alanları eksiksiz bir şekilde doldurunuz.";
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
+                frm.ShowDialog();
             }
         }
         void AracTemizleme()// Form üzerindeki araçları temizleme işlemi için yazılan kod bloğu.
@@ -118,12 +128,21 @@ namespace RozCineWorld
             int yas = Bugun.Year - DogumTarihi.Year;// Yıl farkını hesaplar.
             if (DogumTarihi > Bugun)// Eğer doğum tarihi bugünden büyükse, yani gelecekteyse yaş hesaplaması geçersiz olur.
             {
-                MessageBox.Show("KAYIT YAPILAMADI! Lütfen geçerli bir tarih giriniz!");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="KAYIT YAPILAMADI! Lütfen geçerli bir tarih giriniz!";
+                frm.lblhata.Text = "BAŞARILI";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                frm.ShowDialog();
                 return false;// Geçerli bir tarih girilmediğinde false döndürür.
             }
             else if (yas < 18)// Eğer hesaplanan yaş 18'den küçükse, kayıt işlemi yapılamaz.
             {
-                MessageBox.Show("Yaşınız 18'den büyük olmalıdır!");
+
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Yaşınız 18'den büyük olmalıdır!";
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
+                frm.ShowDialog();
                 return false;
             }
             else// Eğer yaş 18 veya daha büyükse, kayıt işlemi başarılı olur.

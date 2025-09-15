@@ -48,7 +48,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Film listesi yüklenirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally// Son olarak finally bloğu ile bağlantıyı kapatıyoruz.
             {
@@ -85,7 +87,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Arama yapılırken bir hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = "Arama yapılırken bir hata oluştu:\n" + ex.Message;
+                frm.ShowDialog();
             }
             finally
             {

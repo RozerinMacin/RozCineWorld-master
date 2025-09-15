@@ -39,12 +39,17 @@ namespace RozCineWorld
                     kaydet.Parameters.AddWithValue("@koltuksayisi", cBkoltukSayisi.Text);
                     kaydet.ExecuteNonQuery();
                     ListeGetir();
-                    MessageBox.Show("SALON KAYDETME İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ!");
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text ="SALON KAYDETME İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ!";
+                    frm.lblhata.Text = "BAŞARILI";
+                    frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                    frm.ShowDialog();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text = ex.Message;
+                    frm.ShowDialog();
                 }
                 finally
                 {
@@ -60,7 +65,11 @@ namespace RozCineWorld
             }
             else
             {
-                MessageBox.Show("LÜTFEN TÜM ALANLARI EKSİKSİZ BİR ŞEKİLDE DOLDURUNUZ!");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="LÜTFEN TÜM ALANLARI EKSİKSİZ BİR ŞEKİLDE DOLDURUNUZ!";
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
+                frm.ShowDialog();
             }
         }
         void koltukolustur()// Koltuk sayısı combobox'ını doldurur.
@@ -98,7 +107,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally
             {
@@ -118,7 +129,11 @@ namespace RozCineWorld
 
                 if (sayi < 1 || sayi > 100)// Eğer sayı 1 ile 100 arasında değilse
                 {
-                    MessageBox.Show("Lütfen 1 ile 100 arasında bir sayı girin!");// Kullanıcıya uyarı mesajı gösterir.
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text ="Lütfen 1 ile 100 arasında bir sayı girin!";
+                    frm.lblhata.Text = "UYARI!";
+                    frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
+                    frm.ShowDialog();
                     cBkoltukSayisi.Text = "";// Combobox'ı temizler.
                 }
             }

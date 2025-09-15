@@ -34,7 +34,7 @@
             lblhata = new Label();
             pbMESAJ = new PictureBox();
             lblhatamesaji = new Label();
-            button1 = new Button();
+            btntamam = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbMESAJ).BeginInit();
             SuspendLayout();
@@ -84,9 +84,9 @@
             lblhata.ForeColor = Color.White;
             lblhata.Location = new Point(3, 1);
             lblhata.Name = "lblhata";
-            lblhata.Size = new Size(64, 25);
+            lblhata.Size = new Size(71, 25);
             lblhata.TabIndex = 1;
-            lblhata.Text = "HATA";
+            lblhata.Text = "HATA!";
             // 
             // pbMESAJ
             // 
@@ -110,27 +110,27 @@
             lblhatamesaji.Text = "lblhatamesaji";
             lblhatamesaji.TextAlign = ContentAlignment.TopCenter;
             // 
-            // button1
+            // btntamam
             // 
-            button1.BackColor = Color.FromArgb(190, 61, 42);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(137, 149);
-            button1.Name = "button1";
-            button1.Size = new Size(117, 28);
-            button1.TabIndex = 5;
-            button1.Text = "TAMAM";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btntamam.BackColor = Color.FromArgb(190, 61, 42);
+            btntamam.Cursor = Cursors.Hand;
+            btntamam.FlatStyle = FlatStyle.Flat;
+            btntamam.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btntamam.ForeColor = Color.White;
+            btntamam.Location = new Point(137, 149);
+            btntamam.Name = "btntamam";
+            btntamam.Size = new Size(117, 28);
+            btntamam.TabIndex = 5;
+            btntamam.Text = "TAMAM";
+            btntamam.UseVisualStyleBackColor = false;
+            btntamam.Click += button1_Click;
             // 
             // Frmhata
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(392, 199);
-            Controls.Add(button1);
+            Controls.Add(btntamam);
             Controls.Add(lblhatamesaji);
             Controls.Add(pbMESAJ);
             Controls.Add(panel1);
@@ -149,9 +149,9 @@
         private Panel panel1;
         private Label label2;
         private Button btnkapat;
-        private Button button1;
         public Label lblhatamesaji;
         public Label lblhata;
         public PictureBox pbMESAJ;
+        public Button btntamam;
     }
 }

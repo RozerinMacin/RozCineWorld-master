@@ -78,12 +78,20 @@ namespace RozCineWorld
             int yas = Bugun.Year - DogumTarihi.Year;// Yaşı hesaplar.
             if (DogumTarihi > Bugun)
             {
-                MessageBox.Show("KAYIT YAPILAMADI! Lütfen geçerli bir tarih giriniz!");
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = "KAYIT YAPILAMADI! Lütfen geçerli bir tarih giriniz!";
+                frm.ShowDialog();
                 return false;
             }
             else if (yas < 5)
             {
-                MessageBox.Show("Yaşınız 5'ten büyük olmalıdır!");
+                ShowDialog();
+
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Yaşınız 5'ten büyük olmalıdır!";
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
+                frm.ShowDialog();
                 return false;
             }
             else
@@ -130,18 +138,28 @@ namespace RozCineWorld
                         command.Parameters.AddWithValue("@biyografi", txtBiyografi.Text);
                         command.Parameters.AddWithValue("@resim", resimyolu);
                         command.ExecuteNonQuery();
-                        MessageBox.Show("OYUNCU KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ.");
+                        Frmhata frm = new Frmhata();
+                        frm.lblhatamesaji.Text ="OYUNCU KAYIT İŞLEMİ BAŞARILI BİR ŞEKİLDE GERÇEKLEŞTİRİLDİ.";
+                        frm.lblhata.Text = "BAŞARILI";
+                        frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                        frm.ShowDialog();
                         AracTemizleme();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen tüm alanları eksiksiz bir şekilde doldurunuz.");
+                    Frmhata frm = new Frmhata();
+                    frm.lblhatamesaji.Text = "Lütfen tüm alanları eksiksiz bir şekilde doldurunuz.";
+                    frm.lblhata.Text = "UYARI!";
+                    frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
+                    frm.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Bir hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text ="Bir hata oluştu:\n" +  ex.Message;
+                frm.ShowDialog();
             }
             finally
             {

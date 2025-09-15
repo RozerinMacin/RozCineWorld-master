@@ -67,6 +67,8 @@ namespace RozCineWorld
             {
                 Frmhata frm = new Frmhata();
                 frm.lblhatamesaji.Text ="LÜTFEN BİLET NUMARASI GİRİNİZ!";
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
                 frm.ShowDialog();
             }
         }

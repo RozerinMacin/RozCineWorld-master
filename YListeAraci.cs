@@ -78,7 +78,9 @@ namespace RozCineWorld
             }
             catch (Exception ex)// Hata durumunda kullanıcıya uyarı mesajı gösterme işlemi için yazılan kod bloğu.
             {
-                MessageBox.Show(ex.Message, "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frmhata frm = new Frmhata();
+                frm.lblhatamesaji.Text = ex.Message;
+                frm.ShowDialog();
             }
             finally// Bağlantı kapatma işlemi için yazılan kod bloğu.
             {
