@@ -80,7 +80,6 @@ namespace RozCineWorld
                     frm.btntamam.Visible = false;
                     frm.Size = new Size(450, 220);
                     frm.ShowDialog();
-                   // MessageBox.Show("BİYOGRAFİ: " + oku["Biyografi"].ToString(), oku["AdSoyad"].ToString());
                 }
             }
             catch (Exception ex)
