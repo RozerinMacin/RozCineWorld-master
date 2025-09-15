@@ -130,8 +130,8 @@ namespace RozCineWorld
             {
                 Frmhata frm = new Frmhata();
                 frm.lblhatamesaji.Text ="KAYIT YAPILAMADI! Lütfen geçerli bir tarih giriniz!";
-                frm.lblhata.Text = "BAŞARILI";
-                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.tik);
+                frm.lblhata.Text = "UYARI!";
+                frm.pbMESAJ.Image = (System.Drawing.Image)(Properties.Resources.uyari);
                 frm.ShowDialog();
                 return false;// Geçerli bir tarih girilmediğinde false döndürür.
             }
