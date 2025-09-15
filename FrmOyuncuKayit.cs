@@ -85,8 +85,6 @@ namespace RozCineWorld
             }
             else if (yas < 5)
             {
-                ShowDialog();
-
                 Frmhata frm = new Frmhata();
                 frm.lblhatamesaji.Text ="Yaşınız 5'ten büyük olmalıdır!";
                 frm.lblhata.Text = "UYARI!";
